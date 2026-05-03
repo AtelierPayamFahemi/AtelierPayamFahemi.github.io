@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progetti — Payam BIM Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-header { padding: 10rem 3rem 4rem; max-width: 1100px; margin: 0 auto; }
+.filter-bar { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.filter-btn {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+  padding: 6px 16px; border: 0.5px solid rgba(26,25,22,0.25);
+  background: transparent; cursor: pointer; color: var(--ink-mid);
+  transition: all 0.2s;
+}
+.filter-btn.active, .filter-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.projects-full { padding: 0 3rem 6rem; max-width: 1100px; margin: 0 auto; }
+.all-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+/* reuse dark card style from main */
+.card { background: var(--dark-surface); border: 0.5px solid rgba(255,255,255,0.08); overflow: hidden; transition: transform 0.3s; }
+.card:hover { transform: translateY(-4px); }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">P·B</a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="progetti.html" class="active">Progetti</a>
+    <a href="blog.html">Blog</a>
+    <a href="../index.html#contatti">Contatti</a>
+  </div>
+  <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+</nav>
+
+<div class="page-header">
+  <div class="section-tag">/ Progetti</div>
+  <h1 style="font-family:var(--serif);font-size:clamp(2.5rem,6vw,5rem);font-weight:300;line-height:1.1;">
+    Automazione &amp;<br><em style="color:var(--accent)">workflow BIM</em>
+  </h1>
+  <p style="color:var(--ink-mid);margin-top:1.5rem;max-width:500px;">
+    Casi studio di script, tool e processi sviluppati per Revit, Dynamo e l'ecosistema AEC.
+  </p>
+  <div class="filter-bar" style="margin-top:2rem;">
+    <button class="filter-btn active" data-filter="all">Tutti</button>
+    <button class="filter-btn" data-filter="dynamo">Dynamo</button>
+    <button class="filter-btn" data-filter="python">Python</button>
+    <button class="filter-btn" data-filter="ifc">IFC / Standard</button>
+    <button class="filter-btn" data-filter="revit">Revit API</button>
+  </div>
+</div>
+
+<div class="projects-full">
+  <div class="all-cards">
+
+    <article class="card" data-tags="python dynamo">
+      <div class="card-media"><div class="card-placeholder"><span>Aggiorna con tua immagine</span></div></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="tag">Dynamo</span><span class="tag">Python</span></div>
+        <h3 class="card-title">Room Data Sheet Automatizzati</h3>
+        <p class="card-desc">Generazione automatica di schede ambiente in HTML/PDF da Revit.</p>
+        <a href="progetti/room-data-sheet.html" class="card-link">Caso studio →</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="ifc">
+      <div class="card-media"><div class="card-placeholder"><span>Aggiorna con tua immagine</span></div></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="tag">IFC4</span><span class="tag">UNI 11337</span></div>
+        <h3 class="card-title">Export IFC MEP Ottimizzato</h3>
+        <p class="card-desc">Mappatura Revit MEP → IFC4 conforme agli standard italiani.</p>
+        <a href="progetti/ifc-export.html" class="card-link">Caso studio →</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="revit python">
+      <div class="card-media"><div class="card-placeholder"><span>Aggiorna con tua immagine</span></div></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="tag">Revit API</span><span class="tag">Python</span></div>
+        <h3 class="card-title">Altezze Soffitto → Ambienti</h3>
+        <p class="card-desc">Recupero ambienti da elementi soffitto con <code>GetRoomAtPoint()</code>.</p>
+        <a href="progetti/ceiling-rooms.html" class="card-link">Caso studio →</a>
+      </div>
+    </article>
+
+    <!-- TEMPLATE: copia questo blocco per aggiungere un nuovo progetto -->
+    <!--
+    <article class="card" data-tags="dynamo">
+      <div class="card-media">
+        <img src="../images/nome-immagine.jpg" alt="Descrizione">
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="tag">Dynamo</span></div>
+        <h3 class="card-title">Nome Progetto</h3>
+        <p class="card-desc">Breve descrizione del progetto.</p>
+        <a href="progetti/nome-progetto.html" class="card-link">Caso studio →</a>
+      </div>
+    </article>
+    -->
+
+  </div>
+</div>
+
+<footer class="footer">
+  <span>© 2025 Payam — BIM Portfolio</span>
+  <span>Milano, IT</span>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+// Filter functionality
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.card').forEach(card => {
+      const tags = card.dataset.tags || '';
+      card.style.display = (filter === 'all' || tags.includes(filter)) ? 'block' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

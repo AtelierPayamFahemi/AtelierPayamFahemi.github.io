@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Payam BIM Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-header { padding: 10rem 3rem 4rem; max-width: 1100px; margin: 0 auto; }
+.blog-list { padding: 0 3rem 6rem; max-width: 1100px; margin: 0 auto; }
+.post-full-row {
+  display: grid; grid-template-columns: 100px 1fr 120px;
+  gap: 2rem; align-items: start;
+  padding: 2rem 0; border-bottom: 0.5px solid rgba(26,25,22,0.1);
+  transition: background 0.2s;
+}
+.post-full-row:hover { background: rgba(184,92,42,0.03); }
+.post-full-row .post-date { font-family: var(--mono); font-size: 11px; color: var(--ink-light); padding-top: 6px; }
+.post-full-row h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 0.4rem; }
+.post-full-row h2 a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
+.post-full-row h2 a:hover { color: var(--accent); }
+.post-full-row p { font-size: 14px; color: var(--ink-mid); font-weight: 300; }
+.post-full-row .post-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; padding: 4px 10px; background: var(--paper-dark); color: var(--ink-mid); align-self: start; text-align: center; }
+@media(max-width:768px){.post-full-row{grid-template-columns:1fr;gap:0.5rem;}.post-full-row .post-tag{display:none;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">P·B</a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="progetti.html">Progetti</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="../index.html#contatti">Contatti</a>
+  </div>
+  <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+</nav>
+
+<div class="page-header">
+  <div class="section-tag">/ Blog</div>
+  <h1 style="font-family:var(--serif);font-size:clamp(2.5rem,6vw,5rem);font-weight:300;line-height:1.1;">
+    Note tecniche &amp;<br><em style="color:var(--accent)">riflessioni BIM</em>
+  </h1>
+</div>
+
+<div class="blog-list">
+  <div style="border-top:0.5px solid rgba(26,25,22,0.12);">
+
+    <div class="post-full-row">
+      <span class="post-date">Apr 2025</span>
+      <div>
+        <h2><a href="blog/uni-11337.html">LOD cumulativo secondo UNI 11337-4</a></h2>
+        <p>Come interpretare il framework italiano degli LOD e applicarlo nei progetti reali. Analisi del concetto di LOD cumulativo e sue implicazioni operative.</p>
+      </div>
+      <span class="post-tag">Standard</span>
+    </div>
+
+    <div class="post-full-row">
+      <span class="post-date">Mar 2025</span>
+      <div>
+        <h2><a href="blog/dynamo-python.html">Boolean e filtri in Dynamo Python</a></h2>
+        <p>Come usare correttamente i valori booleani nei nodi Python Script per filtrare elementi Revit. Differenze tra l'ambiente visuale e il contesto Python.</p>
+      </div>
+      <span class="post-tag">Scripting</span>
+    </div>
+
+    <div class="post-full-row">
+      <span class="post-date">Feb 2025</span>
+      <div>
+        <h2><a href="blog/weasyprint.html">WeasyPrint in Dynamo: problemi e soluzioni</a></h2>
+        <p>Debug passo per passo della generazione PDF nell'ambiente Python embedded di Dynamo. Transaction scope, path assoluti, e gestione silent exceptions.</p>
+      </div>
+      <span class="post-tag">Debug</span>
+    </div>
+
+    <!-- TEMPLATE: copia per aggiungere un nuovo post
+    <div class="post-full-row">
+      <span class="post-date">Mese YYYY</span>
+      <div>
+        <h2><a href="blog/nome-post.html">Titolo del Post</a></h2>
+        <p>Breve descrizione o intro del post.</p>
+      </div>
+      <span class="post-tag">Tag</span>
+    </div>
+    -->
+
+  </div>
+</div>
+
+<footer class="footer">
+  <span>© 2025 Payam — BIM Portfolio</span>
+  <span>Milano, IT</span>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

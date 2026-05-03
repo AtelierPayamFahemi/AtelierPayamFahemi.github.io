@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payam — BIM Automation & Architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">P·B</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="progetti.html">Progetti</a>
+    <a href="blog.html">Blog</a>
+    <a href="#contatti">Contatti</a>
+  </div>
+  <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+</nav>
+
+<header class="hero">
+  <div class="hero-label">BIM Manager · Automation · AEC</div>
+  <h1 class="hero-title">
+    Architettura<br>
+    <em>attraverso</em><br>
+    il codice.
+  </h1>
+  <p class="hero-sub">Automazione Revit, scripting Dynamo/Python, standard IFC e BIM.<br>Milano, Italia.</p>
+  <div class="hero-cta">
+    <a href="progetti.html" class="btn-primary">Esplora i progetti</a>
+    <a href="#contatti" class="btn-ghost">Contatti</a>
+  </div>
+  <div class="hero-line"></div>
+</header>
+
+<section class="section" id="about">
+  <div class="section-tag">/ 01 — profilo</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>BIM & Automazione<br><em>per l'AEC</em></h2>
+      <p>Lavoro all'intersezione tra architettura, ingegneria e tecnologia. Sviluppo script e workflow per automatizzare processi in Revit, con focus su qualità del dato BIM, esportazione IFC e conformità agli standard italiani.</p>
+      <p>Ogni progetto è un caso studio: dalla logica dello script al risultato visibile nel modello.</p>
+    </div>
+    <div class="about-skills">
+      <div class="skill-row"><span class="skill-name">Autodesk Revit</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Dynamo Visual Programming</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Python / IronPython</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+      <div class="skill-row"><span class="skill-name">IFC · UNI 11337</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Coordinamento BIM</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="progetti-preview">
+  <div class="section-tag light">/ 02 — progetti selezionati</div>
+  <h2 class="section-title light">Automazione &amp; Workflow</h2>
+  <div class="cards-grid">
+
+    <article class="card">
+      <div class="card-media">
+        <div class="card-placeholder">
+          <span>Immagine / Timelapse</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag">Dynamo</span>
+          <span class="tag">Python</span>
+        </div>
+        <h3 class="card-title">Room Data Sheet Automatizzati</h3>
+        <p class="card-desc">Generazione automatica di schede ambiente in HTML/PDF direttamente da Revit tramite script Python in Dynamo.</p>
+        <a href="progetti/room-data-sheet.html" class="card-link">Leggi il caso studio →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-media">
+        <div class="card-placeholder">
+          <span>Immagine / Timelapse</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag">IFC4</span>
+          <span class="tag">UNI 11337</span>
+        </div>
+        <h3 class="card-title">Export IFC MEP Ottimizzato</h3>
+        <p class="card-desc">Mappatura categorie Revit MEP su classi IFC4 per export conforme agli standard italiani BIM.</p>
+        <a href="progetti/ifc-export.html" class="card-link">Leggi il caso studio →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-media">
+        <div class="card-placeholder">
+          <span>Immagine / Timelapse</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag">Revit API</span>
+          <span class="tag">Ceiling</span>
+        </div>
+        <h3 class="card-title">Altezze Soffitto da Elementi</h3>
+        <p class="card-desc">Script per recuperare l'ambiente associato a ogni elemento soffitto tramite <code>GetRoomAtPoint()</code> con offset Z e gestione errori.</p>
+        <a href="progetti/ceiling-rooms.html" class="card-link">Leggi il caso studio →</a>
+      </div>
+    </article>
+
+  </div>
+  <div class="section-cta">
+    <a href="progetti.html" class="btn-primary">Tutti i progetti</a>
+  </div>
+</section>
+
+<section class="section" id="blog-preview">
+  <div class="section-tag">/ 03 — dal blog</div>
+  <h2>Note tecniche &amp;<br><em>riflessioni BIM</em></h2>
+  <div class="posts-list">
+    <article class="post-row">
+      <span class="post-date">2025 — 04</span>
+      <div class="post-content">
+        <h3><a href="blog/uni-11337.html">LOD cumulativo secondo UNI 11337-4</a></h3>
+        <p>Come interpretare il framework italiano degli LOD e applicarlo nei progetti.</p>
+      </div>
+      <span class="post-tag">Standard</span>
+    </article>
+    <article class="post-row">
+      <span class="post-date">2025 — 03</span>
+      <div class="post-content">
+        <h3><a href="blog/dynamo-python.html">Boolean e filtri in Dynamo Python</a></h3>
+        <p>Come usare i booleani nei nodi Python Script per filtrare elementi Revit.</p>
+      </div>
+      <span class="post-tag">Scripting</span>
+    </article>
+    <article class="post-row">
+      <span class="post-date">2025 — 02</span>
+      <div class="post-content">
+        <h3><a href="blog/weasyprint.html">WeasyPrint in Dynamo: problemi e soluzioni</a></h3>
+        <p>Debug della generazione PDF nell'ambiente Python embedded di Dynamo.</p>
+      </div>
+      <span class="post-tag">Debug</span>
+    </article>
+  </div>
+  <a href="blog.html" class="btn-ghost" style="margin-top:2rem;display:inline-block;">Tutti gli articoli →</a>
+</section>
+
+<section class="section section-accent" id="contatti">
+  <div class="section-tag">/ 04 — contatti</div>
+  <h2>Parliamo di<br><em>BIM & automazione</em></h2>
+  <p class="contact-sub">Collaborazioni, consulenze, o semplicemente scambio di idee sul mondo BIM.</p>
+  <div class="contact-links">
+    <a href="mailto:tua@email.com" class="contact-item">
+      <span class="contact-icon">✉</span>
+      <span>tua@email.com</span>
+    </a>
+    <a href="https://github.com/tuousername" target="_blank" class="contact-item">
+      <span class="contact-icon">⌥</span>
+      <span>GitHub</span>
+    </a>
+    <a href="https://linkedin.com/in/tuoprofilo" target="_blank" class="contact-item">
+      <span class="contact-icon">↗</span>
+      <span>LinkedIn</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>© 2025 Payam — BIM Portfolio</span>
+  <span>Milano, IT</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

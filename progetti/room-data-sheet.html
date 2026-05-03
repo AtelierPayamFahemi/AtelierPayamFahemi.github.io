@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room Data Sheet — Payam BIM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+.article-wrap { max-width: 780px; margin: 0 auto; padding: 10rem 2rem 6rem; }
+.article-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.article-h1 { font-family: var(--serif); font-size: clamp(2rem,5vw,3.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; }
+.article-intro { font-size: 17px; color: var(--ink-mid); line-height: 1.8; margin-bottom: 3rem; border-left: 2px solid var(--accent); padding-left: 1.25rem; }
+.article-body h2 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin: 3rem 0 1rem; }
+.article-body p { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.8; font-weight: 300; }
+.article-body ul { color: var(--ink-mid); padding-left: 1.5rem; margin-bottom: 1rem; line-height: 1.8; font-weight: 300; }
+.code-block {
+  background: var(--dark-bg); color: #e8a07a;
+  font-family: var(--mono); font-size: 13px; line-height: 1.7;
+  padding: 1.5rem; margin: 1.5rem 0; overflow-x: auto;
+  border-left: 2px solid var(--accent);
+}
+.media-full { width: 100%; aspect-ratio: 16/9; background: var(--paper-dark); margin: 2rem 0; display: flex; align-items: center; justify-content: center; }
+.media-full span { font-family: var(--mono); font-size: 12px; color: var(--ink-light); }
+.video-embed { width: 100%; aspect-ratio: 16/9; margin: 2rem 0; }
+.video-embed iframe { width: 100%; height: 100%; border: none; }
+.back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 12px; color: var(--ink-mid); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
+.back-link:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="../../index.html" class="nav-logo">P·B</a>
+  <div class="nav-links">
+    <a href="../../index.html">Home</a>
+    <a href="../progetti.html" class="active">Progetti</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../../index.html#contatti">Contatti</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <a href="../progetti.html" class="back-link">← Tutti i progetti</a>
+
+  <div class="article-meta">
+    <span class="tag" style="background:rgba(184,92,42,0.1);color:var(--accent);">Dynamo</span>
+    <span class="tag" style="background:rgba(184,92,42,0.1);color:var(--accent);">Python</span>
+    <span style="font-family:var(--mono);font-size:11px;color:var(--ink-light);padding-top:3px;">Aprile 2025</span>
+  </div>
+
+  <h1 class="article-h1">Room Data Sheet<br><em style="color:var(--accent)">Automatizzati da Revit</em></h1>
+
+  <p class="article-intro">
+    Generazione automatica di schede ambiente in formato HTML e PDF direttamente da un modello Revit, usando uno script Python all'interno di Dynamo.
+  </p>
+
+  <div class="article-body">
+
+    <!-- IMMAGINE O TIMELAPSE: sostituisci con img o iframe YouTube -->
+    <div class="media-full">
+      <span>→ Inserisci qui screenshot o timelapse del workflow</span>
+    </div>
+    <!--
+    Per un timelapse YouTube, usa:
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/TUO_ID_VIDEO" allowfullscreen></iframe>
+    </div>
+    -->
+
+    <h2>Il problema</h2>
+    <p>
+      In un progetto complesso, le schede ambiente devono essere generate e aggiornate manualmente ad ogni revisione del modello. Con decine o centinaia di ambienti, questo processo è lento e soggetto a errori.
+    </p>
+
+    <h2>La soluzione</h2>
+    <p>
+      Uno script Python in Dynamo legge i parametri di ogni ambiente (nome, numero, area, altezza soffitto, finiture) e genera dinamicamente un file HTML per ogni stanza. WeasyPrint converte poi i file in PDF.
+    </p>
+    <ul>
+      <li>Lettura parametri via <code style="font-family:var(--mono);color:var(--accent);">LookupParameter</code> e <code style="font-family:var(--mono);color:var(--accent);">StorageType</code></li>
+      <li>Conversione unità interne Revit → cm</li>
+      <li>Template HTML con CSS inline per layout stabile</li>
+      <li>Gestione errori silenziosi e parametri vuoti</li>
+    </ul>
+
+    <h2>Snippet principale</h2>
+    <pre class="code-block"># Recupero altezza soffitto dall'elemento ceiling
+def get_ceiling_height(ceiling, doc):
+    bb = ceiling.get_BoundingBox(None)
+    if bb is None:
+        return None
+    mid_pt = XYZ(
+        (bb.Min.X + bb.Max.X) / 2,
+        (bb.Min.Y + bb.Max.Y) / 2,
+        bb.Min.Z + 0.1  # offset Z sopra il pavimento
+    )
+    room = doc.GetRoomAtPoint(mid_pt)
+    if room:
+        h = room.LookupParameter("Unbound Height")
+        if h and h.HasValue:
+            return h.AsDouble() * 30.48  # ft → cm
+    return None</pre>
+
+    <!-- Aggiungi altre immagini del risultato finale -->
+    <div class="media-full">
+      <span>→ Screenshot della scheda PDF generata</span>
+    </div>
+
+    <h2>Risultati</h2>
+    <p>
+      Il processo che richiedeva 2-3 ore di lavoro manuale viene completato in pochi minuti, con output sempre coerente con il modello aggiornato.
+    </p>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <span>© 2025 Payam — BIM Portfolio</span>
+  <span>Milano, IT</span>
+</footer>
+</body>
+</html>
