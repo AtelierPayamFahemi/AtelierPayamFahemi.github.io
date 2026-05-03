@@ -220,3 +220,21 @@ h2 em { color: var(--accent); font-style: italic; }
   .footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   .hero-cta { flex-direction: column; align-items: flex-start; }
 }
+/* ─── About updated ─── */
+#about { padding-top: 3rem; padding-bottom: 3rem; }
+#about::before { display: none; }
+.about-grid { grid-template-columns: 1.4fr 1fr; gap: 4rem; }
+.about-right { display: flex; flex-direction: column; }
+.skills-label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+.software-grid {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+}
+.sw-tag {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+  padding: 5px 12px; border: 0.5px solid rgba(26,25,22,0.2);
+  color: var(--ink-mid); background: var(--paper-dark);
+}
