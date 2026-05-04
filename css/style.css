@@ -242,9 +242,10 @@ h2 em { color: var(--accent); font-style: italic; }
 .hero-profile {
   display: flex; align-items: center; gap: 1.25rem;
   margin-bottom: 3rem;
+  margin-top: -2rem;
 }
 .hero-photo {
-  width: 120px; height: 120px;
+  width: 240px; height: 240px;
   object-fit: cover; object-position: top;
   border-radius: 4px;
 }
