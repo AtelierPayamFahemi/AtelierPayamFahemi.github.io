@@ -5,7 +5,7 @@
   --ink: #1a1916;
   --ink-mid: #4a4844;
   --ink-light: #9a9894;
-  --paper: #f5f2ed;
+  --paper: #ffffff;
   --paper-dark: #eceae4;
   --accent: #293452;
   --accent-light: #f0d8c8;
@@ -237,4 +237,29 @@ h2 em { color: var(--accent); font-style: italic; }
   font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
   padding: 5px 12px; border: 0.5px solid rgba(26,25,22,0.2);
   color: var(--ink-mid); background: var(--paper-dark);
+}
+/* ─── Hero profile ─── */
+.hero-profile {
+  display: flex; align-items: center; gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+.hero-photo {
+  width: 120px; height: 120px;
+  object-fit: cover; object-position: top;
+  border-radius: 4px;
+}
+.hero-profile-text {
+  display: flex; flex-direction: column; gap: 0.25rem;
+}
+.hero-name {
+  font-family: var(--sans); font-size: 1.3rem;
+  font-weight: 500; color: var(--ink); letter-spacing: 0.01em;
+}
+.hero-roles {
+  font-family: var(--sans); font-size: 12px;
+  font-weight: 400; color: var(--ink); letter-spacing: 0.05em;
+}
+.hero-spec {
+  font-family: var(--sans); font-size: 13px;
+  font-weight: 300; color: var(--ink-mid);
 }
