@@ -252,14 +252,14 @@ h2 em { color: var(--accent); font-style: italic; }
   display: flex; flex-direction: column; gap: 0.25rem;
 }
 .hero-name {
-  font-family: var(--sans); font-size: 1.3rem;
+  font-family: var(--sans); font-size: 2rem;
   font-weight: 500; color: var(--ink); letter-spacing: 0.01em;
 }
 .hero-roles {
-  font-family: var(--sans); font-size: 12px;
+  font-family: var(--sans); font-size: 15px;
   font-weight: 400; color: var(--ink); letter-spacing: 0.05em;
 }
 .hero-spec {
-  font-family: var(--sans); font-size: 13px;
+  font-family: var(--sans); font-size: 15px;
   font-weight: 300; color: var(--ink-mid);
 }
