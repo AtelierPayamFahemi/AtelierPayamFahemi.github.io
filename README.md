@@ -36,6 +36,6 @@ Throughout his professional career, Payam has deepened his expertise with advanc
 
 ## Contact
 
-- 📧 fahemipayam@gmail.com
-- 💼 [LinkedIn](https://www.linkedin.com/in/payamfahemi/)
--    [Youtube](http://www.youtube.com/@AtelierPayamFahemi)
+- fahemipayam@gmail.com
+- [LinkedIn](https://www.linkedin.com/in/payamfahemi/)
+- [Youtube](http://www.youtube.com/@AtelierPayamFahemi)
