@@ -7,9 +7,7 @@ Automation & Information Management Specialist — Milan, Italy
 
 ## About
 
-BIM professional with extensive experience in modeling, coordination, and digital process automation across architectural and engineering projects.
-
-Specialized in Revit workflows, Dynamo and Python scripting, IFC export, and BIM standards compliance (UNI 11337).
+After gaining experience at architecture firms in my home country, I began my career in Italy as a BIM Specialist. Since then I developed strong skills in BIM modeling and coordination across various design phases. Over time, I advanced to the role of BIM Coordinator, managing complex assignments including:
 
 ---
 
@@ -20,18 +18,20 @@ Specialized in Revit workflows, Dynamo and Python scripting, IFC export, and BIM
 ---
 
 ## Areas of Expertise
-
-- BIM Modeling & Coordination
-- Revit Automation (Dynamo & Python)
-- IFC Export & Mapping (IFC4 / UNI 11337)
-- BEP Development (Pre-BEP & Post-BEP)
-- Clash Detection & Model Quality Control
-- CDE Setup & Management (ACC / BIM 360)
+- Lead BIM strategy, governance, and digital information management.
+- Develop and implement company-wide BIM standards, templates, and workflows.
+- Support project teams in digital implementation, automation, and workflow optimization.
+- Drive innovation in digital processes, including Dynamo and Python-based automation.
+- Develop and manage BEPs (Pre-BEP and Post-BEP).
+- Perform clash detection, issue reporting, and model/code quality control.
+- Extract data from Revit, map IFC classes, and configure models based on specific project requirements.
+- Set up BIM projects within a CDE (e.g., ACC).
+- Coordinate interdisciplinary BIM workflows across architectural and engineering teams.
 - Interdisciplinary BIM Workflow Coordination
 
 ---
 
 ## Contact
 
-- 📧 your@email.com
-- 💼 [LinkedIn](https://linkedin.com/in/yourprofile)
+- 📧 fahemipayam@gmail.com
+- 💼 [LinkedIn](https://www.linkedin.com/in/payamfahemi/)
