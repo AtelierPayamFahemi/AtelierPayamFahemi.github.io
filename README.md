@@ -7,7 +7,10 @@ Automation & Information Management Specialist — Milan, Italy
 
 ## About
 
-After gaining experience at architecture firms in my home country, I began my career in Italy as a BIM Specialist. Since then I developed strong skills in BIM modeling and coordination across various design phases. Over time, I advanced to the role of BIM Coordinator, managing complex assignments including:
+After gaining experience at architecture firms in his home country, Payam began his career in Italy as a BIM Specialist at ATIProject, where he developed strong skills in BIM modeling and coordination across various design phases. He contributed to major projects such as the United Nations Office in Geneva and the Scialoia school complex in Milan.
+Over time, he advanced to the role of BIM Coordinator, managing complex assignments including the Stamira residential project and the Vercelli Hospital. In these projects, he was responsible for setting up BIM models, managing them on Autodesk Construction Cloud (Autodesk Forma), and conducting Clash Detection activities.
+In September 2024, he joined CEAS as a BIM Coordinator, overseeing large-scale projects such as the Ivory Offices and the Torre Richard in Milan. At the same time, he led the implementation of BIM within the architectural discipline and coordinated the work of various BIM Specialists on BIM-driven projects.
+Throughout his professional career, Payam has deepened his expertise with advanced modeling and coordination tools such as Revit and Navisworks, as well as automation tools like Python, Dynamo, and Rhino.Inside.
 
 ---
 
@@ -35,3 +38,4 @@ After gaining experience at architecture firms in my home country, I began my ca
 
 - 📧 fahemipayam@gmail.com
 - 💼 [LinkedIn](https://www.linkedin.com/in/payamfahemi/)
+-    [Youtube](http://www.youtube.com/@AtelierPayamFahemi)
