@@ -287,7 +287,7 @@ body {
 /* ─── Hero ruoli ─── */
 .hero-roles {
   font-family: var(--calibri);
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--ink);
   letter-spacing: 0.05em;
@@ -296,7 +296,7 @@ body {
 /* ─── Hero specializzazione ─── */
 .hero-spec {
   font-family: var(--calibri);
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--ink);
 }
@@ -324,7 +324,7 @@ body {
 /* ─── Hero subtitle ─── */
 .hero-sub {
   font-family: var(--calibri);
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 300;
   color: var(--ink);
   margin-bottom: 2.5rem !important;
