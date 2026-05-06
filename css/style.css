@@ -278,7 +278,7 @@ body {
 /* ─── Hero nome ─── */
 .hero-name {
   font-family: var(--calibri);
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--ink);
   letter-spacing: 0.01em;
