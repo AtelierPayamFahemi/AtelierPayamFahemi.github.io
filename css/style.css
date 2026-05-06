@@ -40,7 +40,7 @@ body {
   border-bottom: 0.5px solid rgba(26,25,22,0.12);
 }
 .nav-logo {
-  font-family: var(--sans); font-size: 15px; font-weight: 700;
+  font-family: var(--sans); font-size: 20px; font-weight: 700;
   letter-spacing: 0.08em; color: var(--ink); text-decoration: none;
 }
 .nav-links { display: flex; gap: 2rem; }
