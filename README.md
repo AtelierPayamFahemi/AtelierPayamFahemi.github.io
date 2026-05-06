@@ -30,7 +30,6 @@ Driven by a data-centric approach, combining technical expertise with innovation
 - Extract data from Revit, map IFC classes, and configure models based on specific project requirements.
 - Set up BIM projects within a CDE (e.g., ACC).
 - Coordinate interdisciplinary BIM workflows across architectural and engineering teams.
-- Interdisciplinary BIM Workflow Coordination
 
 ---
 
