@@ -7,10 +7,10 @@ Automation & Information Management Specialist — Milan, Italy
 
 ## About
 
-After gaining experience at architecture firms in his home country, Payam began his career in Italy as a BIM Specialist at ATIProject, where he developed strong skills in BIM modeling and coordination across various design phases. He contributed to major projects such as the United Nations Office in Geneva and the Scialoia school complex in Milan.
-Over time, he advanced to the role of BIM Coordinator, managing complex assignments including the Stamira residential project and the Vercelli Hospital. In these projects, he was responsible for setting up BIM models, managing them on Autodesk Construction Cloud (Autodesk Forma), and conducting Clash Detection activities.
-In September 2024, he joined CEAS as a BIM Coordinator, overseeing large-scale projects such as the Ivory Offices and the Torre Richard in Milan. At the same time, he led the implementation of BIM within the architectural discipline and coordinated the work of various BIM Specialists on BIM-driven projects.
-Throughout his professional career, Payam has deepened his expertise with advanced modeling and coordination tools such as Revit and Navisworks, as well as automation tools like Python, Dynamo, and Rhino.Inside.
+BIM Coordinator and BIM & Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments.
+Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines.
+Advanced user of tools such as Revit, Navisworks, and Solibri, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation. Strong capabilities in automation and computational workflows using Dynamo, Python, and Rhino.Inside.Revit to optimize processes and enhance efficiency.
+Driven by a data-centric approach, combining technical expertise with innovation to support digital transformation and informed decision-making in BIM environments.
 
 ---
 
