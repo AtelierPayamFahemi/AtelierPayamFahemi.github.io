@@ -138,7 +138,7 @@ h2 em { color: var(--accent); font-style: italic; }
 .section-dark h2 em { color: #e8a07a; }
 
 /* ─── About ─── */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 4rem; align-items: start; }
 .about-text p { color: var(--ink-mid); margin-bottom: 1rem; font-weight: 300; }
 .skill-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .skill-name { font-size: 13px; min-width: 220px; color: var(--ink-mid); font-family: var(--mono); }
@@ -346,3 +346,6 @@ body {
 .hero-profile-text {
   display: flex; flex-direction: column; gap: 0;
 }
+
+#about { padding-top: 3rem; padding-bottom: 3rem; }
+.about-grid { grid-template-columns: 1.6fr 1fr; gap: 4rem; }
