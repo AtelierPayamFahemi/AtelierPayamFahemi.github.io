@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PayamFahemiPortfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
     <a href="progetti.html">Projects</a>
     <a href="blog.html">Blog</a>
     <a href="#contatti">Contacts</a>
-	<a href="CV-PayamFahemi.pdf" download>↓ CV</a>
+    <a href="CV-PayamFahemi.pdf" download>↓ CV</a>
   </div>
   <button class="nav-toggle" onclick="toggleMenu()">☰</button>
 </nav>
@@ -42,10 +42,17 @@
 
 <section class="section" id="about">
   <div class="section-tag">/ 01 — profile</div>
+
+  <!-- TESTO PROFILO: modifica qui la tua descrizione -->
+  <p style="color:var(--ink-mid); font-weight:300; margin-bottom:1rem;">
+    BIM Coordinator and BIM & Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments. Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines. Advanced user of tools such as Revit, Navisworks, and Solibri, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation. Strong capabilities in automation and computational workflows using Dynamo, Python, and Rhino.Inside.Revit to optimize processes and enhance efficiency. Driven by a data-centric approach, combining technical expertise with innovation to support digital transformation and informed decision-making in BIM environments.
+  </p>
+
   <div class="about-grid">
     <div class="about-text">
-      <span>BIM Coordinator and BIM & Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments. Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines. Advanced user of tools such as Revit, Navisworks, and Solibri, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation. Strong capabilities in automation and computational workflows using Dynamo, Python, and Rhino.Inside.Revit to optimize processes and enhance efficiency. Driven by a data-centric approach, combining technical expertise with innovation to support digital transformation and informed decision-making in BIM environments.</span>
-      <ul style="color:var(--ink-mid); padding-left:1.25rem; margin-top:1rem; line-height:2; font-weight:300;">
+
+      <!-- LISTA COMPETENZE: aggiungi o rimuovi voci qui -->
+      <ul style="color:var(--ink-mid); padding-left:1.25rem; margin-top:0; line-height:2; font-weight:300;">
         <li>Lead BIM strategy, governance, and digital information management.</li>
         <li>Develop and implement company-wide BIM standards, templates, and workflows.</li>
         <li>Support project teams in digital implementation, automation, and workflow optimization.</li>
@@ -56,6 +63,8 @@
         <li>Set up BIM projects within a CDE (e.g., ACC).</li>
         <li>Coordinate interdisciplinary BIM workflows across architectural and engineering teams.</li>
       </ul>
+
+      <!-- SOFTWARE: aggiungi o rimuovi tag qui -->
       <div class="about-software" style="margin-top:2.5rem;">
         <div class="skills-label">Software</div>
         <div class="software-grid">
@@ -71,8 +80,11 @@
           <span class="sw-tag">VS Code</span>
         </div>
       </div>
+
     </div>
     <div class="about-right">
+
+      <!-- SKILL BARS: cambia i valori width per aggiornare le percentuali -->
       <div class="about-skills">
         <div class="skills-label">BIM & Automation</div>
         <div class="skill-row"><span class="skill-name">Autodesk Revit</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
@@ -81,20 +93,20 @@
         <div class="skill-row"><span class="skill-name">IFC · UNI 11337</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
         <div class="skill-row"><span class="skill-name">BIM Coordination</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
       </div>
+
     </div>
   </div>
 </section>
 
 <section class="section section-dark" id="progetti-preview">
-  <div class="section-tag light">/ 02 — progetti selezionati</div>
-  <h2 class="section-title light">Automazione &amp; Workflow</h2>
+  <div class="section-tag light">/ 02 — selected projects</div>
+  <h2 class="section-title light">Automation &amp; Workflow</h2>
   <div class="cards-grid">
 
+    <!-- PROGETTO 1: sostituisci card-placeholder con <img src="images/..."> -->
     <article class="card">
       <div class="card-media">
-        <div class="card-placeholder">
-          <span>Immagine / Timelapse</span>
-        </div>
+        <div class="card-placeholder"><span>Image / Timelapse</span></div>
       </div>
       <div class="card-body">
         <div class="card-tags">
@@ -103,15 +115,14 @@
         </div>
         <h3 class="card-title">Room Data Sheet Automatizzati</h3>
         <p class="card-desc">Generazione automatica di schede ambiente in HTML/PDF direttamente da Revit tramite script Python in Dynamo.</p>
-        <a href="progetti/room-data-sheet.html" class="card-link">Leggi il caso studio →</a>
+        <a href="progetti/room-data-sheet.html" class="card-link">Read case study →</a>
       </div>
     </article>
 
+    <!-- PROGETTO 2 -->
     <article class="card">
       <div class="card-media">
-        <div class="card-placeholder">
-          <span>Immagine / Timelapse</span>
-        </div>
+        <div class="card-placeholder"><span>Image / Timelapse</span></div>
       </div>
       <div class="card-body">
         <div class="card-tags">
@@ -120,15 +131,14 @@
         </div>
         <h3 class="card-title">Export IFC MEP Ottimizzato</h3>
         <p class="card-desc">Mappatura categorie Revit MEP su classi IFC4 per export conforme agli standard italiani BIM.</p>
-        <a href="progetti/ifc-export.html" class="card-link">Leggi il caso studio →</a>
+        <a href="progetti/ifc-export.html" class="card-link">Read case study →</a>
       </div>
     </article>
 
+    <!-- PROGETTO 3 -->
     <article class="card">
       <div class="card-media">
-        <div class="card-placeholder">
-          <span>Immagine / Timelapse</span>
-        </div>
+        <div class="card-placeholder"><span>Image / Timelapse</span></div>
       </div>
       <div class="card-body">
         <div class="card-tags">
@@ -137,20 +147,22 @@
         </div>
         <h3 class="card-title">Altezze Soffitto da Elementi</h3>
         <p class="card-desc">Script per recuperare l'ambiente associato a ogni elemento soffitto tramite <code>GetRoomAtPoint()</code> con offset Z e gestione errori.</p>
-        <a href="progetti/ceiling-rooms.html" class="card-link">Leggi il caso studio →</a>
+        <a href="progetti/ceiling-rooms.html" class="card-link">Read case study →</a>
       </div>
     </article>
 
   </div>
   <div class="section-cta">
-    <a href="progetti.html" class="btn-primary">Tutti i progetti</a>
+    <a href="progetti.html" class="btn-primary">All projects</a>
   </div>
 </section>
 
 <section class="section" id="blog-preview">
-  <div class="section-tag">/ 03 — dal blog</div>
-  <h2>Note tecniche &amp;<br><em>riflessioni BIM</em></h2>
+  <div class="section-tag">/ 03 — from the blog</div>
+  <h2>Technical notes &amp;<br><em>BIM insights</em></h2>
   <div class="posts-list">
+
+    <!-- BLOG POST: copia questo blocco per aggiungere un articolo -->
     <article class="post-row">
       <span class="post-date">2025 — 04</span>
       <div class="post-content">
@@ -159,6 +171,7 @@
       </div>
       <span class="post-tag">Standard</span>
     </article>
+
     <article class="post-row">
       <span class="post-date">2025 — 03</span>
       <div class="post-content">
@@ -167,6 +180,7 @@
       </div>
       <span class="post-tag">Scripting</span>
     </article>
+
     <article class="post-row">
       <span class="post-date">2025 — 02</span>
       <div class="post-content">
@@ -175,20 +189,23 @@
       </div>
       <span class="post-tag">Debug</span>
     </article>
+
   </div>
-  <a href="blog.html" class="btn-ghost" style="margin-top:2rem;display:inline-block;">Tutti gli articoli →</a>
+  <a href="blog.html" class="btn-ghost" style="margin-top:2rem;display:inline-block;">All articles →</a>
 </section>
 
 <section class="section section-accent" id="contatti">
-  <div class="section-tag">/ 04 — contatti</div>
-  <h2>Parliamo di<br><em>BIM & automazione</em></h2>
-  <p class="contact-sub">Collaborazioni, consulenze, o semplicemente scambio di idee sul mondo BIM.</p>
+  <div class="section-tag">/ 04 — contacts</div>
+  <h2>Let's talk about<br><em>BIM & automation</em></h2>
+  <p class="contact-sub">Collaborations, consultancies, or simply exchanging ideas about the BIM world.</p>
+
+  <!-- CONTATTI: aggiorna email, GitHub e LinkedIn con i tuoi dati reali -->
   <div class="contact-links">
-    <a href="mailto:tua@email.com" class="contact-item">
+    <a href="mailto:fahemipayam@gmail.com" class="contact-item">
       <span class="contact-icon">✉</span>
-      <span>tua@email.com</span>
+      <span>fahemipayam@gmail.com</span>
     </a>
-    <a href="https://github.com/tuousername" target="_blank" class="contact-item">
+    <a href="https://github.com/AtelierPayamFahemi" target="_blank" class="contact-item">
       <span class="contact-icon">⌥</span>
       <span>GitHub</span>
     </a>
@@ -200,7 +217,7 @@
 </section>
 
 <footer class="footer">
-  <span>© 2026 Payam — BIM Portfolio</span>
+  <span>© 2026 Payam Fahemi — BIM Portfolio</span>
   <span>Milano, IT</span>
 </footer>
 
