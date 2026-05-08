@@ -21,6 +21,7 @@ Driven by a data-centric approach, combining technical expertise with innovation
 ---
 
 ## Areas of Expertise
+- In-depth knowledge of UNI11337, ISO19650, ISO16739 and OpenBIM standards
 - Lead BIM strategy, governance, and digital information management.
 - Develop and implement company-wide BIM standards, templates, and workflows.
 - Support project teams in digital implementation, automation, and workflow optimization.
