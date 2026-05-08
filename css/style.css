@@ -85,7 +85,7 @@ body {
   display: flex; flex-direction: column; gap: 0;
 }
 .hero-name {
-  font-family: var(--calibri); font-size: 60px;
+  font-family: var(--calibri); font-size: 40px;
   font-weight: 700; color: var(--ink);
   letter-spacing: 0.01em; line-height: 1.1; margin-bottom: 0;
 }
