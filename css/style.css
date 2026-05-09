@@ -66,7 +66,7 @@ body {
 }
 .hero-split {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 0.8fr 2fr;
   gap: 2rem;
   align-items: center;
   min-height: 80vh;
@@ -78,7 +78,7 @@ body {
 }
 .hero-right {
   border-left: 0.5px solid rgba(26,25,22,0.2);
-  padding-left: 3rem;
+  padding-left: 5rem;
 }
 .hero-photo { display: none; }
 .hero-profile-text {
