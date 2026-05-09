@@ -59,7 +59,7 @@ body {
 /* ─── Hero ─── */
 .hero {
   min-height: 100vh;
-  padding: 1rem 3rem 8rem;
+  padding: 6rem 3rem 5rem 8rem;
   max-width: var(--max);
   margin: 0 auto;
   position: relative;
