@@ -18,7 +18,7 @@
   --calibri: 'Nunito', 'Calibri', sans-serif;
   --mono: 'DM Mono', monospace;
   --serif: 'Cormorant Garamond', Georgia, serif;
-  --max: 1100px;
+  --max: 1400px;
 }
 
 html { scroll-behavior: smooth; }
