@@ -106,7 +106,7 @@ body {
   opacity: 0; animation: fadeUp 0.9s 0.35s forwards;
 }
 .hero-title em {
-  font-family: var(--calibri); font-weight: 300;
+  font-family: var(--calibri); font-size: clamp(2.5rem, 2.2vw, 2rem); font-weight: 300;
   font-style: italic; color: var(--ink);
 }
 .hero-sub {
