@@ -154,7 +154,7 @@ body {
 .section-dark .section { max-width: var(--max); margin: 0 auto; padding: 0; }
 .section-accent {
   background: var(--accent-light);
-  max-width: 100%; padding: 6rem 3rem;
+  max-width: 100%; padding: 3rem 3rem;
 }
 .section-tag {
   font-family: var(--calibri); font-size: 60px; letter-spacing: 0.05em;
