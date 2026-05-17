@@ -1,240 +1,193 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PayamFahemiPortfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayamFahemiPortfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<nav class="nav">
-  <a href="index.html" class="nav-logo">PayamFahemiPortfolio</a>
-  <div class="nav-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="progetti.html">Projects</a>
-    <a href="blog.html">Blog</a>
-    <a href="#contatti">Contacts</a>
-    <a href="CV-PayamFahemi.pdf" download>↓ CV</a>
-  </div>
-  <button class="nav-toggle" onclick="toggleMenu()">☰</button>
-</nav>
-
-<header class="hero">
-  <div class="hero-split">
-    <div class="hero-left">
-      <strong class="hero-name">PayamFahemi</strong>
-      <span class="hero-roles">ARCHITECT | BIM COORDINATOR | CDE MANAGER</span>
-      <span class="hero-spec">Automation & Information Management Specialist</span>
+  <!-- ═══════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════ -->
+  <nav class="nav">
+    <div class="nav-left">
+      <span class="nav-logo">PayamFahemiPortfolio</span>
+      <div class="nav-titles">
+        <span class="nav-role">ARCHITECT | BIM COORDINATOR | CDE MANAGER</span>
+        <span class="nav-sub">Automation &amp; Information Management Specialist</span>
+      </div>
     </div>
-    <div class="hero-right">
-      <h1 class="hero-title">
-        Beyond an <strong>architecture portfolio</strong>;<br>
-        <em>a storyteller</em><br>
-        of technology &amp; digital workflows.
-      </h1>
+    <div class="nav-right">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="storyteller.html" class="nav-link active">Storyteller</a>
+      <a href="key-projects.html" class="nav-link">Key Projects</a>
+      <a href="digital-workflows.html" class="nav-link">Digital workflows</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="CV-PayamFahemi.pdf" class="nav-cv" download>↓ CV</a>
     </div>
-  </div>
-  <div class="hero-cta" style="display:flex; justify-content:center; margin-top:0.25rem; flex-direction:column; align-items:center; gap:0.5rem; margin-left:-12rem;">
-    <p style="font-family:'DM Mono',monospace; font-size:11px; color:#29345280; letter-spacing:0.1em; text-transform:uppercase; margin:0;">
-      <a href="#progetti-preview" style="color:#29345280; text-decoration:none;">Selected projects</a>
-    </p>
-    <a href="progetti.html" style="font-size:22px; font-weight:300; font-family:'Nunito',sans-serif; color:var(--ink); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#9a9894'" onmouseout="this.style.color='var(--ink)'">View all projects</a>
-    <a href="#progetti-preview" style="font-size:28px; color:#9a9894; text-decoration:none; line-height:1;">↓</a>
-  </div>
-</header>
+  </nav>
 
-<section class="section" id="about">
-  <div class="section-tag">/ 01 — profile</div>
+  <!-- ═══════════════════════════════════════════
+       MAIN LAYOUT
+  ═══════════════════════════════════════════ -->
+  <main class="main-grid">
 
-  <!-- TESTO PROFILO -->
-  <p style="color:var(--ink-mid); font-weight:300; margin-bottom:1.5rem;">
-    BIM Coordinator and BIM & Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments. Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines. Advanced user of tools such as Revit, Navisworks, and Solibri, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation. Strong capabilities in automation and computational workflows using Dynamo, Python, and Rhino.Inside.Revit to optimize processes and enhance efficiency. Driven by a data-centric approach, combining technical expertise with innovation to support digital transformation and informed decision-making in BIM environments.
-  </p>
+    <!-- LEFT SIDEBAR: social icons -->
+    <aside class="sidebar">
+      <!-- TODO: replace href with your actual email -->
+      <a href="mailto:your@email.com" class="social-icon" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      </a>
+      <!-- TODO: replace href with your LinkedIn URL -->
+      <a href="https://linkedin.com/in/TODO" target="_blank" class="social-icon" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <!-- TODO: replace href with your GitHub URL -->
+      <a href="https://github.com/AtelierPayamFahemi" target="_blank" class="social-icon" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <!-- TODO: replace href with your YouTube URL -->
+      <a href="https://youtube.com/TODO" target="_blank" class="social-icon" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#1E1E20"/></svg>
+      </a>
+    </aside>
 
-  <!-- LISTA COMPETENZE -->
-  <ul style="color:var(--ink-mid); padding-left:1.25rem; margin-bottom:2.5rem; line-height:2; font-weight:300;">
-    <li>In-depth knowledge of UNI11337, ISO19650, ISO16739 and OpenBIM standards.</li>
-    <li>Lead BIM strategy, governance, and digital information management.</li>
-    <li>Develop and implement company-wide BIM standards, templates, and workflows.</li>
-    <li>Support project teams in digital implementation, automation, and workflow optimization.</li>
-    <li>Drive innovation in digital processes, including Dynamo and Python-based automation.</li>
-    <li>Develop and manage BEPs (Pre-BEP and Post-BEP).</li>
-    <li>Perform clash detection, issue reporting, and model/code quality control.</li>
-    <li>Extract data from Revit, map IFC classes, and configure models based on specific project requirements.</li>
-    <li>Set up BIM projects within a CDE (e.g., ACC).</li>
-    <li>Coordinate interdisciplinary BIM workflows across architectural and engineering teams.</li>
-  </ul>
-  
-  <!-- BIM & AUTOMATION SKILL BARS -->
-  <!--
-  <div style="margin-bottom:2.5rem;">
-    <div class="skills-label">BIM & Automation</div>
-    <div class="skill-row"><span class="skill-name">Autodesk Revit</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
-    <div class="skill-row"><span class="skill-name">Dynamo</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-    <div class="skill-row"><span class="skill-name">Python / IronPython</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
-    <div class="skill-row"><span class="skill-name">IFC · UNI 11337</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-    <div class="skill-row"><span class="skill-name">BIM Coordination</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
-  </div>
-  -->
-  <!-- SOFTWARE -->
-  <!--
-  <div>
-    <div class="skills-label">Software</div>
-    <div class="software-grid">
-      <span class="sw-tag">Revit</span>
-      <span class="sw-tag">Navisworks</span>
-      <span class="sw-tag">Dynamo</span>
-      <span class="sw-tag">AutoCAD</span>
-      <span class="sw-tag">ACC / BIM 360</span>
-      <span class="sw-tag">Rhino</span>
-      <span class="sw-tag">Solibri</span>
-      <span class="sw-tag">Enscape</span>
-      <span class="sw-tag">Python</span>
-      <span class="sw-tag">VS Code</span>
-    </div>
-  </div>
-  -->
-</section>
+    <!-- CENTER COLUMN: hero text + media cards -->
+    <section class="center-col">
 
-<section class="section section-dark" id="progetti-preview">
-  <div class="section-tag light">/ 02 — selected projects</div>
-  <h2 class="section-title light">Automation &amp; Workflow</h2>
-  <div class="cards-grid">
-
-    <!-- PROJECT 1: sostituisci card-placeholder con <img src="images/..."> -->
-    <article class="card">
-      <div class="card-media">
-        <iframe 
-          src="https://www.youtube.com/embed/-ZAgUEtB4IE?autoplay=1&mute=1&loop=1&playlist=-ZAgUEtB4IE&controls=0&showinfo=0&rel=0&modestbranding=1"
-          frameborder="0" 
-          allowfullscreen
-          style="width:100%; height:100%; display:block;">
-        </iframe>
+      <!-- Hero typography -->
+      <div class="hero-text">
+        <h1 class="hero-line">ARCHITECTURE</h1>
+        <h1 class="hero-line indent-1">PORTFOLIO,</h1>
+        <h1 class="hero-line indent-2">A <em>STORYTELLER</em></h1>
+        <h1 class="hero-line indent-3">OF ME,</h1>
+        <h1 class="hero-line indent-4">TECHNOLOGY &amp;</h1>
+        <h1 class="hero-line indent-5">DIGITAL WORKFLOWS.</h1>
       </div>
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="tag">Dynamo</span>
-          <span class="tag">Python</span>
-          <span class="tag">HTML/CSS</span>
+
+      <!-- Bottom media row -->
+      <div class="bottom-media">
+
+        <!-- Timelapse video card → Digital Workflows -->
+        <a href="digital-workflows.html" class="media-card timelapse-card" aria-label="Digital Workflows timelapse">
+          <!--
+            TODO: Replace with your timelapse video file path, e.g.:
+            <video autoplay muted loop playsinline>
+              <source src="images/timelapse-coding.mp4" type="video/mp4">
+            </video>
+          -->
+          <div class="media-placeholder">
+            <span class="placeholder-label">timelaps<br>Of coding and python</span>
+          </div>
+          <div class="hover-overlay">
+            <span class="hover-label">Digital Workflows</span>
+          </div>
+        </a>
+
+        <!-- A'design YouTube video card -->
+        <!--
+          TODO: Replace href with your actual YouTube video URL, e.g.:
+          href="https://www.youtube.com/watch?v=VIDEOID"
+        -->
+        <a href="https://youtube.com/TODO" target="_blank" class="media-card video-card" aria-label="A'design video">
+          <!--
+            TODO: Replace with your YouTube video embed or thumbnail, e.g.:
+            <iframe src="https://www.youtube.com/embed/VIDEOID" ...></iframe>
+            OR
+            <img src="images/adesign-thumb.jpg" alt="A'design video thumbnail">
+          -->
+          <div class="media-placeholder">
+            <span class="placeholder-label">holder for a video from my youtube<br>(A'design video)</span>
+          </div>
+          <div class="hover-overlay">
+            <span class="hover-label">Watch on YouTube ↗</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- RIGHT COLUMN: project card + blog + render -->
+    <section class="right-col">
+
+      <!-- Digital Workflow card (top right) -->
+      <a href="digital-workflows.html" class="workflow-card">
+        <!--
+          TODO: Replace with your timelapse video or thumbnail, e.g.:
+          <video autoplay muted loop playsinline class="workflow-bg-video">
+            <source src="images/rds-timelapse.mp4" type="video/mp4">
+          </video>
+        -->
+        <div class="workflow-bg-placeholder"></div>
+        <div class="workflow-card-content">
+          <div class="workflow-tags">
+            <span class="tag">Dynamo</span>
+            <span class="tag">Python</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+          <h3 class="workflow-title">Room Data Sheet Automation</h3>
+          <p class="workflow-desc">Automatic generation of HTML/PDF room sheets directly from Revit via Python script in Dynamo.</p>
+          <span class="workflow-read">Read case study →</span>
         </div>
-        <h3 class="card-title">Room Data Sheet Automation</h3>
-        <p class="card-desc">Automatic generation of HTML/PDF room sheets directly from Revit via Python script in Dynamo.</p>
-        <a href="progetti/room-data-sheet.html" class="card-link">Read case study →</a>
-      </div>
-    </article>
+      </a>
 
-    <!-- PROJECT 2 -->
-    <article class="card">
-      <div class="card-media">
-        <div class="card-placeholder"><span>Image / Timelapse</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="tag">IFC4</span>
-          <span class="tag">UNI 11337</span>
+      <!-- Blog card (top right, second) -->
+      <a href="blog.html" class="blog-card" aria-label="From the blog">
+        <!--
+          TODO: Replace with your blog image, e.g.:
+          <img src="images/blog-cover.jpg" alt="From the blog" class="blog-img">
+        -->
+        <div class="blog-img-placeholder"></div>
+        <div class="hover-overlay">
+          <span class="hover-label">From the Blog</span>
         </div>
-        <h3 class="card-title">Export IFC MEP Ottimizzato</h3>
-        <p class="card-desc">Mappatura categorie Revit MEP su classi IFC4 per export conforme agli standard italiani BIM.</p>
-        <a href="progetti/ifc-export.html" class="card-link">Read case study →</a>
-      </div>
-    </article>
-
-    <!-- PROJECT 3 -->
-    <article class="card">
-      <div class="card-media" style="position:relative;">
-        <iframe
-          src="https://www.youtube.com/embed/NDi7UG3ztUg?autoplay=1&mute=1&loop=1&playlist=NDi7UG3ztUg&controls=0&showinfo=0&rel=0&modestbranding=1"
-          frameborder="0"
-          allowfullscreen
-          style="width:100%; height:100%; display:block;">
-        </iframe>
-        <div style="position:absolute; top:0; left:0; width:100%; height:100%;"></div>
-      </div>
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="tag">Revit</span>
-          <span class="tag">Speckle</span>
-          <span class="tag">Power BI</span>
+        <div class="blog-label">
+          <span>FROM<br>THE<br>BLOG</span>
         </div>
-        <h3 class="card-title">Revit To PowerBI Via Speckle</h3>
-        <p class="card-desc">Creating Power BI dashboards for revit model using Speckle.</p>
-        <a href="progetti/Revit-PowerBI-Speckle.html" class="card-link">Read case study →</a>
+      </a>
+
+      <!-- Profile photo + Architecture render row -->
+      <div class="bottom-right-row">
+
+        <!-- Profile photo → Profile page -->
+        <a href="profile.html" class="profile-card" aria-label="Profile">
+          <!--
+            TODO: Replace with your actual profile photo, e.g.:
+            <img src="images/payam-profile.jpg" alt="Payam Fahemi" class="profile-img">
+          -->
+          <div class="profile-img-placeholder"></div>
+          <div class="hover-overlay">
+            <span class="hover-label">Profile</span>
+          </div>
+        </a>
+
+        <!-- Architecture render → Storyteller page -->
+        <a href="storyteller.html" class="render-card" aria-label="Storyteller">
+          <!--
+            TODO: Replace with the Piuarch render image, e.g.:
+            <img src="images/piuarch-render.jpg" alt="Architecture render" class="render-img">
+          -->
+          <div class="render-img-placeholder"></div>
+          <div class="hover-overlay">
+            <span class="hover-label">Storyteller</span>
+          </div>
+          <span class="render-credit">Image courtesy of Piuarch</span>
+        </a>
+
       </div>
-    </article>
+    </section>
 
-  </div>
-  <div class="section-cta">
-    <a href="progetti.html" class="btn-primary">All projects</a>
-  </div>
-</section>
+  </main>
 
-<section class="section" id="blog-preview">
-  <div class="section-tag">/ 03 — from the blog</div>
-  <h2>Technical notes &amp;<br><em>BIM insights</em></h2>
-  <div class="posts-list">
+  <!-- Footer -->
+  <footer class="footer">
+    <span>© 2026 PayamFahemiPortfolio</span>
+    <span>Milan, IT</span>
+  </footer>
 
-    <!-- BLOG POST: copia questo blocco per aggiungere un articolo -->
-    <article class="post-row">
-      <span class="post-date">2025 — 04</span>
-      <div class="post-content">
-        <h3><a href="blog/uni-11337.html">LOD cumulativo secondo UNI 11337-4</a></h3>
-        <p>Come interpretare il framework italiano degli LOD e applicarlo nei progetti.</p>
-      </div>
-      <span class="post-tag">Standard</span>
-    </article>
-
-    <article class="post-row">
-      <span class="post-date">2025 — 03</span>
-      <div class="post-content">
-        <h3><a href="blog/dynamo-python.html">Boolean e filtri in Dynamo Python</a></h3>
-        <p>Come usare i booleani nei nodi Python Script per filtrare elementi Revit.</p>
-      </div>
-      <span class="post-tag">Scripting</span>
-    </article>
-
-    <article class="post-row">
-      <span class="post-date">2025 — 02</span>
-      <div class="post-content">
-        <h3><a href="blog/weasyprint.html">WeasyPrint in Dynamo: problemi e soluzioni</a></h3>
-        <p>Debug della generazione PDF nell'ambiente Python embedded di Dynamo.</p>
-      </div>
-      <span class="post-tag">Debug</span>
-    </article>
-
-  </div>
-  <a href="blog.html" class="btn-ghost" style="margin-top:2rem;display:inline-block;">All articles →</a>
-</section>
-
-<section class="section section-accent" id="contatti">
-  <div class="section-tag">/ 04 — contacts</div>
-  <!-- <h2>Let's talk about<br><em>BIM & automation</em></h2>
-  <p class="contact-sub">Collaborations, consultancies, or simply exchanging ideas about the BIM world.</p> -->
-
-  <!-- CONTACTS: update email, GitHub e LinkedIn -->
-  <div class="contact-links">
-    <a href="mailto:fahemipayam@gmail.com" class="contact-item">
-      <span class="contact-icon">✉</span>
-      <span>fahemipayam@gmail.com</span>
-    </a>
-    <a href="https://github.com/AtelierPayamFahemi" target="_blank" class="contact-item">
-      <span class="contact-icon">⌥</span>
-      <span>GitHub</span>
-    </a>
-    <a href="https://www.linkedin.com/in/payamfahemi/" target="_blank" class="contact-item">
-      <span class="contact-icon">↗</span>
-      <span>LinkedIn</span>
-    </a>
-  </div>
-</section>
-
-<footer class="footer">
-  <span>© 2026 PayamFahemiPortfolio</span>
-  <span>Milan, IT</span>
-</footer>
-
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
