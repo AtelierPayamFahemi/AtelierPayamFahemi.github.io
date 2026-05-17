@@ -8,21 +8,19 @@
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════
-       NAV
-  ═══════════════════════════════════════════ -->
+  <!-- NAV -->
   <nav class="nav">
     <div class="nav-left">
       <span class="nav-logo">PayamFahemiPortfolio</span>
       <div class="nav-titles">
         <span class="nav-role">ARCHITECT | BIM COORDINATOR | CDE MANAGER</span>
-        <span class="nav-sub">Automation & Information Management Specialist</span>
+        <span class="nav-sub">Automation &amp; Information Management Specialist</span>
       </div>
     </div>
     <div class="nav-right">
-      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html" class="nav-link active">Home</a>
       <a href="profile.html" class="nav-link">Profile</a>
-      <a href="storyteller.html" class="nav-link active">Storyteller</a>
+      <a href="storyteller.html" class="nav-link">Storyteller</a>
       <a href="key-projects.html" class="nav-link">Key Projects</a>
       <a href="digital-workflows.html" class="nav-link">Digital workflows</a>
       <a href="blog.html" class="nav-link">Blog</a>
@@ -31,12 +29,16 @@
   </nav>
 
   <!-- ═══════════════════════════════════════════
-       MAIN LAYOUT
+       4-COLUMN GRID
+       col1: sidebar
+       col2: hero text + timelapse
+       col3: youtube video (bottom only)
+       col4: workflow card + blog + profile + render
   ═══════════════════════════════════════════ -->
   <main class="main-grid">
 
-    <!-- LEFT SIDEBAR: social icons -->
-    <aside class="sidebar">
+    <!-- COL 1: Social icons -->
+    <aside class="col1-sidebar">
       <!-- TODO: replace href with your actual email -->
       <a href="mailto:your@email.com" class="social-icon" aria-label="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
@@ -55,10 +57,8 @@
       </a>
     </aside>
 
-    <!-- CENTER COLUMN: hero text + media cards -->
-    <section class="center-col">
-
-      <!-- Hero typography -->
+    <!-- COL 2: Hero text + timelapse card -->
+    <section class="col2">
       <div class="hero-text">
         <h1 class="hero-line">ARCHITECTURE</h1>
         <h1 class="hero-line indent-1">PORTFOLIO,</h1>
@@ -67,127 +67,98 @@
         <h1 class="hero-line indent-4">TECHNOLOGY &amp;</h1>
         <h1 class="hero-line indent-5">DIGITAL WORKFLOWS.</h1>
       </div>
-
-      <!-- Bottom media row -->
-      <div class="bottom-media">
-
-        <!-- Timelapse video card → Digital Workflows -->
-        <a href="digital-workflows.html" class="media-card timelapse-card" aria-label="Digital Workflows timelapse">
-          <!--
-            TODO: Replace with your timelapse video file path, e.g.:
-            <video autoplay muted loop playsinline>
-              <source src="images/timelapse-coding.mp4" type="video/mp4">
-            </video>
-          -->
-          <div class="media-placeholder">
-            <span class="placeholder-label">timelaps<br>Of coding and python</span>
-          </div>
-          <div class="hover-overlay">
-            <span class="hover-label">Digital Workflows</span>
-          </div>
-        </a>
-
-        <!-- A'design YouTube video card -->
+      <!-- Timelapse → Digital Workflows -->
+      <a href="digital-workflows.html" class="card timelapse-card" aria-label="Digital Workflows timelapse">
         <!--
-          TODO: Replace href with your actual YouTube video URL, e.g.:
-          href="https://www.youtube.com/watch?v=VIDEOID"
-        -->
-        <a href="https://youtube.com/TODO" target="_blank" class="media-card video-card" aria-label="A'design video">
-          <!--
-            TODO: Replace with your YouTube video embed or thumbnail, e.g.:
-            <iframe src="https://www.youtube.com/embed/VIDEOID" ...></iframe>
-            OR
-            <img src="images/adesign-thumb.jpg" alt="A'design video thumbnail">
-          -->
-          <div class="media-placeholder">
-            <span class="placeholder-label">holder for a video from my youtube<br>(A'design video)</span>
-          </div>
-          <div class="hover-overlay">
-            <span class="hover-label">Watch on YouTube ↗</span>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- RIGHT COLUMN: project card + blog + render -->
-    <section class="right-col">
-
-      <!-- Top area: workflow + blog side by side -->
-      <div class="right-top">
-
-      <!-- Digital Workflow card (top right) -->
-      <a href="digital-workflows.html" class="workflow-card">
-        <!--
-          TODO: Replace with your timelapse video or thumbnail, e.g.:
-          <video autoplay muted loop playsinline class="workflow-bg-video">
-            <source src="images/rds-timelapse.mp4" type="video/mp4">
+          TODO: Replace with your timelapse video, e.g.:
+          <video autoplay muted loop playsinline>
+            <source src="images/timelapse-coding.mp4" type="video/mp4">
           </video>
         -->
-        <div class="workflow-bg-placeholder"></div>
-        <div class="workflow-card-content">
-          <div class="workflow-tags">
-            <span class="tag">Dynamo</span>
-            <span class="tag">Python</span>
-            <span class="tag">HTML/CSS</span>
-          </div>
-          <h3 class="workflow-title">Room Data Sheet Automation</h3>
-          <p class="workflow-desc">Automatic generation of HTML/PDF room sheets directly from Revit via Python script in Dynamo.</p>
-          <span class="workflow-read">Read case study →</span>
+        <div class="card-placeholder">
+          <span class="placeholder-label">timelaps<br>Of coding and python</span>
         </div>
+        <div class="hover-overlay"><span class="hover-label">Digital Workflows</span></div>
       </a>
+    </section>
 
-      <!-- Blog card (top right, second) -->
-      <a href="blog.html" class="blog-card" aria-label="From the blog">
+    <!-- COL 3: YouTube video (sits at the bottom) -->
+    <section class="col3">
+      <!-- TODO: Replace href with your YouTube video URL -->
+      <a href="https://youtube.com/TODO" target="_blank" class="card youtube-card" aria-label="A'design video">
         <!--
-          TODO: Replace with your blog image, e.g.:
-          <img src="images/blog-cover.jpg" alt="From the blog" class="blog-img">
+          TODO: Replace with your YouTube thumbnail or embed, e.g.:
+          <img src="images/adesign-thumb.jpg" alt="A'design video">
         -->
-        <div class="blog-img-placeholder"></div>
-        <div class="hover-overlay">
-          <span class="hover-label">From the Blog</span>
+        <div class="card-placeholder">
+          <span class="placeholder-label">holder for a video from my youtube<br>(A'design video)</span>
         </div>
-        <div class="blog-label">
-          <span>FROM<br>THE<br>BLOG</span>
-        </div>
+        <div class="hover-overlay"><span class="hover-label">Watch on YouTube ↗</span></div>
       </a>
+    </section>
 
-      </div><!-- /right-top -->
+    <!-- COL 4: Workflow card + blog (top) | profile + render (bottom) -->
+    <section class="col4">
 
-      <!-- Profile photo + Architecture render row -->
-      <div class="bottom-right-row">
-
-        <!-- Profile photo → Profile page -->
-        <a href="profile.html" class="profile-card" aria-label="Profile">
+      <!-- TOP: workflow (wide) + blog (narrow) -->
+      <div class="col4-top">
+        <a href="digital-workflows.html" class="card workflow-card">
           <!--
-            TODO: Replace with your actual profile photo, e.g.:
-            <img src="images/payam-profile.jpg" alt="Payam Fahemi" class="profile-img">
+            TODO: Replace with your timelapse video, e.g.:
+            <video autoplay muted loop playsinline class="card-media">
+              <source src="images/rds-timelapse.mp4" type="video/mp4">
+            </video>
           -->
-          <div class="profile-img-placeholder"></div>
-          <div class="hover-overlay">
-            <span class="hover-label">Profile</span>
+          <div class="card-placeholder"></div>
+          <div class="workflow-content">
+            <div class="workflow-tags">
+              <span class="tag">Dynamo</span>
+              <span class="tag">Python</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+            <h3 class="workflow-title">Room Data Sheet Automation</h3>
+            <p class="workflow-desc">Automatic generation of HTML/PDF room sheets directly from Revit via Python script in Dynamo.</p>
+            <span class="workflow-read">Read case study →</span>
           </div>
         </a>
 
-        <!-- Architecture render → Storyteller page -->
-        <a href="storyteller.html" class="render-card" aria-label="Storyteller">
+        <a href="blog.html" class="card blog-card" aria-label="From the blog">
           <!--
-            TODO: Replace with the Piuarch render image, e.g.:
-            <img src="images/piuarch-render.jpg" alt="Architecture render" class="render-img">
+            TODO: Replace with your blog image, e.g.:
+            <img src="images/blog-cover.jpg" alt="From the blog" class="card-media">
           -->
-          <div class="render-img-placeholder"></div>
-          <div class="hover-overlay">
-            <span class="hover-label">Storyteller</span>
-          </div>
+          <div class="card-placeholder"></div>
+          <div class="hover-overlay"><span class="hover-label">From the Blog</span></div>
+          <div class="blog-label">FROM<br>THE<br>BLOG</div>
+        </a>
+      </div>
+
+      <!-- BOTTOM: profile (narrow) + render (wide) -->
+      <div class="col4-bottom">
+        <a href="profile.html" class="card profile-card" aria-label="Profile">
+          <!--
+            TODO: Replace with your profile photo, e.g.:
+            <img src="images/payam-profile.jpg" alt="Payam Fahemi" class="card-media">
+          -->
+          <div class="card-placeholder"></div>
+          <div class="hover-overlay"><span class="hover-label">Profile</span></div>
+        </a>
+
+        <a href="storyteller.html" class="card render-card" aria-label="Storyteller">
+          <!--
+            TODO: Replace with the Piuarch render, e.g.:
+            <img src="images/piuarch-render.jpg" alt="Architecture render" class="card-media">
+          -->
+          <div class="card-placeholder"></div>
+          <div class="hover-overlay"><span class="hover-label">Storyteller</span></div>
           <span class="render-credit">Image courtesy of Piuarch</span>
         </a>
-
       </div>
+
     </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <span>© 2026 PayamFahemiPortfolio</span>
     <span>Milan, IT</span>
