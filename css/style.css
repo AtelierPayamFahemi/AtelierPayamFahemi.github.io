@@ -65,9 +65,10 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-sub {
-  font-size: 18px;
+  font-size: 10px;
   color: rgba(191,191,191,0.55);
   letter-spacing: 0.03em;
+  margin-top: 4px; /* prova con 4px, 6px, 8px finché non ti piace */
 }
 
 .nav-right {
