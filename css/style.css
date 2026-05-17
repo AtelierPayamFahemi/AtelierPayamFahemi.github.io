@@ -1,16 +1,42 @@
 /* ═══════════════════════════════════════════
-   TOKENS
+   DESIGN TOKENS — edit these to resize/reposition everything
 ═══════════════════════════════════════════ */
 :root {
+  /* Colors */
   --paper:    #1E1E20;
   --white:    #FFFFFF;
   --offwhite: #BFBFBF;
   --accent:   #F8CBAD;
   --font:     'Calibri', 'Calibri Regular', sans-serif;
-  --nav-h:    110px;
-  --foot-h:   50px;
-  --side-w:   48px;
-  --gap:      5px;
+
+  /* ── Layout dimensions ── */
+  --nav-h:    110px;   /* height of top navigation bar */
+  --foot-h:   36px;    /* height of bottom footer */
+  --gap:      5px;     /* gap between all cards */
+
+  /* ── 4 Column widths ── */
+  --col1-w:   48px;    /* sidebar: social icons */
+  --col2-w:   1fr;     /* hero text + timelapse — takes remaining space */
+  --col3-w:   220px;   /* youtube video column */
+  --col4-w:   420px;   /* right panel: workflow, blog, profile, render */
+
+  /* ── Col 2: timelapse card height ── */
+  --timelapse-h: 52%;  /* % of col2 height occupied by timelapse card */
+
+  /* ── Col 3: youtube card height ── */
+  --youtube-h: 46%;    /* % of col3 height — card sits at the BOTTOM */
+
+  /* ── Col 4 top row: workflow vs blog widths ── */
+  --workflow-w: 1fr;   /* workflow card width within col4-top */
+  --blog-w: 180px;     /* blog card width within col4-top */
+
+  /* ── Col 4 bottom row: profile vs render widths ── */
+  --profile-w: 120px;  /* profile card width within col4-bottom */
+  --render-w:  1fr;    /* render card width — takes remaining space */
+
+  /* ── Col 4 split: top vs bottom heights ── */
+  --col4-top-h: 1fr;   /* top area (workflow+blog) height */
+  --col4-bot-h: 42%;   /* bottom area (profile+render) height */
 }
 
 /* ═══════════════════════════════════════════
@@ -49,7 +75,6 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0;
 }
 
 .nav-logo {
@@ -93,11 +118,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-link:hover { color: var(--white); }
-
-.nav-link.active {
-  color: var(--white);
-  font-style: italic;
-}
+.nav-link.active { color: var(--white); font-style: italic; }
 
 .nav-cv {
   font-size: 18px;
@@ -105,12 +126,10 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 0.06em;
   transition: color 0.2s;
 }
-
 .nav-cv:hover { color: var(--white); }
 
 /* ═══════════════════════════════════════════
-   PAGE SHELL
-   Fixed below nav, above footer
+   MAIN 4-COLUMN GRID
 ═══════════════════════════════════════════ */
 .main-grid {
   position: fixed;
@@ -119,13 +138,14 @@ a { text-decoration: none; color: inherit; }
   left: 0;
   right: 0;
   display: grid;
-  grid-template-columns: var(--side-w) 1fr 420px;
+  grid-template-columns: var(--col1-w) var(--col2-w) var(--col3-w) var(--col4-w);
+  gap: 0;
 }
 
 /* ═══════════════════════════════════════════
-   SIDEBAR — icons vertically CENTERED
+   COL 1 — Sidebar: social icons (vertically centered)
 ═══════════════════════════════════════════ */
-.sidebar {
+.col1-sidebar {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,21 +162,18 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: center;
 }
-
 .social-icon svg { width: 18px; height: 18px; }
 .social-icon:hover { color: var(--white); }
 
 /* ═══════════════════════════════════════════
-   CENTER COLUMN
-   Top: hero text
-   Bottom: two video cards side by side
+   COL 2 — Hero text + timelapse card
 ═══════════════════════════════════════════ */
-.center-col {
+.col2 {
   display: flex;
   flex-direction: column;
-  padding: 28px 20px 0 16px;
-  overflow: hidden;
+  padding: 28px 16px 0 16px;
   gap: var(--gap);
+  overflow: hidden;
 }
 
 .hero-text {
@@ -187,41 +204,88 @@ a { text-decoration: none; color: inherit; }
 .indent-4 { padding-left: 16%; }
 .indent-5 { padding-left: 20%; }
 
-/* Bottom two video cards */
-.bottom-media {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: var(--gap);
-  height: 54%;
+.timelapse-card {
+  height: var(--timelapse-h);
   flex-shrink: 0;
 }
 
-/* Timelapse — full height of the row */
-.timelapse-card {
-  height: 100%;
+/* ═══════════════════════════════════════════
+   COL 3 — YouTube video (pinned to bottom)
+═══════════════════════════════════════════ */
+.col3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;   /* card sits at the BOTTOM */
+  padding: 0 var(--gap) 0 var(--gap);
 }
 
-/* YouTube card — shorter, sitting at bottom of its column */
-.video-card {
-  align-self: flex-end;
-  height: 52%;
+.youtube-card {
+  height: var(--youtube-h);
+}
+
+/* ═══════════════════════════════════════════
+   COL 4 — Right panel
+═══════════════════════════════════════════ */
+.col4 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--gap) var(--gap) 0 var(--gap);
+  overflow: hidden;
+}
+
+/* Top: workflow + blog */
+.col4-top {
+  display: grid;
+  grid-template-columns: var(--workflow-w) var(--blog-w);
+  gap: var(--gap);
+  flex: 1;
+  min-height: 0;
+}
+
+/* Bottom: profile + render */
+.col4-bottom {
+  display: grid;
+  grid-template-columns: var(--profile-w) var(--render-w);
+  gap: var(--gap);
+  height: var(--col4-bot-h);
+  flex-shrink: 0;
 }
 
 /* ═══════════════════════════════════════════
    SHARED CARD BASE
 ═══════════════════════════════════════════ */
-.media-card,
-.blog-card,
-.profile-card,
-.render-card,
-.workflow-card {
+.card {
   position: relative;
   overflow: hidden;
   display: block;
   cursor: pointer;
   border-radius: 2px;
   background: #252527;
+}
+
+.card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #252527;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 14px;
+}
+
+.card-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
+.placeholder-label {
+  font-size: 10px;
+  color: rgba(191,191,191,0.4);
+  line-height: 1.55;
+  font-style: italic;
 }
 
 /* Hover overlay */
@@ -237,10 +301,7 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
-.media-card:hover   .hover-overlay,
-.blog-card:hover    .hover-overlay,
-.profile-card:hover .hover-overlay,
-.render-card:hover  .hover-overlay { opacity: 1; }
+.card:hover .hover-overlay { opacity: 1; }
 
 .hover-label {
   font-size: 11px;
@@ -250,86 +311,22 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
 }
 
-/* Media fills */
-.media-card video,
-.media-card img,
-.media-card iframe {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  border: none;
-}
-
-.media-placeholder {
-  width: 100%; height: 100%;
-  display: flex;
-  align-items: flex-end;
-  padding: 12px 14px;
-}
-
-.placeholder-label {
-  font-size: 10px;
-  color: rgba(191,191,191,0.4);
-  line-height: 1.55;
-  font-style: italic;
-}
-
 /* ═══════════════════════════════════════════
-   RIGHT COLUMN
-   ┌──────────────────┬──────────┐
-   │  WORKFLOW CARD   │  BLOG    │  ← right-top
-   │  (wide, tall)    │  (narrow)│
-   ├──────────┬───────┴──────────┤
-   │ PROFILE  │  RENDER (large)  │  ← bottom-right-row
-   └──────────┴──────────────────┘
+   WORKFLOW CARD
 ═══════════════════════════════════════════ */
-.right-col {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-  padding: var(--gap) var(--gap) 0 var(--gap);
-  overflow: hidden;
-}
+.workflow-card { height: 100%; }
 
-/* Top area: workflow + blog */
-.right-top {
-  display: grid;
-  grid-template-columns: 1fr 185px;
-  gap: var(--gap);
-  flex: 1;
-  min-height: 0;
-}
-
-/* Workflow card */
-.workflow-card {
-  height: 100%;
-}
-
-.workflow-bg-placeholder,
-.workflow-bg-video {
-  position: absolute;
-  inset: 0;
-  background: #252527;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-
-.workflow-card-content {
+.workflow-content {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 16px 14px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 55%);
 }
 
-.workflow-tags {
-  display: flex;
-  gap: 5px;
-  margin-bottom: 7px;
-  flex-wrap: wrap;
-}
+.workflow-tags { display: flex; gap: 5px; margin-bottom: 7px; flex-wrap: wrap; }
 
 .tag {
   font-size: 9.5px;
@@ -361,23 +358,14 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 0.04em;
 }
 
-/* Blog card */
-.blog-card {
-  height: 100%;
-}
-
-.blog-img-placeholder,
-.blog-img {
-  width: 100%; height: 100%;
-  background: #252527;
-  object-fit: cover;
-  display: block;
-}
+/* ═══════════════════════════════════════════
+   BLOG CARD
+═══════════════════════════════════════════ */
+.blog-card { height: 100%; }
 
 .blog-label {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 14px; right: 14px;
   text-align: right;
   font-size: 11px;
   font-weight: 600;
@@ -387,46 +375,15 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
-/* Bottom row: profile + render */
-.bottom-right-row {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: var(--gap);
-  height: 42%;
-  flex-shrink: 0;
-}
-
-/* Profile card */
-.profile-card {
-  height: 100%;
-}
-
-.profile-img-placeholder,
-.profile-img {
-  width: 100%; height: 100%;
-  background: #2a2a2c;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
-}
-
-/* Render card */
-.render-card {
-  height: 100%;
-}
-
-.render-img-placeholder,
-.render-img {
-  width: 100%; height: 100%;
-  background: #242426;
-  object-fit: cover;
-  display: block;
-}
+/* ═══════════════════════════════════════════
+   PROFILE & RENDER CARDS
+═══════════════════════════════════════════ */
+.profile-card { height: 100%; }
+.render-card  { height: 100%; }
 
 .render-credit {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 0; left: 0;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
   font-size: 8px;
@@ -447,7 +404,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  font-size: 15px;
+  font-size: 10px;
   color: rgba(191,191,191,0.35);
   background: var(--paper);
   letter-spacing: 0.06em;
