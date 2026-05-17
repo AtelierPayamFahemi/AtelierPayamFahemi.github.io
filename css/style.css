@@ -48,7 +48,7 @@ a { text-decoration: none; color: inherit; }
 .nav-left {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0; /* ← togli il gap */
 }
 
 .nav-logo {
@@ -68,7 +68,7 @@ a { text-decoration: none; color: inherit; }
   font-size: 18px;
   color: rgba(191,191,191,0.55);
   letter-spacing: 0.03em;
-  margin-top: 8px; /* prova con 4px, 6px, 8px finché non ti piace */
+  margin-top: 12px; 
 }
 
 .nav-right {
