@@ -17,7 +17,7 @@
   /* ── 4 Column widths ── */
   --col1-w:   48px;    /* sidebar: social icons */
   --col2-w:   1fr;     /* hero text + timelapse — takes remaining space */
-  --col3-w:   600px;   /* youtube video column */
+  --col3-w:   400px;   /* youtube video column */
   --col4-w:   1000px;   /* right panel: workflow, blog, profile, render */
 
   /* ── Col 2: timelapse card height ── */
