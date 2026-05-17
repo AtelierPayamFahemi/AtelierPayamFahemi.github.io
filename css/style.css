@@ -47,8 +47,9 @@ a { text-decoration: none; color: inherit; }
 
 .nav-left {
   display: flex;
-  flex-direction: column;
-  gap: 0; /* ← togli il gap */
+  flex-direction: row;
+  align-items: center;
+  gap: 24px; 
 }
 
 .nav-logo {
