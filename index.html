@@ -8,37 +8,33 @@
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ═══════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════ -->
   <nav class="nav">
+
+    <!-- LEFT: logo + roles — DO NOT CHANGE -->
     <div class="nav-left">
       <span class="nav-logo">PayamFahemiPortfolio</span>
       <div class="nav-titles">
         <span class="nav-role">ARCHITECT | BIM COORDINATOR | CDE MANAGER</span>
-        <span class="nav-sub">BIM &amp; Digital Information Manager</span>
+        <span class="nav-sub">Automation &amp; Information Management Specialist</span>
       </div>
     </div>
-    <div class="nav-right">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="profile.html" class="nav-link">Profile</a>
-      <a href="storyteller.html" class="nav-link">Storyteller</a>
-      <a href="key-projects.html" class="nav-link">Key Projects</a>
-      <a href="digital-workflows.html" class="nav-link">Digital workflows</a>
-      <a href="blog.html" class="nav-link">Blog</a>
-      <a href="CV-PayamFahemi.pdf" class="nav-cv" download>↓ CV</a>
-    </div>
+
+    <!-- RIGHT: CV only (links moved to sidebar-right) -->
+    <a href="CV-PayamFahemi.pdf" class="nav-cv" download>↓ CV</a>
+
   </nav>
 
   <!-- ═══════════════════════════════════════════
-       4-COLUMN GRID
-       col1: sidebar
-       col2: hero text + timelapse
-       col3: youtube video (bottom only)
-       col4: workflow card + blog + profile + render
+       PAGE LAYOUT
+       3 columns: sidebar-left | main | sidebar-right
   ═══════════════════════════════════════════ -->
   <main class="main-grid">
 
-    <!-- COL 1: Social icons -->
-    <aside class="col1-sidebar">
+    <!-- COL 1: Social icons — DO NOT CHANGE -->
+    <aside class="sidebar-left">
       <!-- TODO: replace href with your actual email -->
       <a href="mailto:your@email.com" class="social-icon" aria-label="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
@@ -57,118 +53,86 @@
       </a>
     </aside>
 
-    <!-- COL 2: Hero text + timelapse card -->
-    <section class="col2">
-      <div class="hero-text">
-
-      </div>
-      <!-- Timelapse → Digital Workflows -->
-      <a href="digital-workflows.html" class="card timelapse-card" aria-label="Digital Workflows timelapse">
+    <!-- COL 2: Timelapse card -->
+    <section class="main-content">
+      <a href="digital-workflows.html" class="timelapse-card" aria-label="Digital Workflows timelapse">
         <!--
           TODO: Replace with your timelapse video, e.g.:
-          <video autoplay muted loop playsinline>
+          <video autoplay muted loop playsinline class="card-media">
             <source src="images/timelapse-coding.mp4" type="video/mp4">
           </video>
         -->
-        <div class="card-placeholder">
-          <span class="placeholder-label">timelaps<br>Of coding and python</span>
-        </div>
-        <div class="hover-overlay"><span class="hover-label">Digital Workflows</span></div>
+        <div class="card-placeholder"></div>
       </a>
     </section>
 
-    <!-- COL 3: YouTube video (sits at the bottom) -->
-    <section class="col3">
-      <!-- TODO: Replace href with your YouTube video URL -->
-      <a href="https://youtube.com/TODO" target="_blank" class="card youtube-card" aria-label="A'design video">
+    <!-- COL 3: Vertical nav links with hover preview -->
+    <aside class="sidebar-right">
+
+      <a href="index.html" class="nav-item active">
+        <span class="nav-item-label">Home</span>
         <!--
-          TODO: Replace with your YouTube thumbnail or embed, e.g.:
-          <img src="images/adesign-thumb.jpg" alt="A'design video">
+          TODO: add your preview image, e.g.:
+          <img src="images/preview-home.jpg" alt="Home preview" class="nav-preview">
         -->
-        <div class="card-placeholder">
-          <span class="placeholder-label">holder for a video from my youtube<br>(A'design video)</span>
-        </div>
-        <div class="hover-overlay"><span class="hover-label">Watch on YouTube ↗</span></div>
+        <div class="nav-preview"></div>
       </a>
-    </section>
 
-    <!-- COL 4: Workflow card + blog (top) | profile + render (bottom) -->
-    <section class="col4">
+      <a href="profile.html" class="nav-item">
+        <span class="nav-item-label">Profile</span>
+        <!--
+          TODO: add your preview image, e.g.:
+          <img src="images/preview-profile.jpg" alt="Profile preview" class="nav-preview">
+        -->
+        <div class="nav-preview"></div>
+      </a>
 
-      <!-- TOP: workflow (wide) + blog (narrow) -->
-      <div class="col4-top">
-        <a href="digital-workflows.html" class="card workflow-card">
-          <!--
-            TODO: Replace with your timelapse video, e.g.:
-            <video autoplay muted loop playsinline class="card-media">
-              <source src="images/rds-timelapse.mp4" type="video/mp4">
-            </video>
-          -->
-          <div class="card-placeholder"></div>
-          <div class="workflow-content">
-            <div class="workflow-tags">
-              <span class="tag">Dynamo</span>
-              <span class="tag">Python</span>
-              <span class="tag">HTML/CSS</span>
-            </div>
-            <h3 class="workflow-title">Room Data Sheet Automation</h3>
-            <p class="workflow-desc">Automatic generation of HTML/PDF room sheets directly from Revit via Python script in Dynamo.</p>
-            <span class="workflow-read">Read case study →</span>
-          </div>
-        </a>
+      <a href="storyteller.html" class="nav-item">
+        <span class="nav-item-label">Storyteller</span>
+        <!--
+          TODO: add your preview image, e.g.:
+          <img src="images/preview-storyteller.jpg" alt="Storyteller preview" class="nav-preview">
+        -->
+        <div class="nav-preview"></div>
+      </a>
 
-        <a href="blog.html" class="card blog-card" aria-label="From the blog">
-          <!--
-            TODO: Replace with your blog image, e.g.:
-            <img src="images/blog-cover.jpg" alt="From the blog" class="card-media">
-          -->
-          <div class="card-placeholder"></div>
-          <div class="hover-overlay"><span class="hover-label">From the Blog</span></div>
-          <div class="blog-label">FROM<br>THE<br>BLOG</div>
-        </a>
-      </div>
+      <a href="key-projects.html" class="nav-item">
+        <span class="nav-item-label">Key Projects</span>
+        <!--
+          TODO: add your preview image, e.g.:
+          <img src="images/preview-keyprojects.jpg" alt="Key Projects preview" class="nav-preview">
+        -->
+        <div class="nav-preview"></div>
+      </a>
 
-      <!-- BOTTOM: profile (narrow) + render (wide) -->
-      <div class="col4-bottom">
-        <a href="profile.html" class="card profile-card" aria-label="Profile">
-          <!--
-            TODO: Replace with your profile photo, e.g.:
-            <img src="images/payam-profile.jpg" alt="Payam Fahemi" class="card-media">
-          -->
-          <div class="card-placeholder"></div>
-          <div class="hover-overlay"><span class="hover-label">Profile</span></div>
-        </a>
+      <a href="digital-workflows.html" class="nav-item">
+        <span class="nav-item-label">Digital workflows</span>
+        <!--
+          TODO: add your preview image, e.g.:
+          <img src="images/preview-workflows.jpg" alt="Digital Workflows preview" class="nav-preview">
+        -->
+        <div class="nav-preview"></div>
+      </a>
 
-        <a href="storyteller.html" class="card render-card" aria-label="Storyteller">
-          <!--
-            TODO: Replace with the Piuarch render, e.g.:
-            <img src="images/piuarch-render.jpg" alt="Architecture render" class="card-media">
-          -->
-          <div class="card-placeholder"></div>
-          <div class="hover-overlay"><span class="hover-label">Storyteller</span></div>
-          <span class="render-credit">Image courtesy of Piuarch</span>
-        </a>
-      </div>
+      <a href="blog.html" class="nav-item">
+        <span class="nav-item-label">Blog</span>
+        <!--
+          TODO: add your preview image, e.g.:
+          <img src="images/preview-blog.jpg" alt="Blog preview" class="nav-preview">
+        -->
+        <div class="nav-preview"></div>
+      </a>
 
-    </section>
+    </aside>
 
   </main>
 
+  <!-- FOOTER — DO NOT CHANGE -->
   <footer class="footer">
     <span>© 2026 PayamFahemiPortfolio</span>
     <span>Milan, IT</span>
   </footer>
 
   <script src="js/main.js"></script>
-  <!-- GRID OVERLAY — remove when layout is done -->
-  <div class="grid-overlay">
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-  </div>
 </body>
 </html>
