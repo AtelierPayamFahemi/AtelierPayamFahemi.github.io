@@ -29,6 +29,9 @@
 
   /* Nav link font size */
   --nav-item-size: 16px;
+
+  --timelapse-max-w: 900px;   /* maximum width */
+  --timelapse-max-h: 600px;   /* maximum height */
 }
 
 /* ═══════════════════════════════════════════
@@ -153,14 +156,10 @@ a { text-decoration: none; color: inherit; }
 }
 
 .timelapse-card {
-  display: block;
   width: 100%;
   height: 100%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 2px;
-  background: #252527;
-  cursor: pointer;
+  max-width: var(--timelapse-max-w);
+  max-height: var(--timelapse-max-h);
 }
 
 .timelapse-card .card-media {
@@ -248,3 +247,49 @@ a { text-decoration: none; color: inherit; }
   background: var(--paper);
   letter-spacing: 0.06em;
 }
+
+/* ═══════════════════════════════════════════
+   WORKFLOW INFO — outside card, bottom right
+═══════════════════════════════════════════ */
+.workflow-info {
+  position: fixed;
+  bottom: calc(var(--foot-h) + var(--gap));
+  right: calc(var(--sidebar-right-w) + var(--gap) * 2);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.workflow-tags { display: flex; gap: 6px; }
+
+.tag {
+  font-size: 10px;
+  color: var(--accent);
+  background: rgba(200,120,58,0.25);
+  border: 0.5px solid rgba(248,203,173,0.5);
+  padding: 2px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.06em;
+}
+
+.workflow-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.workflow-desc {
+  font-size: 10px;
+  color: var(--offwhite);
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+.workflow-read {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.workflow-read:hover { opacity: 0.75; }
