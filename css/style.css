@@ -216,7 +216,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;   /* card sits at the BOTTOM */
-  padding: 10% var(--gap) 0 var(--gap);
+  padding: 100% var(--gap) 0 var(--gap);
 }
 
 .youtube-card {
