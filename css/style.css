@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════════
-   DESIGN TOKENS — edit these to resize/reposition everything
+   DESIGN TOKENS
+   Edit these variables to adjust the layout.
 ═══════════════════════════════════════════ */
 :root {
   /* Colors */
@@ -9,56 +10,27 @@
   --accent:   #F8CBAD;
   --font:     'Calibri', 'Calibri Regular', sans-serif;
 
-  /* ── Layout dimensions ── */
-  --nav-h:    110px;   /* height of top navigation bar */
-  --foot-h:   36px;    /* height of bottom footer */
-  --gap:      5px;     /* gap between all cards */
+  /* Spacing — "gap A" — one value controls all equal gaps */
+  --gap: 24px;
 
-  /* ── 4 Column widths ── */
-  --col1-w:   48px;    /* sidebar: social icons */
-  --col2-w:   1fr;     /* hero text + timelapse — takes remaining space */
-  --col3-w:   300px;   /* youtube video column */
-  --col4-w:   1000px;   /* right panel: workflow, blog, profile, render */
+  /* Nav */
+  --nav-h: 110px;
 
-  /* ── Col 2: timelapse card height ── */
-  --timelapse-h: 50%;  /* % of col2 height occupied by timelapse card */
+  /* Footer */
+  --foot-h: 36px;
 
-  /* ── Col 3: youtube card height ── */
-  --youtube-h: 42%;    /* % of col3 height — card sits at the BOTTOM */
+  /* Sidebar widths */
+  --sidebar-left-w:  48px;
+  --sidebar-right-w: 140px;
 
-  /* ── Col 4 top row: workflow vs blog widths ── */
-  --workflow-w: 1fr;   /* workflow card width within col4-top */
-  --blog-w: 160px;     /* blog card width within col4-top */
+  /* Nav link hover preview size */
+  --preview-w: 200px;
+  --preview-h: 130px;
 
-  /* ── Col 4 bottom row: profile vs render widths ── */
-  --profile-w: 120px;  /* profile card width within col4-bottom */
-  --render-w:  1fr;    /* render card width — takes remaining space */
-
-  /* ── Col 4 split: top vs bottom heights ── */
-  --col4-top-h: 1fr;   /* top area (workflow+blog) height */
-  --col4-bot-h: 40%;   /* bottom area (profile+render) height */
+  /* Nav link font size */
+  --nav-item-size: 16px;
 }
 
-/* ═══════════════════════════════════════════
-   GRID OVERLAY — remove when layout is done
-═══════════════════════════════════════════ */
-.grid-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 16px;
-  padding: 0 24px;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.grid-overlay-col {
-  background: rgba(255, 100, 0, 0.07);
-  border-left: 1px dashed rgba(255, 100, 0, 0.35);
-  border-right: 1px dashed rgba(255, 100, 0, 0.35);
-}
 /* ═══════════════════════════════════════════
    RESET & BASE
 ═══════════════════════════════════════════ */
@@ -71,13 +43,12 @@ html, body {
   background: var(--paper);
   color: var(--white);
   font-family: var(--font);
-  font-size: 14px;
 }
 
 a { text-decoration: none; color: inherit; }
 
 /* ═══════════════════════════════════════════
-   NAV
+   NAV — DO NOT CHANGE
 ═══════════════════════════════════════════ */
 .nav {
   position: fixed;
@@ -87,7 +58,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 14px 24px;
+  padding: var(--gap);
   z-index: 100;
 }
 
@@ -123,33 +94,20 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 0.03em;
 }
 
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  align-self: center;
-}
-
-.nav-link {
-  font-size: 18px;
-  color: var(--offwhite);
-  letter-spacing: 0.04em;
-  transition: color 0.2s;
-}
-
-.nav-link:hover { color: var(--white); }
-.nav-link.active { color: var(--white); font-style: italic; }
-
 .nav-cv {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--offwhite);
   letter-spacing: 0.06em;
   transition: color 0.2s;
+  align-self: center;
 }
+
 .nav-cv:hover { color: var(--white); }
 
 /* ═══════════════════════════════════════════
-   MAIN 4-COLUMN GRID
+   MAIN GRID
+   3 columns: sidebar-left | main content | sidebar-right
+   Gap A is equal on all sides and between columns.
 ═══════════════════════════════════════════ */
 .main-grid {
   position: fixed;
@@ -158,19 +116,20 @@ a { text-decoration: none; color: inherit; }
   left: 0;
   right: 0;
   display: grid;
-  grid-template-columns: var(--col1-w) var(--col2-w) var(--col3-w) var(--col4-w);
-  gap: 0;
+  grid-template-columns: var(--sidebar-left-w) 1fr var(--sidebar-right-w);
+  padding: var(--gap);
+  gap: var(--gap);
 }
 
 /* ═══════════════════════════════════════════
-   COL 1 — Sidebar: social icons (vertically centered)
+   SIDEBAR LEFT — Social icons — DO NOT CHANGE
 ═══════════════════════════════════════════ */
-.col1-sidebar {
+.sidebar-left {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: var(--gap);
 }
 
 .social-icon {
@@ -182,118 +141,29 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: center;
 }
+
 .social-icon svg { width: 18px; height: 18px; }
 .social-icon:hover { color: var(--white); }
 
 /* ═══════════════════════════════════════════
-   COL 2 — Hero text + timelapse card
+   MAIN CONTENT — Timelapse card
 ═══════════════════════════════════════════ */
-.col2 {
+.main-content {
   display: flex;
-  flex-direction: column;
-  padding: 28px 16px 0 16px;
-  gap: var(--gap);
-  overflow: hidden;
 }
-
-.hero-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 0;
-}
-
-.hero-line {
-  font-size: clamp(18px, 2.6vw, 38px);
-  font-weight: 400;
-  color: var(--offwhite);
-  line-height: 1.25;
-  letter-spacing: 0.04em;
-}
-
-.hero-line em {
-  font-style: italic;
-  color: var(--white);
-  font-weight: 600;
-}
-
-.indent-1 { padding-left: 4%; }
-.indent-2 { padding-left: 8%; }
-.indent-3 { padding-left: 12%; }
-.indent-4 { padding-left: 16%; }
-.indent-5 { padding-left: 20%; }
 
 .timelapse-card {
-  height: var(--timelapse-h);
-  flex-shrink: 0;
-}
-
-/* ═══════════════════════════════════════════
-   COL 3 — YouTube video (pinned to bottom)
-═══════════════════════════════════════════ */
-.col3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;   /* card sits at the BOTTOM */
-  padding: 150% var(--gap) 0 var(--gap);
-}
-
-.youtube-card {
-  height: var(--youtube-h);
-}
-
-/* ═══════════════════════════════════════════
-   COL 4 — Right panel
-═══════════════════════════════════════════ */
-.col4 {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-  padding: var(--gap) var(--gap) 0 var(--gap);
-  overflow: hidden;
-}
-
-/* Top: workflow + blog */
-.col4-top {
-  display: grid;
-  grid-template-columns: var(--workflow-w) var(--blog-w);
-  gap: var(--gap);
-  flex: 1;
-  min-height: 0;
-}
-
-/* Bottom: profile + render */
-.col4-bottom {
-  display: grid;
-  grid-template-columns: var(--profile-w) var(--render-w);
-  gap: var(--gap);
-  height: var(--col4-bot-h);
-  flex-shrink: 0;
-}
-
-/* ═══════════════════════════════════════════
-   SHARED CARD BASE
-═══════════════════════════════════════════ */
-.card {
-  position: relative;
-  overflow: hidden;
   display: block;
-  cursor: pointer;
-  border-radius: 2px;
-  background: #252527;
-}
-
-.card-placeholder {
   width: 100%;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
   background: #252527;
-  display: flex;
-  align-items: flex-end;
-  padding: 12px 14px;
+  cursor: pointer;
 }
 
-.card-media {
+.timelapse-card .card-media {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -301,120 +171,69 @@ a { text-decoration: none; color: inherit; }
   border: none;
 }
 
-.placeholder-label {
-  font-size: 10px;
-  color: rgba(191,191,191,0.4);
-  line-height: 1.55;
+.card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #252527;
+}
+
+/* ═══════════════════════════════════════════
+   SIDEBAR RIGHT — Vertical nav links
+   Links are centered vertically.
+   Hover preview appears to the LEFT of each link.
+═══════════════════════════════════════════ */
+.sidebar-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;      /* text right-aligned */
+  justify-content: center;    /* centered vertically */
+  gap: var(--gap);
+}
+
+/* Each nav item */
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.nav-item-label {
+  font-size: var(--nav-item-size);
+  color: var(--offwhite);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-item:hover .nav-item-label { color: var(--white); }
+
+.nav-item.active .nav-item-label {
+  color: var(--white);
   font-style: italic;
 }
 
-/* Hover overlay */
-.hover-overlay {
+/* Hover preview rectangle — appears to the LEFT */
+.nav-preview {
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.58);
-  display: flex;
-  align-items: flex-end;
-  padding: 12px 14px;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-}
-
-.card:hover .hover-overlay { opacity: 1; }
-
-.hover-label {
-  font-size: 11px;
-  color: var(--white);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-/* ═══════════════════════════════════════════
-   WORKFLOW CARD
-═══════════════════════════════════════════ */
-.workflow-card { height: 100%; }
-
-.workflow-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 16px 14px;
-  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 55%);
-}
-
-.workflow-tags { display: flex; gap: 5px; margin-bottom: 7px; flex-wrap: wrap; }
-
-.tag {
-  font-size: 9.5px;
-  color: var(--accent);
-  border: 0.5px solid rgba(248,203,173,0.55);
-  padding: 2px 7px;
+  right: 110%;              /* sits to the LEFT of the label */
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--preview-w);
+  height: var(--preview-h);
+  object-fit: cover;
+  background: #252527;      /* placeholder color — remove when image added */
   border-radius: 2px;
-  letter-spacing: 0.06em;
-}
-
-.workflow-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 4px;
-  line-height: 1.3;
-}
-
-.workflow-desc {
-  font-size: 9.5px;
-  color: var(--offwhite);
-  line-height: 1.6;
-  margin-bottom: 7px;
-}
-
-.workflow-read {
-  font-size: 10.5px;
-  color: var(--accent);
-  letter-spacing: 0.04em;
-}
-
-/* ═══════════════════════════════════════════
-   BLOG CARD
-═══════════════════════════════════════════ */
-.blog-card { height: 100%; }
-
-.blog-label {
-  position: absolute;
-  top: 14px; right: 14px;
-  text-align: right;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--white);
-  line-height: 1.45;
-  letter-spacing: 0.06em;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.25s ease;
 }
 
-/* ═══════════════════════════════════════════
-   PROFILE & RENDER CARDS
-═══════════════════════════════════════════ */
-.profile-card { height: 100%; }
-.render-card  { height: 100%; }
-
-.render-credit {
-  position: absolute;
-  bottom: 0; left: 0;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
-  font-size: 8px;
-  color: rgba(191,191,191,0.3);
-  padding: 8px 4px;
-  pointer-events: none;
-  letter-spacing: 0.06em;
-}
+.nav-item:hover .nav-preview { opacity: 1; }
 
 /* ═══════════════════════════════════════════
-   FOOTER
+   FOOTER — DO NOT CHANGE
 ═══════════════════════════════════════════ */
 .footer {
   position: fixed;
@@ -423,8 +242,8 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
-  font-size: 15px;
+  padding: 0 var(--gap);
+  font-size: 10px;
   color: rgba(191,191,191,0.35);
   background: var(--paper);
   letter-spacing: 0.06em;
