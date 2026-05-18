@@ -21,7 +21,7 @@
   --col4-w:   1000px;   /* right panel: workflow, blog, profile, render */
 
   /* ── Col 2: timelapse card height ── */
-  --timelapse-h: 55%;  /* % of col2 height occupied by timelapse card */
+  --timelapse-h: 50%;  /* % of col2 height occupied by timelapse card */
 
   /* ── Col 3: youtube card height ── */
   --youtube-h: 42%;    /* % of col3 height — card sits at the BOTTOM */
