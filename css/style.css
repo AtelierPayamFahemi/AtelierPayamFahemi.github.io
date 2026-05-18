@@ -215,7 +215,7 @@ a { text-decoration: none; color: inherit; }
 .col3 {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;   /* card sits at the BOTTOM */
+  justify-content: flex-start;   /* card sits at the BOTTOM */
   padding: 55% var(--gap) 0 var(--gap);
 }
 
