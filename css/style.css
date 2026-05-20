@@ -254,11 +254,8 @@ a { text-decoration: none; color: inherit; }
 ═══════════════════════════════════════════ */
 .workflow-info {
   position: fixed;
-  bottom: calc(var(--foot-h) + var(--gap));
+  bottom: calc(50% - var(--foot-h));  /* adjust this value until it aligns */
   right: calc(var(--sidebar-right-w) + var(--gap) * 2);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
 }
 
 .workflow-tags { display: flex; gap: 6px; }
