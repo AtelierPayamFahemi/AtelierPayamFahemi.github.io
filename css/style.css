@@ -254,7 +254,7 @@ a { text-decoration: none; color: inherit; }
 ═══════════════════════════════════════════ */
 .workflow-info {
   position: fixed;
-  bottom: calc(50% - var(--foot-h));  /* adjust this value until it aligns */
+  bottom: calc(20% - var(--foot-h));  /* adjust this value until it aligns */
   right: calc(var(--sidebar-right-w) + var(--gap) * 2);
 }
 
