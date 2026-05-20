@@ -217,7 +217,7 @@ a { text-decoration: none; color: inherit; }
 /* Hover preview rectangle — appears to the LEFT */
 .nav-preview {
   position: absolute;
-  right: 110%;              /* sits to the LEFT of the label */
+  right: 150%;              /* sits to the LEFT of the label */
   top: 50%;
   transform: translateY(-50%);
   width: var(--preview-w);
