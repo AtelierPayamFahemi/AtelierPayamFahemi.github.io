@@ -24,8 +24,8 @@
   --sidebar-right-w: 140px;
 
   /* Nav link hover preview size */
-  --preview-w: 200px;
-  --preview-h: 130px;
+  --preview-w: 400px;
+  --preview-h: 230px;
 
   /* Nav link font size */
   --nav-item-size: 16px;
