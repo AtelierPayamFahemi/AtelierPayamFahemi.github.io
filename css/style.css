@@ -30,8 +30,8 @@
   /* Nav link font size */
   --nav-item-size: 16px;
 
-  --timelapse-max-w: 900px;   /* maximum width */
-  --timelapse-max-h: 600px;   /* maximum height */
+  --timelapse-max-w: 1000px;   /* maximum width */
+  --timelapse-max-h: 700px;   /* maximum height */
 }
 
 /* ═══════════════════════════════════════════
