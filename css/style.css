@@ -227,8 +227,7 @@ a { text-decoration: none; color: inherit; }
   background: #252527;      /* placeholder color — remove when image added */
   border-radius: 2px;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.15s ease;
 }
 
 .nav-item:hover .nav-preview { opacity: 1; }
