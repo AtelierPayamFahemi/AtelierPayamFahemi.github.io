@@ -192,7 +192,7 @@ a { text-decoration: none; color: inherit; }
 
 /* Each nav item */
 .nav-item {
-  position: relative;
+  position: static;  /* no relative, no padding — untouched */
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -216,18 +216,18 @@ a { text-decoration: none; color: inherit; }
 
 /* Hover preview rectangle — appears to the LEFT */
 .nav-preview {
-  position: absolute;
-  right: 160px;              
+  position: fixed;
   top: 50%;
+  right: 160px;
   transform: translateY(-50%);
   width: var(--preview-w);
   height: var(--preview-h);
   object-fit: cover;
-  background: #252527;      /* placeholder color — remove when image added */
   border-radius: 2px;
-  opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 999;
 }
 
 .nav-item:hover .nav-preview { opacity: 1; }
