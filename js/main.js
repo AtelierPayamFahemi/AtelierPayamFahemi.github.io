@@ -27,18 +27,21 @@ document.querySelectorAll('.nav-item').forEach(item => {
   const preview = item.querySelector('.nav-preview');
   if (!preview) return;
 
-  item.addEventListener('mouseenter', () => {
+  let hideTimeout;
+
+  const show = () => {
+    clearTimeout(hideTimeout);
     preview.style.opacity = '1';
-  });
+  };
 
-  item.addEventListener('mouseleave', (e) => {
-    // only hide if mouse is NOT moving to the preview itself
-    if (!preview.contains(e.relatedTarget)) {
+  const hide = () => {
+    hideTimeout = setTimeout(() => {
       preview.style.opacity = '0';
-    }
-  });
+    }, 100); // small delay prevents flicker during mouse travel
+  };
 
-  preview.addEventListener('mouseleave', () => {
-    preview.style.opacity = '0';
-  });
+  item.addEventListener('mouseenter', show);
+  item.addEventListener('mouseleave', hide);
+  preview.addEventListener('mouseenter', show);
+  preview.addEventListener('mouseleave', hide);
 });
