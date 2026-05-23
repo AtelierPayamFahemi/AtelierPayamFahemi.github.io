@@ -192,12 +192,15 @@ a { text-decoration: none; color: inherit; }
 
 /* Each nav item */
 .nav-item {
-  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.nav-item-inner {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  cursor: pointer;
-  padding-left: 220px;  /* must be >= preview width so hover zone covers it */
+  gap: 16px;
 }
 
 .nav-item-label {
@@ -217,20 +220,17 @@ a { text-decoration: none; color: inherit; }
 
 /* Hover preview rectangle — appears to the LEFT */
 .nav-preview {
-  position: absolute;
-  right: 160px;              
-  top: 50%;
-  transform: translateY(-50%);
   width: var(--preview-w);
   height: var(--preview-h);
   object-fit: cover;
-  background: #252527;      /* placeholder color — remove when image added */
   border-radius: 2px;
   opacity: 0;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.2s ease;
 }
 
-.nav-item:hover .nav-preview { opacity: 1; }
+.nav-item:hover .nav-preview {
+  opacity: 1;
+}
 
 /* ═══════════════════════════════════════════
    FOOTER — DO NOT CHANGE
