@@ -16,10 +16,13 @@
   --nav-item-size:   16px;
 
   --timelapse-max-w: 900px;
-  --timelapse-max-h: 600px;
+  --timelapse-max-h: 560px;
 
-  --preview-w: 400px;
-  --preview-h: 280px;
+  --preview-w: 300px;
+  --preview-h: 200px;
+
+  /* Fixed distance from right edge where all previews align */
+  --preview-right: 160px;
 }
 
 /* ═══════════════════════════════════════════
@@ -63,10 +66,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-titles { display: flex; flex-direction: column; gap: 2px; }
-
 .nav-role { font-size: 18px; color: var(--offwhite); letter-spacing: 0.05em; }
-
-.nav-sub { font-size: 18px; color: rgba(191,191,191,0.55); }
+.nav-sub  { font-size: 18px; color: rgba(191,191,191,0.55); }
 
 .nav-cv {
   font-size: 16px;
@@ -91,7 +92,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ═══════════════════════════════════════════
-   SIDEBAR LEFT
+   SIDEBAR LEFT — vertically centered
 ═══════════════════════════════════════════ */
 .sidebar-left {
   display: flex;
@@ -112,13 +113,16 @@ a { text-decoration: none; color: inherit; }
 
 /* ═══════════════════════════════════════════
    MAIN CONTENT
+   Card is vertically centered.
+   Workflow info sits right below the card's bottom edge,
+   right-aligned to the card's right edge.
 ═══════════════════════════════════════════ */
 .main-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 12px;
+  align-items: center;      /* center card horizontally */
+  justify-content: center;  /* center card vertically */
+  position: relative;
 }
 
 .timelapse-card {
@@ -127,11 +131,11 @@ a { text-decoration: none; color: inherit; }
   max-width: var(--timelapse-max-w);
   max-height: var(--timelapse-max-h);
   aspect-ratio: 16/9;
-  position: relative;
   overflow: hidden;
   border-radius: 2px;
   background: #252527;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .card-placeholder {
@@ -146,14 +150,15 @@ a { text-decoration: none; color: inherit; }
   border: none;
 }
 
-/* ═══════════════════════════════════════════
-   WORKFLOW INFO
-═══════════════════════════════════════════ */
+/* ── Workflow info: anchored to bottom-right of card ── */
 .workflow-info {
+  width: 100%;
+  max-width: var(--timelapse-max-w);
   display: flex;
   flex-direction: column;
+  align-items: flex-end;    /* right-aligned */
   gap: 5px;
-  align-self: flex-end;  /* aligns to right edge of timelapse card */
+  margin-top: 10px;
 }
 
 .workflow-tags { display: flex; gap: 6px; }
@@ -180,6 +185,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--offwhite);
   line-height: 1.6;
   max-width: 380px;
+  text-align: right;
 }
 
 .workflow-read {
@@ -190,16 +196,12 @@ a { text-decoration: none; color: inherit; }
 .workflow-read:hover { opacity: 0.75; }
 
 /* ═══════════════════════════════════════════
-   SIDEBAR RIGHT — nav links + hover preview
+   SIDEBAR RIGHT — nav links
    
-   HOW THE HOVER PREVIEW WORKS:
-   Each .nav-item is a flex row: [preview image] [label]
-   The preview starts at opacity:0 and becomes opacity:1 on hover.
-   Because preview and label are in the SAME flex row, the mouse
-   never leaves the hover zone — no flicker possible.
-   
-   To add a preview image, replace <div class="nav-preview">
-   with <img src="..." class="nav-preview">
+   Preview images are position:fixed so they
+   take zero space — nav links stay centered.
+   All previews align to the same fixed left edge
+   regardless of label length.
 ═══════════════════════════════════════════ */
 .sidebar-right {
   display: flex;
@@ -210,12 +212,12 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-item {
-  position: relative;   /* ← needed for absolute child */
+  position: static;   /* NOT relative — preview uses fixed positioning */
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .nav-item-label {
@@ -233,20 +235,21 @@ a { text-decoration: none; color: inherit; }
   font-style: italic;
 }
 
-/* Preview: same row as label, left of it, hidden until hover */
+/* ── Preview: fixed position, always same left edge ── */
 .nav-preview {
+  position: fixed;
+  right: var(--preview-right);   /* fixed distance — ALL previews align here */
+  top: 50%;
+  transform: translateY(-50%);
   width: var(--preview-w);
   height: var(--preview-h);
   object-fit: cover;
   background: #252527;
   border-radius: 2px;
-  flex-shrink: 0;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.2s ease;
-  position: absolute;   /* ← takes no space in the flow */
-  right: 100%;          /* ← appears to the left of the label */
-  top: 50%;
-  transform: translateY(-50%);
+  z-index: 200;
 }
 
 .nav-item:hover .nav-preview { opacity: 1; }
