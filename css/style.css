@@ -210,13 +210,12 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-item {
+  position: relative;   /* ← needed for absolute child */
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .nav-item-label {
@@ -239,11 +238,15 @@ a { text-decoration: none; color: inherit; }
   width: var(--preview-w);
   height: var(--preview-h);
   object-fit: cover;
-  background: #252527;   /* placeholder — remove when image added */
+  background: #252527;
   border-radius: 2px;
   flex-shrink: 0;
   opacity: 0;
   transition: opacity 0.2s ease;
+  position: absolute;   /* ← takes no space in the flow */
+  right: 100%;          /* ← appears to the left of the label */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .nav-item:hover .nav-preview { opacity: 1; }
