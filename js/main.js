@@ -23,3 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+document.querySelectorAll('.nav-item').forEach(item => {
+  const preview = item.querySelector('.nav-preview');
+  if (!preview) return;
+
+  item.addEventListener('mouseenter', () => {
+    preview.style.opacity = '1';
+  });
+
+  item.addEventListener('mouseleave', (e) => {
+    // only hide if mouse is NOT moving to the preview itself
+    if (!preview.contains(e.relatedTarget)) {
+      preview.style.opacity = '0';
+    }
+  });
+
+  preview.addEventListener('mouseleave', () => {
+    preview.style.opacity = '0';
+  });
+});
