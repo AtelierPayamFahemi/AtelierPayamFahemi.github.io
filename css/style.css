@@ -197,6 +197,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: flex-end;
   cursor: pointer;
+  padding-left: 220px;  /* must be >= preview width so hover zone covers it */
 }
 
 .nav-item-label {
