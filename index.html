@@ -8,12 +8,7 @@
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════
-       NAV
-  ═══════════════════════════════════════════ -->
   <nav class="nav">
-
-    <!-- LEFT: logo + roles — DO NOT CHANGE -->
     <div class="nav-left">
       <span class="nav-logo">PayamFahemiPortfolio</span>
       <div class="nav-titles">
@@ -21,39 +16,28 @@
         <span class="nav-sub">BIM &amp; Digital Information Manager</span>
       </div>
     </div>
-
-    <!-- RIGHT: CV only (links moved to sidebar-right) -->
     <a href="CV-PayamFahemi.pdf" class="nav-cv" download>↓ CV</a>
-
   </nav>
 
-  <!-- ═══════════════════════════════════════════
-       PAGE LAYOUT
-       3 columns: sidebar-left | main | sidebar-right
-  ═══════════════════════════════════════════ -->
   <main class="main-grid">
 
-    <!-- COL 1: Social icons — DO NOT CHANGE -->
+    <!-- COL 1: Social icons -->
     <aside class="sidebar-left">
-      <!-- TODO: replace href with your actual email -->
       <a href="mailto:fahemipayam@gmail.com" class="social-icon" aria-label="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
-      <!-- TODO: replace href with your LinkedIn URL -->
       <a href="https://www.linkedin.com/in/payamfahemi/" target="_blank" class="social-icon" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
-      <!-- TODO: replace href with your GitHub URL -->
       <a href="https://github.com/AtelierPayamFahemi" target="_blank" class="social-icon" aria-label="GitHub">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
       </a>
-      <!-- TODO: replace href with your YouTube URL -->
       <a href="http://www.youtube.com/@AtelierPayamFahemi" target="_blank" class="social-icon" aria-label="YouTube">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#1E1E20"/></svg>
       </a>
     </aside>
 
-    <!-- COL 2: Timelapse card -->
+    <!-- COL 2: Timelapse card + workflow info -->
     <section class="main-content">
       <a href="digital-workflows.html" class="timelapse-card" aria-label="Digital Workflows timelapse">
         <!--
@@ -64,74 +48,60 @@
         -->
         <div class="card-placeholder"></div>
       </a>
+
+      <!-- Workflow info — sits below card, right-aligned -->
+      <div class="workflow-info">
+        <div class="workflow-tags">
+          <span class="tag">Dynamo</span>
+          <span class="tag">Python</span>
+          <span class="tag">HTML/CSS</span>
+        </div>
+        <h3 class="workflow-title">Room Data Sheet Automation</h3>
+        <p class="workflow-desc">Automatic generation of HTML/PDF room sheets directly from Revit via Python script in Dynamo.</p>
+        <a href="digital-workflows.html" class="workflow-read">Read case study →</a>
+      </div>
     </section>
 
-    <!-- Workflow info — sits outside card, bottom right -->
-    <div class="workflow-info">
-      <div class="workflow-tags">
-        <span class="tag">Dynamo</span>
-        <span class="tag">Python</span>
-        <span class="tag">HTML/CSS</span>
-      </div>
-      <h3 class="workflow-title">Room Data Sheet Automation</h3>
-      <p class="workflow-desc">Automatic generation of HTML/PDF room sheets directly from Revit via Python script in Dynamo.</p>
-      <a href="digital-workflows.html" class="workflow-read">Read case study →</a>
-    </div>
-    
     <!-- COL 3: Vertical nav links with hover preview -->
     <aside class="sidebar-right">
 
+      <!-- Home: no preview -->
       <a href="index.html" class="nav-item active">
         <span class="nav-item-label">Home</span>
-        <!--
-          TODO: add your preview image, e.g.:
-          <img src="images/preview-home.jpg" alt="Home preview" class="nav-preview">
-        -->
-        <!--
-        <div class="nav-preview"></div>
-        -->
       </a>
 
+      <!-- Profile: with preview -->
       <a href="profile.html" class="nav-item">
-        <div class="nav-item-inner">
-          <img src="images/preview-profile.jpg" alt="Profile" class="nav-preview">
-          <span class="nav-item-label">Profile</span>
-        </div>
+        <span class="nav-item-label">Profile</span>
+        <!-- TODO: <img src="images/preview-profile.jpg" alt="Profile" class="nav-preview"> -->
+        <div class="nav-preview"></div>
       </a>
 
+      <!-- Storyteller: with preview -->
       <a href="storyteller.html" class="nav-item">
         <span class="nav-item-label">Storyteller</span>
-        <!--
-          TODO: add your preview image, e.g.:
-          <img src="images/preview-storyteller.jpg" alt="Storyteller preview" class="nav-preview">
-        -->
+        <!-- TODO: <img src="images/preview-storyteller.jpg" alt="Storyteller" class="nav-preview"> -->
         <div class="nav-preview"></div>
       </a>
 
+      <!-- Key Projects: with preview -->
       <a href="key-projects.html" class="nav-item">
         <span class="nav-item-label">Key Projects</span>
-        <!--
-          TODO: add your preview image, e.g.:
-          <img src="images/preview-keyprojects.jpg" alt="Key Projects preview" class="nav-preview">
-        -->
+        <!-- TODO: <img src="images/preview-keyprojects.jpg" alt="Key Projects" class="nav-preview"> -->
         <div class="nav-preview"></div>
       </a>
 
+      <!-- Digital workflows: with preview -->
       <a href="digital-workflows.html" class="nav-item">
         <span class="nav-item-label">Digital workflows</span>
-        <!--
-          TODO: add your preview image, e.g.:
-          <img src="images/preview-workflows.jpg" alt="Digital Workflows preview" class="nav-preview">
-        -->
+        <!-- TODO: <img src="images/preview-workflows.jpg" alt="Digital Workflows" class="nav-preview"> -->
         <div class="nav-preview"></div>
       </a>
 
+      <!-- Blog: with preview -->
       <a href="blog.html" class="nav-item">
         <span class="nav-item-label">Blog</span>
-        <!--
-          TODO: add your preview image, e.g.:
-          <img src="images/preview-blog.jpg" alt="Blog preview" class="nav-preview">
-        -->
+        <!-- TODO: <img src="images/preview-blog.jpg" alt="Blog" class="nav-preview"> -->
         <div class="nav-preview"></div>
       </a>
 
@@ -139,7 +109,6 @@
 
   </main>
 
-  <!-- FOOTER — DO NOT CHANGE -->
   <footer class="footer">
     <span>© 2026 PayamFahemiPortfolio</span>
     <span>Milan, IT</span>
