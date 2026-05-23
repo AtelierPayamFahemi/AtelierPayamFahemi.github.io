@@ -1,37 +1,25 @@
 /* ═══════════════════════════════════════════
    DESIGN TOKENS
-   Edit these variables to adjust the layout.
 ═══════════════════════════════════════════ */
 :root {
-  /* Colors */
   --paper:    #1E1E20;
   --white:    #FFFFFF;
   --offwhite: #BFBFBF;
   --accent:   #F8CBAD;
   --font:     'Calibri', 'Calibri Regular', sans-serif;
 
-  /* Spacing — "gap A" — one value controls all equal gaps */
-  --gap: 24px;
-
-  /* Nav */
-  --nav-h: 110px;
-
-  /* Footer */
-  --foot-h: 36px;
-
-  /* Sidebar widths */
+  --gap:             24px;
+  --nav-h:           110px;
+  --foot-h:          36px;
   --sidebar-left-w:  48px;
   --sidebar-right-w: 140px;
+  --nav-item-size:   16px;
 
-  /* Nav link hover preview size */
+  --timelapse-max-w: 900px;
+  --timelapse-max-h: 600px;
+
   --preview-w: 400px;
   --preview-h: 280px;
-
-  /* Nav link font size */
-  --nav-item-size: 16px;
-
-  --timelapse-max-w: 900px;   /* maximum width */
-  --timelapse-max-h: 600px;   /* maximum height */
 }
 
 /* ═══════════════════════════════════════════
@@ -51,7 +39,7 @@ html, body {
 a { text-decoration: none; color: inherit; }
 
 /* ═══════════════════════════════════════════
-   NAV — DO NOT CHANGE
+   NAV
 ═══════════════════════════════════════════ */
 .nav {
   position: fixed;
@@ -65,59 +53,37 @@ a { text-decoration: none; color: inherit; }
   z-index: 100;
 }
 
-.nav-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+.nav-left { display: flex; flex-direction: column; }
 
 .nav-logo {
   font-size: 22px;
   font-weight: 700;
   color: var(--white);
-  letter-spacing: 0.01em;
   margin-bottom: 6px;
 }
 
-.nav-titles {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
+.nav-titles { display: flex; flex-direction: column; gap: 2px; }
 
-.nav-role {
-  font-size: 18px;
-  color: var(--offwhite);
-  letter-spacing: 0.05em;
-}
+.nav-role { font-size: 18px; color: var(--offwhite); letter-spacing: 0.05em; }
 
-.nav-sub {
-  font-size: 18px;
-  color: rgba(191,191,191,0.55);
-  letter-spacing: 0.03em;
-}
+.nav-sub { font-size: 18px; color: rgba(191,191,191,0.55); }
 
 .nav-cv {
   font-size: 16px;
   color: var(--offwhite);
-  letter-spacing: 0.06em;
-  transition: color 0.2s;
   align-self: center;
+  transition: color 0.2s;
 }
-
 .nav-cv:hover { color: var(--white); }
 
 /* ═══════════════════════════════════════════
    MAIN GRID
-   3 columns: sidebar-left | main content | sidebar-right
-   Gap A is equal on all sides and between columns.
 ═══════════════════════════════════════════ */
 .main-grid {
   position: fixed;
   top: var(--nav-h);
   bottom: var(--foot-h);
-  left: 0;
-  right: 0;
+  left: 0; right: 0;
   display: grid;
   grid-template-columns: var(--sidebar-left-w) 1fr var(--sidebar-right-w);
   padding: var(--gap);
@@ -125,7 +91,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ═══════════════════════════════════════════
-   SIDEBAR LEFT — Social icons — DO NOT CHANGE
+   SIDEBAR LEFT
 ═══════════════════════════════════════════ */
 .sidebar-left {
   display: flex;
@@ -136,127 +102,58 @@ a { text-decoration: none; color: inherit; }
 }
 
 .social-icon {
-  width: 24px;
-  height: 24px;
+  width: 24px; height: 24px;
   color: var(--offwhite);
   transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
 }
-
 .social-icon svg { width: 18px; height: 18px; }
 .social-icon:hover { color: var(--white); }
 
 /* ═══════════════════════════════════════════
-   MAIN CONTENT — Timelapse card
+   MAIN CONTENT
 ═══════════════════════════════════════════ */
 .main-content {
   display: flex;
-  align-items: center;  
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
 }
 
 .timelapse-card {
+  display: block;
   width: 100%;
-  height: 100%;
   max-width: var(--timelapse-max-w);
   max-height: var(--timelapse-max-h);
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #252527;
+  cursor: pointer;
 }
 
-.timelapse-card .card-media {
-  width: 100%;
-  height: 100%;
+.card-placeholder {
+  width: 100%; height: 100%;
+  background: #252527;
+}
+
+.card-media {
+  width: 100%; height: 100%;
   object-fit: cover;
   display: block;
   border: none;
 }
 
-.card-placeholder {
-  width: 100%;
-  height: 100%;
-  background: #252527;
-}
-
 /* ═══════════════════════════════════════════
-   SIDEBAR RIGHT — Vertical nav links
-   Links are centered vertically.
-   Hover preview appears to the LEFT of each link.
-═══════════════════════════════════════════ */
-.sidebar-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;      /* text right-aligned */
-  justify-content: center;    /* centered vertically */
-  gap: var(--gap);
-}
-
-/* Each nav item */
-.nav-item {
-  display: block;
-  cursor: pointer;
-}
-
-.nav-item-inner {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 16px;
-}
-
-.nav-item-label {
-  font-size: var(--nav-item-size);
-  color: var(--offwhite);
-  letter-spacing: 0.04em;
-  transition: color 0.2s;
-  white-space: nowrap;
-}
-
-.nav-item:hover .nav-item-label { color: var(--white); }
-
-.nav-item.active .nav-item-label {
-  color: var(--white);
-  font-style: italic;
-}
-
-/* Hover preview rectangle — appears to the LEFT */
-.nav-preview {
-  width: var(--preview-w);
-  height: var(--preview-h);
-  object-fit: cover;
-  border-radius: 2px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.nav-item:hover .nav-preview {
-  opacity: 1;
-}
-
-/* ═══════════════════════════════════════════
-   FOOTER — DO NOT CHANGE
-═══════════════════════════════════════════ */
-.footer {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  height: var(--foot-h);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 var(--gap);
-  font-size: 15px;
-  color: rgba(191,191,191,0.35);
-  background: var(--paper);
-  letter-spacing: 0.06em;
-}
-
-/* ═══════════════════════════════════════════
-   WORKFLOW INFO — outside card, bottom right
+   WORKFLOW INFO
 ═══════════════════════════════════════════ */
 .workflow-info {
-  position: fixed;
-  bottom: calc(20% - var(--foot-h));  /* adjust this value until it aligns */
-  right: auto;
-  left: calc(var(--sidebar-left-w) + var(--gap) * 40);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-self: flex-end;  /* aligns to right edge of timelapse card */
 }
 
 .workflow-tags { display: flex; gap: 6px; }
@@ -290,5 +187,80 @@ a { text-decoration: none; color: inherit; }
   color: var(--accent);
   letter-spacing: 0.04em;
 }
-
 .workflow-read:hover { opacity: 0.75; }
+
+/* ═══════════════════════════════════════════
+   SIDEBAR RIGHT — nav links + hover preview
+   
+   HOW THE HOVER PREVIEW WORKS:
+   Each .nav-item is a flex row: [preview image] [label]
+   The preview starts at opacity:0 and becomes opacity:1 on hover.
+   Because preview and label are in the SAME flex row, the mouse
+   never leaves the hover zone — no flicker possible.
+   
+   To add a preview image, replace <div class="nav-preview">
+   with <img src="..." class="nav-preview">
+═══════════════════════════════════════════ */
+.sidebar-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-item-label {
+  font-size: var(--nav-item-size);
+  color: var(--offwhite);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-item:hover .nav-item-label { color: var(--white); }
+
+.nav-item.active .nav-item-label {
+  color: var(--white);
+  font-style: italic;
+}
+
+/* Preview: same row as label, left of it, hidden until hover */
+.nav-preview {
+  width: var(--preview-w);
+  height: var(--preview-h);
+  object-fit: cover;
+  background: #252527;   /* placeholder — remove when image added */
+  border-radius: 2px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.nav-item:hover .nav-preview { opacity: 1; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+.footer {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: var(--foot-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gap);
+  font-size: 15px;
+  color: rgba(191,191,191,0.35);
+  background: var(--paper);
+  letter-spacing: 0.06em;
+}
