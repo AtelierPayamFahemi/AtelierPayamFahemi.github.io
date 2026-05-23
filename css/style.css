@@ -218,7 +218,7 @@ a { text-decoration: none; color: inherit; }
 .nav-preview {
   position: fixed;
   top: 50%;
-  right: 160px;
+  right: 200px;
   transform: translateY(-50%);
   width: var(--preview-w);
   height: var(--preview-h);
