@@ -24,14 +24,14 @@
   --sidebar-right-w: 140px;
 
   /* Nav link hover preview size */
-  --preview-w: 900px;
-  --preview-h: 600px;
+  --preview-w: 750px;
+  --preview-h: 550px;
 
   /* Nav link font size */
   --nav-item-size: 16px;
 
-  --timelapse-max-w: 1000px;   /* maximum width */
-  --timelapse-max-h: 700px;   /* maximum height */
+  --timelapse-max-w: 750px;   /* maximum width */
+  --timelapse-max-h: 550px;   /* maximum height */
 }
 
 /* ═══════════════════════════════════════════
