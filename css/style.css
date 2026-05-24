@@ -254,9 +254,9 @@ a { text-decoration: none; color: inherit; }
 ═══════════════════════════════════════════ */
 .workflow-info {
   position: fixed;
-  bottom: calc(48% - var(--foot-h));  /* adjust this value until it aligns */
+  bottom: calc(20% - var(--foot-h));  /* adjust this value until it aligns */
   right: auto;
-  left: calc(var(--sidebar-left-w) + var(--gap) * 40);
+  left: calc(var(--sidebar-left-w) + var(--gap) * 10);
 }
 
 .workflow-tags { display: flex; gap: 6px; }
