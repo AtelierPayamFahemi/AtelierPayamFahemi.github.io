@@ -256,7 +256,7 @@ a { text-decoration: none; color: inherit; }
   position: fixed;
   bottom: calc(20% - var(--foot-h));  /* adjust this value until it aligns */
   right: auto;
-  left: calc(var(--sidebar-left-w) + var(--gap) * 4);
+  left: calc(var(--sidebar-left-w) + var(--gap) * 2);
 }
 
 .workflow-tags { display: flex; gap: 6px; }
