@@ -1,48 +1,58 @@
 /* ═══════════════════════════════════════════
-   STORYTELLER PAGE
-   Separate file — does NOT affect home page.
-   Only applies when <body class="page-storyteller">
+   STORYTELLER PAGE — standalone CSS
+   Does NOT affect home page (no shared classes)
 ═══════════════════════════════════════════ */
 
-/* ── Override body for white canvas ── */
-.page-storyteller {
+/* ── Variables ── */
+:root {
+  --st-font:       'Calibri', 'Calibri Regular', sans-serif;
+  --st-col-gap:    80px;   /* horizontal gap between columns — increase for more breathing room */
+  --st-row-gap:    100px;  /* vertical gap between projects */
+  --st-page-pad:   48px;   /* left/right page margin */
+  --st-header-h:   60px;
+  --st-footer-h:   40px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
   background: #FFFFFF;
   color: #000000;
-  overflow-y: auto;    /* allow vertical scroll */
+  font-family: var(--st-font);
   overflow-x: hidden;
 }
 
-/* ── Override nav for white page ── */
-.page-storyteller .nav {
+a { text-decoration: none; color: inherit; }
+
+/* ═══════════════════════════════════════════
+   HEADER — minimal, logo only
+═══════════════════════════════════════════ */
+.st-header {
+  position: sticky;
+  top: 0;
+  height: var(--st-header-h);
   background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--st-page-pad);
   border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  z-index: 100;
 }
 
-.page-storyteller .nav-logo,
-.page-storyteller .nav-role { color: #000000; }
-
-.page-storyteller .nav-sub  { color: rgba(0,0,0,0.45); }
-.page-storyteller .nav-cv   { color: rgba(0,0,0,0.5); }
-.page-storyteller .nav-cv:hover { color: #000000; }
-
-/* ── Override footer for white page ── */
-.page-storyteller .footer {
-  background: #FFFFFF;
-  color: rgba(0,0,0,0.3);
-  border-top: 0.5px solid rgba(0,0,0,0.08);
+.st-logo {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 0.01em;
 }
 
 /* ═══════════════════════════════════════════
-   MAIN WRAPPER
+   MAIN
 ═══════════════════════════════════════════ */
 .st-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: calc(var(--nav-h) + 48px);
-  padding-bottom: calc(var(--foot-h) + 48px);
-  padding-left: 48px;
-  padding-right: 48px;
-  font-family: var(--font);
+  padding: 56px var(--st-page-pad) 80px;
 }
 
 /* ═══════════════════════════════════════════
@@ -51,19 +61,19 @@
 .st-goto-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 72px;
 }
 
 .st-goto-btn {
-  font-family: var(--font);
+  font-family: var(--st-font);
   font-size: 14px;
   color: #000000;
   border: 1px solid #000000;
-  padding: 10px 28px;
+  padding: 10px 32px;
   border-radius: 2px;
   letter-spacing: 0.06em;
-  text-decoration: none;
   transition: background 0.2s, color 0.2s;
+  cursor: pointer;
 }
 
 .st-goto-btn:hover {
@@ -72,18 +82,14 @@
 }
 
 /* ═══════════════════════════════════════════
-   PROJECT ROW
-   3 columns: left | center | right
-   Horizontal gap is larger than vertical
-   to keep projects visually detached.
+   PROJECT ROW — full width, 3 equal columns
 ═══════════════════════════════════════════ */
 .st-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 64px;   /* wide horizontal gap for readability */
-  row-gap: 0;
-  margin-bottom: 96px; /* vertical separation between projects */
+  grid-template-columns: 1fr 1fr 1fr;  /* 3 equal columns across full width */
+  column-gap: var(--st-col-gap);
   align-items: start;
+  margin-bottom: var(--st-row-gap);
 }
 
 /* ═══════════════════════════════════════════
@@ -92,7 +98,7 @@
 .st-col {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 /* ═══════════════════════════════════════════
@@ -116,53 +122,49 @@
   width: 100%;
   height: 100%;
   background: #000000;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: monospace;
   font-size: 13px;
   letter-spacing: 0.04em;
-  min-height: 200px;
+  min-height: 180px;
 }
 
 /* ═══════════════════════════════════════════
-   TYPOGRAPHY
-   3 sizes as in the image:
-   Large  → project number (01, 02, 03)
-   Medium → company name
-   Small  → skills / description label
+   TYPOGRAPHY — 3 sizes
 ═══════════════════════════════════════════ */
+
+/* Large: project number */
 .st-number {
-  font-family: var(--font);
+  font-family: var(--st-font);
   font-size: 72px;
   font-weight: 700;
   color: #000000;
   line-height: 1;
   letter-spacing: -0.02em;
 }
-
 .st-number--right { text-align: right; }
 
+/* Medium: company name */
 .st-company {
-  font-family: var(--font);
+  font-family: var(--st-font);
   font-size: 22px;
   font-weight: 700;
   color: #000000;
   line-height: 1.2;
-  margin-top: -8px;
+  margin-top: -4px;
 }
-
 .st-company--right { text-align: right; }
 
+/* Small: skills + description label */
 .st-skills {
-  font-family: var(--font);
+  font-family: var(--st-font);
   font-size: 13px;
   font-weight: 400;
   color: #000000;
-  letter-spacing: 0.02em;
 }
-
 .st-skills--right { text-align: right; }
 
 /* ═══════════════════════════════════════════
@@ -171,48 +173,43 @@
 .st-desc {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .st-desc-label {
-  font-family: var(--font);
+  font-family: var(--st-font);
   font-size: 13px;
   color: #000000;
-  letter-spacing: 0.02em;
 }
 
 /* ═══════════════════════════════════════════
-   DOTTED LINES
-   Replace with actual text when ready.
-   Each <span> = one dotted line.
+   DOTTED LINES — placeholder for text
+   Replace <span> rows with real <p> text when ready
 ═══════════════════════════════════════════ */
 .st-dotted-lines {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .st-dotted-lines span {
   display: block;
   height: 1px;
-  border-bottom: 1px dotted rgba(0,0,0,0.35);
+  border-bottom: 1px dotted rgba(0,0,0,0.3);
   width: 100%;
 }
 
 /* ═══════════════════════════════════════════
-   CURRENT ROLE SECTION
+   FOOTER
 ═══════════════════════════════════════════ */
-.st-current-role {
-  padding-top: 80px;
-  border-top: 0.5px solid rgba(0,0,0,0.15);
-  margin-top: 40px;
-}
-
-.st-current-label {
-  font-family: var(--font);
-  font-size: 13px;
-  color: rgba(0,0,0,0.4);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 32px;
+.st-footer {
+  height: var(--st-footer-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--st-page-pad);
+  font-size: 11px;
+  color: rgba(0,0,0,0.3);
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+  letter-spacing: 0.06em;
 }
