@@ -183,23 +183,6 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ═══════════════════════════════════════════
-   DOTTED LINES — placeholder for text
-   Replace <span> rows with real <p> text when ready
-═══════════════════════════════════════════ */
-.st-dotted-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.st-dotted-lines span {
-  display: block;
-  height: 1px;
-  border-bottom: 1px dotted rgba(0,0,0,0.3);
-  width: 100%;
-}
-
-/* ═══════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════ */
 .st-footer {
