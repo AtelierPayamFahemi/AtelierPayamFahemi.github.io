@@ -136,8 +136,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .social-icon {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   color: var(--offwhite);
   transition: color 0.2s;
   display: flex;
