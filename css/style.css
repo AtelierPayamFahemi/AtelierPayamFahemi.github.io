@@ -169,6 +169,7 @@ a { text-decoration: none; color: inherit; }
   gap: 4px;
   font-size: var(--fs-body);
   color: var(--offwhite);
+  margin-top: auto;
 }
 
 .footer-link {
@@ -176,6 +177,7 @@ a { text-decoration: none; color: inherit; }
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
 
 /* ═══════════════════════════════════════════
    COL 2
