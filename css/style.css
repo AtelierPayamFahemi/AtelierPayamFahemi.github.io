@@ -106,6 +106,19 @@ a { text-decoration: none; color: inherit; }
   padding: 0 var(--gap-edge);
   height: calc(100vh - var(--nav-h) - var(--line-h));
   overflow: hidden;
+  position: relative;
+}
+
+/* Continuous horizontal line 2 — spans all 3 columns */
+.main-grid::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--white);
+  top: calc(var(--fs-giant) * 0.9 + 16px + 12px);
+  pointer-events: none;
 }
 
 .col {
