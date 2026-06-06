@@ -117,7 +117,7 @@ a { text-decoration: none; color: inherit; }
   right: 0;
   height: 1px;
   background: var(--white);
-  top: calc(var(--fs-giant) * 0.9 + 16px + 24px);
+  top: calc(var(--fs-giant) * 0.9 + 16px + 28px);
   pointer-events: none;
 }
 
