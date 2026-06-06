@@ -28,7 +28,7 @@
   --preview-h: 420px;
 
   /* Nav link font size */
-  --nav-item-size: 16px;
+  --nav-item-size: 18px;
 
   --timelapse-max-w: 900px;   /* maximum width */
   --timelapse-max-h: 620px;   /* maximum height */
@@ -145,7 +145,7 @@ a { text-decoration: none; color: inherit; }
   justify-content: center;
 }
 
-.social-icon svg { width: 18px; height: 18px; }
+.social-icon svg { width: 24px; height: 24px; }
 .social-icon:hover { color: var(--white); }
 
 /* ═══════════════════════════════════════════
