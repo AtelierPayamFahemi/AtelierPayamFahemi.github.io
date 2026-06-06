@@ -148,34 +148,6 @@ a { text-decoration: none; color: inherit; }
 .social-icon svg { width: 24px; height: 24px; }
 .social-icon:hover { color: var(--white); }
 
-/* ═══════════════════════════════════════════
-   MAIN CONTENT — Timelapse card
-═══════════════════════════════════════════ */
-.main-content {
-  display: flex;
-  align-items: center;  
-}
-
-.timelapse-card {
-  width: 100%;
-  height: 100%;
-  max-width: var(--timelapse-max-w);
-  max-height: var(--timelapse-max-h);
-}
-
-.timelapse-card .card-media {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border: none;
-}
-
-.card-placeholder {
-  width: 100%;
-  height: 100%;
-  background: #252527;
-}
 
 /* ═══════════════════════════════════════════
    SIDEBAR RIGHT — Vertical nav links
