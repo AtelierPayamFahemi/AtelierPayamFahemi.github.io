@@ -86,13 +86,13 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-role {
-  font-size: 32px;
+  font-size: 28px;
   color: var(--offwhite);
   letter-spacing: 0.05em;
 }
 
 .nav-sub {
-  font-size: 32px;
+  font-size: 28px;
   color: rgba(191,191,191,0.55);
   letter-spacing: 0.03em;
 }
