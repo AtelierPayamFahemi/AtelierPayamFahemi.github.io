@@ -113,15 +113,8 @@ a { text-decoration: none; color: inherit; }
    Gap A is equal on all sides and between columns.
 ═══════════════════════════════════════════ */
 .main-grid {
-  position: fixed;
-  top: var(--nav-h);
-  bottom: var(--foot-h);
-  left: 0;
-  right: 0;
-  display: grid;
-  grid-template-columns: var(--sidebar-left-w) 1fr var(--sidebar-right-w);
-  padding: var(--gap);
-  gap: var(--gap);
+  grid-template-columns: var(--sidebar-left-w) var(--sidebar-right-w);
+  justify-content: space-between;
 }
 
 /* ═══════════════════════════════════════════
