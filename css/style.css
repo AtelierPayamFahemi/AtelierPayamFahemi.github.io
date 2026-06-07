@@ -161,7 +161,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 700;
   letter-spacing: 0.01em; 
   transition: opacity 0.2s;
-  margin-top: 12px;
+  margin-top: 8px;
   display: inline-block;
 }
 .atelier-link:hover { opacity: 0.7; }
