@@ -6,7 +6,7 @@
 /* ── Variables ── */
 :root {
   --st-font:       'Calibri', 'Calibri Regular', sans-serif;
-  --st-col-gap:    80px;   /* horizontal gap between columns — increase for more breathing room */
+  --st-col-gap:    60px;   /* horizontal gap between columns — increase for more breathing room */
   --st-row-gap:    100px;  /* vertical gap between projects */
   --st-page-pad:   48px;   /* left/right page margin */
   --st-header-h:   60px;
