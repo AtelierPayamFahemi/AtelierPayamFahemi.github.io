@@ -163,6 +163,7 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--st-font);
   font-size: 18px;
   font-weight: 400;
+  gap: 8px;
   color: #000000;
 }
 .st-skills--right { text-align: right; }
