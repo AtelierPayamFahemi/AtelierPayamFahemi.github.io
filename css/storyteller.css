@@ -168,6 +168,12 @@ a { text-decoration: none; color: inherit; }
 }
 .st-skills--right { text-align: right; }
 
+.st-skills-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 /* ═══════════════════════════════════════════
    DESCRIPTION BLOCK
 ═══════════════════════════════════════════ */
