@@ -197,7 +197,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--white);
   line-height: 1.7;
   flex: 1;
-  padding-top: 16px;
+  padding-top: 10px;
 }
 
 .cta-links {
