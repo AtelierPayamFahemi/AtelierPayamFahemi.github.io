@@ -40,8 +40,9 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-brand {
-  font-size: 18px;
+  font-size: var(--fs-body);
   font-weight: 700;
+  font-family: var(--font);
   color: #000000;
   white-space: nowrap;
 }
@@ -54,7 +55,8 @@ a { text-decoration: none; color: inherit; }
 .nav-brand a:hover { text-decoration: underline; }
 
 .nav-section {
-  font-size: 18px;
+  font-size: var(--fs-body);
+  font-family: var(--font);
   color: #000000;
 }
 
