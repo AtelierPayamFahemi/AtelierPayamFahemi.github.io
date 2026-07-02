@@ -212,10 +212,10 @@ em   { font-style: italic; }
   margin-bottom:  16px;
 }
 
-/* ─── PROFILE GRID — 3 columns ────────────────────────── */
+/* ─── PROFILE GRID — 2 columns ────────────────────────── */
 .profile-grid {
   display: grid;
-  grid-template-columns: var(--profile-col-left) var(--profile-col-mid) var(--profile-col-right);
+  grid-template-columns: var(--photo-width) 1fr;
   gap: var(--profile-gap);
   align-items: start;
 }
@@ -241,8 +241,12 @@ em   { font-style: italic; }
   margin-bottom: 4px;
 }
 
-.profile-subtitle { margin-bottom: 8px; }
+.profile-subtitle { margin-bottom: 4px; }
 .profile-meta     { margin-bottom: 4px; }
+.profile-line {
+  white-space: nowrap;
+  margin-bottom: 4px;
+}
 
 /* Social icons */
 .social-icons {
