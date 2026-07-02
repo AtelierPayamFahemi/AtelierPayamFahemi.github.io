@@ -9,7 +9,7 @@
 <body>
 
   <!-- ═══════════════════════════════════════════
-       HEADER
+       HEADER — DO NOT CHANGE
   ═══════════════════════════════════════════ -->
   <header class="nav-row">
     <span class="nav-brand"><a href="index.html"><strong>PF Portfolio</strong></a></span>
@@ -17,13 +17,26 @@
   </header>
 
   <!-- ═══════════════════════════════════════════
+       STICKY SECTION INDICATOR
+  ═══════════════════════════════════════════ -->
+  <nav class="section-indicator" aria-label="Section indicator">
+    <div class="indicator-line"></div>
+    <a href="#profile"      class="indicator-dot" data-label="PROFILE"></a>
+    <a href="#description"  class="indicator-dot" data-label="DESCRIPTION"></a>
+    <a href="#education"    class="indicator-dot" data-label="EDUCATION"></a>
+    <a href="#software"     class="indicator-dot" data-label="SOFTWARE"></a>
+    <a href="#certificates" class="indicator-dot" data-label="CERTIFICATES"></a>
+    <a href="#language"     class="indicator-dot" data-label="LANGUAGE"></a>
+    <a href="#accomplishments" class="indicator-dot" data-label="ACCOMPLISHMENTS"></a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
        MAIN CONTENT
   ═══════════════════════════════════════════ -->
   <main class="page-content">
 
-    <!-- ─── SECTION 1: PROFILE ─── -->
+    <!-- ─── PROFILE ─── -->
     <section class="section" id="profile">
-
       <div class="profile-grid">
 
         <!-- Photo placeholder -->
@@ -36,10 +49,9 @@
           <h1 class="profile-heading">PROFILE</h1>
           <p class="profile-title">BIM COORDINATOR | CDE MANAGER | AI ENTHUSIAST</p>
           <p class="profile-subtitle">BIM &amp; Digital Information Manager</p>
-          <p class="profile-meta"><strong>Registered Architect in Italy</strong> <span class="underline">Matricola</span>: 1303</p>
+          <p class="profile-meta"><strong>Registered Architect in Italy</strong> Matricola: 1303</p>
           <p class="profile-meta"><strong>Nationality:</strong> Iranian – Italian</p>
 
-          <!-- Social icons row -->
           <div class="social-icons">
             <a href="mailto:fahemipayam@gmail.com" class="icon-link" aria-label="Email">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
@@ -55,166 +67,174 @@
             </a>
           </div>
         </div>
-      </div>
 
-      <!-- Description -->
-      <div class="text-block">
-        <h2 class="section-heading">DESCRIPTION</h2>
-        <p>BIM Coordinator and BIM &amp; Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments. Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines. Advanced user of tools such as Revit, <span class="underline">Navisworks</span>, and <span class="underline">Solibri</span>, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation. Strong capabilities in automation and computational workflows using Dynamo, Python, and <span class="underline">Rhino Inside Revit</span> to optimize processes and enhance efficiency. Driven by a data-centric approach, combining technical expertise with innovation to support digital transformation and informed decision-making in BIM environments.</p>
-      </div>
+        <!-- Description — right column of profile grid -->
+        <div class="profile-description" id="description">
+          <h2 class="section-heading">DESCRIPTION</h2>
+          <p>BIM Coordinator and BIM &amp; Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments. Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines. Advanced user of tools such as Revit, Navisworks, and Solibri, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation. Strong capabilities in automation and computational workflows using Dynamo, Python, and Rhino Inside Revit to optimize processes and enhance efficiency. Driven by a data-centric approach, combining technical expertise with innovation to support digital transformation and informed decision-making in BIM environments.</p>
+        </div>
 
-      <!-- Education -->
-      <div class="text-block">
-        <h2 class="section-heading">EDUCATION</h2>
-        <div class="edu-item">
-          <p><strong>BIM Manager</strong> - Postgraduate Master | 2020 | Milan | Italy | 110/110</p>
-          <p class="italic">Politecnico di Milano, Scuola di Fratelli Pesenti</p>
-        </div>
-        <div class="edu-item">
-          <p><strong>Master's Degree</strong> - Architecture | 2017 | Parma | Italy | 108/110</p>
-          <p class="italic">University of Parma, Department of Civil Engineering &amp; Architecture</p>
-        </div>
-        <div class="edu-item">
-          <p><strong>Bachelor's Degree</strong> - Architecture | 2009 | Isfahan | Iran | 3.6/4</p>
-          <p class="italic">Azad University (IAU), Urban and Architecture Faculty <em>(Honor student in the third year)</em></p>
-        </div>
       </div>
     </section>
 
-    <!-- ─── SECTION 2: SOFTWARE PROFICIENCIES ─── -->
-    <section class="section" id="software">
+    <!-- ─── EDUCATION ─── -->
+    <section class="section section-divided" id="education">
+      <h2 class="section-heading">EDUCATION</h2>
+      <div class="edu-item">
+        <p><strong>BIM Manager</strong> - Postgraduate Master | 2020 | Milan | Italy | 110/110</p>
+        <p class="italic">Politecnico di Milano, Scuola di Fratelli Pesenti</p>
+      </div>
+      <div class="edu-item">
+        <p><strong>Master's Degree</strong> - Architecture | 2017 | Parma | Italy | 108/110</p>
+        <p class="italic">University of Parma, Department of Civil Engineering &amp; Architecture</p>
+      </div>
+      <div class="edu-item">
+        <p><strong>Bachelor's Degree</strong> - Architecture | 2009 | Isfahan | Iran | 3.6/4</p>
+        <p class="italic">Azad University (IAU), Urban and Architecture Faculty <em>(Honor student in the third year)</em></p>
+      </div>
+    </section>
+
+    <!-- ─── SOFTWARE PROFICIENCIES ─── -->
+    <section class="section section-divided" id="software">
       <h2 class="section-heading">SOFTWARE PROFICIENCIES</h2>
 
-      <!-- 3D & Object Modeling -->
-      <div class="sw-category">
-        <p class="sw-category-label">3D &amp; Object Modeling</p>
-        <div class="sw-row">
-          <span class="sw-name">Revit / Autodesk ReCap</span>
-          <div class="sw-circles" data-score="6" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name">Rhinoceros / Rhino Inside / Grasshopper</span>
-          <div class="sw-circles" data-score="3" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name">AutoCAD</span>
-          <div class="sw-circles" data-score="5" data-max="6"></div>
-        </div>
+      <div class="sw-legend">
+        <span class="circle"></span> Familiar &nbsp;&nbsp;
+        <span class="circle filled"></span> Proficient
       </div>
 
-      <!-- BIM Management & Coordination -->
-      <div class="sw-category">
-        <p class="sw-category-label">BIM Management &amp; Coordination</p>
-        <div class="sw-row">
-          <span class="sw-name">Dynamo</span>
-          <div class="sw-circles" data-score="5" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name"><span class="underline">Navisworks</span> (Clash Detection)</span>
-          <div class="sw-circles" data-score="5" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name"><span class="underline">Solibri</span> / IDS (Code Checking)</span>
-          <div class="sw-circles" data-score="5" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name">Autodesk Forma / <span class="underline">Dalux</span> / <span class="underline">BimCollab</span> / <span class="underline">Trimble</span></span>
-          <div class="sw-circles" data-score="4" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name">Python (Dynamo integration)</span>
-          <div class="sw-circles" data-score="3" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name">Power BI</span>
-          <div class="sw-circles" data-score="6" data-max="6"></div>
-        </div>
-      </div>
+      <div class="sw-two-col">
 
-      <!-- Artificial Intelligence -->
-      <div class="sw-category">
-        <p class="sw-category-label">Artificial Intelligence</p>
-        <div class="sw-row">
-          <span class="sw-name">chatGPT</span>
-          <div class="sw-circles" data-score="4" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name">Claude</span>
-          <div class="sw-circles" data-score="4" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name">Perpexcity</span>
-          <div class="sw-circles" data-score="4" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name">NotebookLM</span>
-          <div class="sw-circles" data-score="4" data-max="6"></div>
-        </div>
-        <div class="sw-row">
-          <span class="sw-name">Krea</span>
-          <div class="sw-circles" data-score="3" data-max="6"></div>
-        </div>
-      </div>
+        <!-- LEFT column -->
+        <div class="sw-col">
+          <div class="sw-category">
+            <p class="sw-category-label">3D &amp; Object Modeling</p>
+            <div class="sw-row">
+              <span class="sw-name">Revit / Autodesk ReCap</span>
+              <div class="sw-circles" data-score="6" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Rhinoceros / Rhino Inside / Grasshopper</span>
+              <div class="sw-circles" data-score="3" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">AutoCAD</span>
+              <div class="sw-circles" data-score="5" data-max="6"></div>
+            </div>
+          </div>
 
-      <!-- VRay & Architectural Visualization -->
-      <div class="sw-category">
-        <p class="sw-category-label">VRay &amp; Architectural Visualization</p>
-        <div class="sw-row">
-          <span class="sw-name">Lumion 10 Pro</span>
-          <div class="sw-circles" data-score="6" data-max="6"></div>
+          <div class="sw-category">
+            <p class="sw-category-label">BIM Management &amp; Coordination</p>
+            <div class="sw-row">
+              <span class="sw-name">Dynamo</span>
+              <div class="sw-circles" data-score="5" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Navisworks (Clash Detection)</span>
+              <div class="sw-circles" data-score="5" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Solibri / IDS (Code Checking)</span>
+              <div class="sw-circles" data-score="5" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Autodesk Forma / Dalux / BimCollab / Trimble</span>
+              <div class="sw-circles" data-score="4" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Python (Dynamo integration)</span>
+              <div class="sw-circles" data-score="3" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Power BI</span>
+              <div class="sw-circles" data-score="6" data-max="6"></div>
+            </div>
+          </div>
         </div>
-        <div class="sw-row">
-          <span class="sw-name">Photoshop</span>
-          <div class="sw-circles" data-score="5" data-max="6"></div>
-        </div>
-      </div>
 
-      <!-- 2D & Documentation -->
-      <div class="sw-category">
-        <p class="sw-category-label">2D &amp; Documentation</p>
-        <div class="sw-row">
-          <span class="sw-name">InDesign</span>
-          <div class="sw-circles" data-score="5" data-max="6"></div>
+        <!-- RIGHT column -->
+        <div class="sw-col">
+          <div class="sw-category">
+            <p class="sw-category-label">Artificial Intelligence</p>
+            <div class="sw-row">
+              <span class="sw-name">chatGPT</span>
+              <div class="sw-circles" data-score="4" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Claude</span>
+              <div class="sw-circles" data-score="4" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Perpexcity</span>
+              <div class="sw-circles" data-score="4" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">NotebookLM</span>
+              <div class="sw-circles" data-score="4" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Krea</span>
+              <div class="sw-circles" data-score="3" data-max="6"></div>
+            </div>
+          </div>
+
+          <div class="sw-category">
+            <p class="sw-category-label">VRay &amp; Architectural Visualization</p>
+            <div class="sw-row">
+              <span class="sw-name">Lumion 10 Pro</span>
+              <div class="sw-circles" data-score="6" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Photoshop</span>
+              <div class="sw-circles" data-score="5" data-max="6"></div>
+            </div>
+          </div>
+
+          <div class="sw-category">
+            <p class="sw-category-label">2D &amp; Documentation</p>
+            <div class="sw-row">
+              <span class="sw-name">InDesign</span>
+              <div class="sw-circles" data-score="5" data-max="6"></div>
+            </div>
+            <div class="sw-row">
+              <span class="sw-name">Microsoft Office Suite</span>
+              <div class="sw-circles" data-score="5" data-max="6"></div>
+            </div>
+          </div>
         </div>
-        <div class="sw-row">
-          <span class="sw-name">Microsoft Office Suite</span>
-          <div class="sw-circles" data-score="5" data-max="6"></div>
-        </div>
+
       </div>
     </section>
 
-    <!-- ─── SECTION 3: CERTIFICATES, LANGUAGE, ACCOMPLISHMENTS ─── -->
-    <section class="section" id="certificates">
-
+    <!-- ─── CERTIFICATES + LANGUAGE ─── -->
+    <section class="section section-divided" id="certificates">
       <div class="bottom-grid">
 
-        <!-- LEFT: Certificates -->
         <div class="cert-block">
           <h2 class="section-heading">CERTIFICATES</h2>
           <div class="cert-item">
-            <span><strong class="underline">buildingSMART</strong> Certified BIM Foundation</span>
-            <a href="./assets/cert-buildingsmart-foundation.pdf" download class="cert-arrow" title="Download certificate">&#8595;</a>
+            <span><strong>buildingSMART</strong> Certified BIM Foundation</span>
+            <a href="./assets/cert-buildingsmart-foundation.pdf" class="cta-link" download>PDF ↘</a>
           </div>
           <div class="cert-item">
             <span><strong>ICMQ</strong> Certified BIM Specialist</span>
-            <a href="./assets/cert-icmq-bim-specialist.pdf" download class="cert-arrow" title="Download certificate">&#8595;</a>
+            <a href="./assets/cert-icmq-bim-specialist.pdf" class="cta-link" download>PDF ↘</a>
           </div>
           <div class="cert-item">
             <span><strong>Autodesk</strong> Certified Professional</span>
-            <a href="./assets/cert-autodesk-professional.pdf" download class="cert-arrow" title="Download certificate">&#8595;</a>
+            <a href="./assets/cert-autodesk-professional.pdf" class="cta-link" download>PDF ↘</a>
           </div>
           <div class="cert-item">
             <span>ACP ® | Revit Architecture</span>
-            <a href="./assets/cert-acp-revit.pdf" download class="cert-arrow" title="Download certificate">&#8595;</a>
+            <a href="./assets/cert-acp-revit.pdf" class="cta-link" download>PDF ↘</a>
           </div>
           <div class="cert-item">
             <span>CEPAS | CDE Manager</span>
-            <a href="./assets/cert-cepas-cde.pdf" download class="cert-arrow" title="Download certificate">&#8595;</a>
+            <a href="./assets/cert-cepas-cde.pdf" class="cta-link" download>PDF ↘</a>
           </div>
         </div>
 
-        <!-- RIGHT: Language -->
-        <div class="lang-block">
+        <div class="lang-block" id="language">
           <h2 class="section-heading">LANGUAGE</h2>
           <p><strong>Italian</strong> Professional working proficiency</p>
           <p><strong>English</strong> Professional working proficiency</p>
@@ -222,36 +242,35 @@
         </div>
 
       </div>
+    </section>
 
-      <!-- Accomplishments -->
-      <div class="text-block">
-        <h2 class="section-heading">ACCOMPLISHMENTS</h2>
-        <div class="accomplishment-grid">
-          <div class="accomplishment-text">
-            <p class="acc-label">BRONZE WINNER</p>
-            <p class="acc-title">A'DESIGN AWARD &amp; COMPETITION</p>
-            <p class="acc-meta"><strong>April | 2016 | Milan | Italy</strong></p>
-            <p>Awarded in architecture, building and structure design category for the project "Sunshade-deck canopy".</p>
-          </div>
-          <div class="accomplishment-image placeholder-black placeholder-small">
-            <span class="placeholder-label">Image<br>place<br>holder</span>
-          </div>
+    <!-- ─── ACCOMPLISHMENTS ─── -->
+    <section class="section section-divided" id="accomplishments">
+      <h2 class="section-heading">ACCOMPLISHMENTS</h2>
+      <div class="accomplishment-grid">
+        <div class="accomplishment-text">
+          <p class="acc-label">BRONZE WINNER</p>
+          <p class="acc-title">A'DESIGN AWARD &amp; COMPETITION</p>
+          <p class="acc-meta"><strong>April | 2016 | Milan | Italy</strong></p>
+          <p>Awarded in architecture, building and structure design category for the project "Sunshade-deck canopy".</p>
+        </div>
+        <div class="accomplishment-image placeholder-black placeholder-small">
+          <span class="placeholder-label">Image<br>place<br>holder</span>
         </div>
       </div>
 
-      <!-- Video placeholder -->
-      <div class="video-placeholder placeholder-black">
-        <span class="placeholder-label">Video place holder</span>
+      <div class="text-block">
+        <h2 class="section-heading">AWARD VIDEO</h2>
+        <div class="video-placeholder placeholder-black">
+          <span class="placeholder-label">Video place holder</span>
+        </div>
       </div>
-
     </section>
 
   </main>
 
-  <!-- ═══════════════════════════════════════════
-       SCRIPT: render circle indicators
-  ═══════════════════════════════════════════ -->
   <script>
+    // Render circles
     document.querySelectorAll('.sw-circles').forEach(el => {
       const score = parseInt(el.dataset.score, 10);
       const max   = parseInt(el.dataset.max,   10);
@@ -262,6 +281,22 @@
         el.appendChild(c);
       }
     });
+
+    // Sticky section indicator — highlight active dot
+    const dots = document.querySelectorAll('.indicator-dot');
+    const sections = document.querySelectorAll('section[id], div[id]');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          dots.forEach(d => d.classList.remove('active'));
+          const active = document.querySelector(`.indicator-dot[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(s => observer.observe(s));
   </script>
 
 </body>
