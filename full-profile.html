@@ -44,13 +44,13 @@
           <span class="placeholder-label">Image place<br>holder</span>
         </div>
 
-        <!-- Profile text -->
+        <!-- Profile text — each line on its own row, no wrapping -->
         <div class="profile-info">
           <h1 class="profile-heading">PROFILE</h1>
           <p class="profile-title">BIM COORDINATOR | CDE MANAGER | AI ENTHUSIAST</p>
-          <p class="profile-subtitle">BIM &amp; Digital Information Manager</p>
-          <p class="profile-meta"><strong>Registered Architect in Italy</strong> Matricola: 1303</p>
-          <p class="profile-meta"><strong>Nationality:</strong> Iranian – Italian</p>
+          <p class="profile-line">BIM &amp; Digital Information Manager</p>
+          <p class="profile-line"><strong>Registered Architect in Italy</strong> Matricola: 1303</p>
+          <p class="profile-line"><strong>Nationality:</strong> Iranian – Italian</p>
 
           <div class="social-icons">
             <a href="mailto:fahemipayam@gmail.com" class="icon-link" aria-label="Email">
@@ -68,13 +68,13 @@
           </div>
         </div>
 
-        <!-- Description — right column of profile grid -->
-        <div class="profile-description" id="description">
-          <h2 class="section-heading">DESCRIPTION</h2>
-          <p>BIM Coordinator and BIM &amp; Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments. Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines. Advanced user of tools such as Revit, Navisworks, and Solibri, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation. Strong capabilities in automation and computational workflows using Dynamo, Python, and Rhino Inside Revit to optimize processes and enhance efficiency. Driven by a data-centric approach, combining technical expertise with innovation to support digital transformation and informed decision-making in BIM environments.</p>
-        </div>
-
       </div>
+    </section>
+
+    <!-- ─── DESCRIPTION ─── -->
+    <section class="section section-divided" id="description">
+      <h2 class="section-heading">DESCRIPTION</h2>
+      <p>BIM Coordinator and BIM &amp; Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments. Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines. Advanced user of tools such as Revit, Navisworks, and Solibri, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation. Strong capabilities in automation and computational workflows using Dynamo, Python, and Rhino Inside Revit to optimize processes and enhance efficiency. Driven by a data-centric approach, combining technical expertise with innovation to support digital transformation and informed decision-making in BIM environments.</p>
     </section>
 
     <!-- ─── EDUCATION ─── -->
@@ -284,7 +284,7 @@
 
     // Sticky section indicator — highlight active dot
     const dots = document.querySelectorAll('.indicator-dot');
-    const sections = document.querySelectorAll('section[id], div[id]');
+    const sections = document.querySelectorAll('section[id]');
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -294,7 +294,7 @@
           if (active) active.classList.add('active');
         }
       });
-    }, { threshold: 0.3 });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
 
     sections.forEach(s => observer.observe(s));
   </script>
