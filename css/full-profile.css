@@ -438,11 +438,10 @@ em   { font-style: italic; }
 
 .placeholder-label { line-height: 1.5; }
 
-.placeholder-small {
-  width:       10px;
-  height:      10px;
-  object-fit: cover;
-  display: block;
+.accomplishment-image {
+  width:      100px;
+  height:     100px;
+  flex-shrink: 0;
 }
 
 .video-placeholder {
