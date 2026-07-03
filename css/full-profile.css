@@ -439,8 +439,8 @@ em   { font-style: italic; }
 .placeholder-label { line-height: 1.5; }
 
 .accomplishment-image {
-  width:      100px;
-  height:     100px;
+  width:      10px;
+  height:     10px;
   flex-shrink: 0;
 }
 
