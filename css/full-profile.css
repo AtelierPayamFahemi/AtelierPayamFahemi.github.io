@@ -220,9 +220,11 @@ em   { font-style: italic; }
   align-items: start;
 }
 
-.profile-photo {
-  width:  var(--photo-width);
-  height: var(--photo-height);
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* PROFILE heading — larger to feel dominant */
