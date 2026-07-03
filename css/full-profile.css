@@ -45,7 +45,7 @@
   /* Profile layout */
   --photo-width:        260px;
   --photo-height:       340px;
-  --profile-gap:        60px;          /* gap between photo column and info */
+  --profile-gap:        80px;          /* gap between photo column and info */
 
   /* Two-column profile grid */
   --profile-col-left:   260px;         /* photo */
