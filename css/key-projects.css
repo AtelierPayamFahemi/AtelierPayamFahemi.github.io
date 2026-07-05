@@ -147,9 +147,11 @@ a { color: inherit; text-decoration: none; }
 }
 
 .project-desc {
-  font-size:   var(--fs-body);
-  font-family: var(--font);
-  line-height: var(--line-height);
+  font-size:        var(--fs-body);
+  font-family:      var(--font);
+  line-height:      var(--line-height);
+  overflow-wrap:    break-word;
+  word-break:       break-word;
 }
 
 /* "See the project" button */
