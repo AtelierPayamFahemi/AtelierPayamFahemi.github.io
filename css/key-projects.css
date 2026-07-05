@@ -44,10 +44,10 @@
   --main-image-height:      100vh;
 
   /* Gallery image height */
-  --gallery-image-height:   45vh;
+  --gallery-image-height:   100vh;
 
   /* Gap between projects */
-  --project-gap:            0px;
+  --project-gap:            20px;
 
   /* Placeholder */
   --placeholder-font:       'Courier New', Courier, monospace;
