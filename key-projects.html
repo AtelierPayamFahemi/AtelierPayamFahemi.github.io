@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Projects</title>
+  <link rel="stylesheet" href="css/key-projects.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════ -->
+  <header class="nav-row">
+    <span class="nav-brand"><a href="index.html">PF Portfolio</a></span>
+    <span class="nav-section">| 04.Key projects</span>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════ -->
+  <main class="projects-list">
+
+    <!-- ═══════════════════════════════════════════
+         PROJECT 01
+         To add more projects: duplicate this entire
+         .project-block and update content + images.
+         To switch to 3 columns: change --proj-cols to 3
+         in :root for that project, or globally.
+    ═══════════════════════════════════════════ -->
+    <article class="project-block">
+
+      <!-- ── Top row: text left | main image right ── -->
+      <div class="project-top">
+
+        <div class="project-info">
+          <h2 class="project-title">01 | PROJECT NAME</h2>
+          <p class="project-desc">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.</p>
+          <button class="see-project-btn" aria-expanded="false">See the project</button>
+        </div>
+
+        <div class="project-main-image placeholder-black">
+          <span class="placeholder-label">Main image position</span>
+        </div>
+
+      </div>
+
+      <!-- ── Expandable gallery: 2×2 grid, full width ── -->
+      <div class="project-gallery" hidden>
+        <div class="gallery-grid">
+          <div class="gallery-image placeholder-black">
+            <span class="placeholder-label">Image position</span>
+          </div>
+          <div class="gallery-image placeholder-black">
+            <span class="placeholder-label">Image position</span>
+          </div>
+          <div class="gallery-image placeholder-black">
+            <span class="placeholder-label">Image position</span>
+          </div>
+          <div class="gallery-image placeholder-black">
+            <span class="placeholder-label">Image position</span>
+          </div>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- ═══════════════════════════════════════════
+         PROJECT 02 — duplicate of above
+    ═══════════════════════════════════════════ -->
+    <article class="project-block">
+
+      <div class="project-top">
+
+        <div class="project-info">
+          <h2 class="project-title">02 | PROJECT NAME</h2>
+          <p class="project-desc">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.</p>
+          <button class="see-project-btn" aria-expanded="false">See the project</button>
+        </div>
+
+        <div class="project-main-image placeholder-black">
+          <span class="placeholder-label">Main image position</span>
+        </div>
+
+      </div>
+
+      <div class="project-gallery" hidden>
+        <div class="gallery-grid">
+          <div class="gallery-image placeholder-black">
+            <span class="placeholder-label">Image position</span>
+          </div>
+          <div class="gallery-image placeholder-black">
+            <span class="placeholder-label">Image position</span>
+          </div>
+          <div class="gallery-image placeholder-black">
+            <span class="placeholder-label">Image position</span>
+          </div>
+          <div class="gallery-image placeholder-black">
+            <span class="placeholder-label">Image position</span>
+          </div>
+        </div>
+      </div>
+
+    </article>
+
+  </main>
+
+  <script>
+    // Toggle gallery expand/collapse
+    document.querySelectorAll('.see-project-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const block   = btn.closest('.project-block');
+        const gallery = block.querySelector('.project-gallery');
+        const open    = btn.getAttribute('aria-expanded') === 'true';
+
+        if (open) {
+          gallery.hidden = true;
+          btn.setAttribute('aria-expanded', 'false');
+          btn.textContent = 'See the project';
+        } else {
+          gallery.hidden = false;
+          btn.setAttribute('aria-expanded', 'true');
+          btn.textContent = 'Close the project';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
