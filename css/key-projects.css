@@ -50,10 +50,10 @@
   --project-gap:            20px;
 
   /* Space between main image and gallery grid */
-  --main-to-gallery-gap:    8px;
+  --main-to-gallery-gap:    2px;
    
   /* Space between header and first project */
-  --page-top-gap:           0px;
+  --page-top-gap:           2px;
 
   /* Placeholder */
   --placeholder-font:       'Courier New', Courier, monospace;
