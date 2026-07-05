@@ -49,6 +49,12 @@
   /* Gap between projects */
   --project-gap:            20px;
 
+  /* Space between main image and gallery grid */
+  --main-to-gallery-gap:    8px;
+   
+  /* Space between header and first project */
+  --page-top-gap:           0px;
+
   /* Placeholder */
   --placeholder-font:       'Courier New', Courier, monospace;
   --placeholder-font-size:  13px;
@@ -200,6 +206,15 @@ a { color: inherit; text-decoration: none; }
   height:     100%;
   object-fit: cover;
   display:    block;
+}
+
+/* ─── SPACING OVERRIDES ──────────────────────────────── */
+.project-gallery {
+  margin-top: var(--main-to-gallery-gap);
+}
+
+.projects-list {
+  margin-top: var(--page-top-gap);
 }
 
 /* ─── PLACEHOLDER ─────────────────────────────────────── */
