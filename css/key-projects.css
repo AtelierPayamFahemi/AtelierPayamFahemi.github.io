@@ -1,0 +1,218 @@
+/* ═══════════════════════════════════════════════════════
+   key-projects.css
+   PF Portfolio — Key Projects Page
+   ═══════════════════════════════════════════════════════
+
+   PARAMETERS — change these independently:
+   ─────────────────────────────────────────────────────── */
+
+:root {
+  /* Typography */
+  --font:                   'Calibri', 'Calibri Regular', sans-serif;
+  --fs-body:                18px;
+  --fs-project-title:       40px;
+  --fs-btn:                 18px;
+  --fw-bold:                700;
+  --fw-normal:              400;
+  --line-height:            1.6;
+
+  /* Colors */
+  --color-bg:               #ffffff;
+  --color-text:             #000000;
+  --color-btn:              #888888;       /* "See the project" gray */
+  --color-placeholder:      #000000;
+
+  /* Header — keep identical to other pages */
+  --gap-col:                80px;
+  --gap-edge:               48px;
+  --nav-h:                  48px;
+
+  /* Layout */
+  /* Left info column width — change this to adjust text/image ratio */
+  --info-col-width:         300px;
+
+  /* Gap between the two columns in project-top */
+  --proj-col-gap:           0px;
+
+  /* Gap between gallery images (no gap = edge to edge inside grid) */
+  --gallery-gap:            2px;
+
+  /* Number of gallery columns — change to 3 for 3-column grid */
+  --gallery-cols:           2;
+
+  /* Main image height */
+  --main-image-height:      70vh;
+
+  /* Gallery image height */
+  --gallery-image-height:   45vh;
+
+  /* Gap between projects */
+  --project-gap:            0px;
+
+  /* Placeholder */
+  --placeholder-font:       'Courier New', Courier, monospace;
+  --placeholder-font-size:  13px;
+}
+
+/* ─── RESET ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family:      var(--font);
+  font-size:        var(--fs-body);
+  color:            var(--color-text);
+  background-color: var(--color-bg);
+  line-height:      var(--line-height);
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ─── HEADER ─────────────────────────────────────────── */
+.nav-row {
+  display:               grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap:            var(--gap-col);
+  padding:               0 var(--gap-edge);
+  height:                var(--nav-h);
+  align-items:           center;
+  border-bottom:         1px solid #000000;
+  position:              sticky;
+  top:                   0;
+  background:            var(--color-bg);
+  z-index:               100;
+}
+
+.nav-brand {
+  font-size:   var(--fs-body);
+  font-weight: var(--fw-bold);
+  font-family: var(--font);
+  color:       #000000;
+  white-space: nowrap;
+}
+
+.nav-brand a         { color: inherit; text-decoration: none; }
+.nav-brand a:hover   { text-decoration: underline; }
+
+.nav-section {
+  font-size:   var(--fs-body);
+  font-family: var(--font);
+  color:       #000000;
+}
+
+/* ─── PROJECTS LIST ───────────────────────────────────── */
+.projects-list {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--project-gap);
+}
+
+/* ─── PROJECT BLOCK ───────────────────────────────────── */
+.project-block {
+  display:        flex;
+  flex-direction: column;
+  width:          100%;
+}
+
+/* ─── PROJECT TOP ROW ─────────────────────────────────── */
+/* Left: text info column. Right: main image fills the rest */
+.project-top {
+  display:               grid;
+  grid-template-columns: var(--info-col-width) 1fr;
+  gap:                   var(--proj-col-gap);
+  width:                 100%;
+}
+
+/* ─── PROJECT INFO (left column) ──────────────────────── */
+.project-info {
+  display:        flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:        40px 32px;
+  gap:            16px;
+}
+
+.project-title {
+  font-size:      var(--fs-project-title);
+  font-weight:    var(--fw-bold);
+  font-family:    var(--font);
+  line-height:    1.1;
+  letter-spacing: 0.01em;
+}
+
+.project-desc {
+  font-size:   var(--fs-body);
+  font-family: var(--font);
+  line-height: var(--line-height);
+}
+
+/* "See the project" button */
+.see-project-btn {
+  font-size:   var(--fs-btn);
+  font-family: var(--font);
+  font-style:  italic;
+  color:       var(--color-btn);
+  background:  none;
+  border:      none;
+  padding:     0;
+  cursor:      pointer;
+  text-align:  left;
+  width:       fit-content;
+  transition:  color 0.2s;
+}
+
+.see-project-btn:hover { color: var(--color-text); }
+
+/* ─── MAIN IMAGE (right column) ───────────────────────── */
+.project-main-image {
+  width:  100%;
+  height: var(--main-image-height);
+}
+
+.project-main-image img {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  display:    block;
+}
+
+/* ─── GALLERY (full width, expands below) ─────────────── */
+.project-gallery {
+  width: 100%;
+}
+
+/* hidden attribute handled by JS — animate open */
+.project-gallery[hidden] { display: none; }
+
+.gallery-grid {
+  display:               grid;
+  grid-template-columns: repeat(var(--gallery-cols), 1fr);
+  gap:                   var(--gallery-gap);
+  width:                 100%;
+}
+
+.gallery-image {
+  width:  100%;
+  height: var(--gallery-image-height);
+}
+
+.gallery-image img {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  display:    block;
+}
+
+/* ─── PLACEHOLDER ─────────────────────────────────────── */
+.placeholder-black {
+  background:      var(--color-placeholder);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  color:           #ffffff;
+  font-family:     var(--placeholder-font);
+  font-size:       var(--placeholder-font-size);
+  text-align:      center;
+  letter-spacing:  0.05em;
+}
+
+.placeholder-label { line-height: 1.5; }
