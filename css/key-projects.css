@@ -32,7 +32,7 @@
   --info-col-width:         600px;
 
   /* Gap between the two columns in project-top */
-  --proj-col-gap:           0px;
+  --proj-col-gap:           20px;
 
   /* Gap between gallery images (no gap = edge to edge inside grid) */
   --gallery-gap:            2px;
@@ -44,7 +44,7 @@
   --main-image-height:      100vh;
 
   /* Gallery image height */
-  --gallery-image-height:   100vh;
+  --gallery-image-height:   70vh;
 
   /* Gap between projects */
   --project-gap:            20px;
