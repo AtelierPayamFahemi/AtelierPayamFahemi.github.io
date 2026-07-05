@@ -29,7 +29,7 @@
 
   /* Layout */
   /* Left info column width — change this to adjust text/image ratio */
-  --info-col-width:         300px;
+  --info-col-width:         600px;
 
   /* Gap between the two columns in project-top */
   --proj-col-gap:           0px;
@@ -41,7 +41,7 @@
   --gallery-cols:           2;
 
   /* Main image height */
-  --main-image-height:      70vh;
+  --main-image-height:      100vh;
 
   /* Gallery image height */
   --gallery-image-height:   45vh;
