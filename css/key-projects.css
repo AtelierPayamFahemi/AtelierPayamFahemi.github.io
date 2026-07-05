@@ -135,6 +135,7 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   padding:        40px 32px;
   gap:            16px;
+  overflow: hidden;
 }
 
 .project-title {
