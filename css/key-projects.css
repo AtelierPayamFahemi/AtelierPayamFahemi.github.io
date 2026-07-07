@@ -29,7 +29,7 @@
 
   /* Layout */
   /* Left info column width — change this to adjust text/image ratio */
-  --info-col-width:         450px;
+  --info-col-width:         500px;
 
   /* Gap between the two columns in project-top */
   --proj-col-gap:           20px;
