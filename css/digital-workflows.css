@@ -1,0 +1,335 @@
+/* ═══════════════════════════════════════════════════════
+   digital-workflows.css
+   PF Portfolio — Digital Workflows & AI Page
+   ═══════════════════════════════════════════════════════
+
+   PARAMETERS — change these independently:
+   ─────────────────────────────────────────────────────── */
+
+:root {
+  /* Typography */
+  --font:               'Calibri', 'Calibri Regular', sans-serif;
+  --font-mono:          'Courier New', Courier, monospace;
+  --fs-body:            18px;
+  --fs-heading:         24px;
+  --fs-intro:           42px;
+  --fs-showcase-title:  28px;
+  --fs-area-title:      22px;
+  --fs-tag:             13px;
+  --fw-bold:            700;
+  --fw-normal:          400;
+  --line-height:        1.6;
+  --letter-spacing-heading: 0.05em;
+
+  /* Colors — dark theme */
+  --color-bg:           #1E1E20;
+  --color-text:         #FFFFFF;
+  --color-muted:        #BFBFBF;
+  --color-accent:       #FFFFFF;
+  --color-tag-bg:       #2E2E30;
+  --color-tag-text:     #BFBFBF;
+  --color-card-bg:      #28282A;
+  --color-card-border:  #3A3A3C;
+  --color-divider:      #3A3A3C;
+  --color-node-bg:      #1E1E20;
+  --color-node-border:  #FFFFFF;
+
+  /* Header — DO NOT CHANGE */
+  --nav-h:              48px;
+  --gap-edge:           48px;
+  --gap-col:            80px;
+
+  /* Layout */
+  --content-padding-x:  48px;
+  --section-gap:        80px;
+  --section-padding-top: 20px;
+  --card-gap:           2px;         /* gap between area cards */
+  --showcase-gap:       48px;        /* gap between showcases */
+
+  /* Intro */
+  --intro-padding:      80px 48px;
+
+  /* Process diagram */
+  --node-size:          80px;
+  --node-font-size:     15px;
+
+  /* Video */
+  --video-width:        55%;         /* showcase video column width */
+}
+
+/* ─── RESET ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family:      var(--font);
+  font-size:        var(--fs-body);
+  color:            var(--color-text);
+  background-color: var(--color-bg);
+  line-height:      var(--line-height);
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ─── HEADER — DO NOT CHANGE ─────────────────────────── */
+.nav-row {
+  display:               grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap:            var(--gap-col);
+  padding:               0 var(--gap-edge);
+  height:                var(--nav-h);
+  align-items:           center;
+  border-bottom:         1px solid #3A3A3C;
+  position:              sticky;
+  top:                   0;
+  background:            var(--color-bg);
+  z-index:               200;
+}
+
+.nav-brand {
+  font-size:   var(--fs-body);
+  font-weight: var(--fw-bold);
+  font-family: var(--font);
+  color:       #ffffff;
+  white-space: nowrap;
+}
+
+.nav-brand a        { color: inherit; text-decoration: none; }
+.nav-brand a:hover  { text-decoration: underline; }
+
+.nav-section {
+  font-size:   var(--fs-body);
+  font-family: var(--font);
+  color:       #ffffff;
+}
+
+/* ─── SECTION WRAPPER ─────────────────────────────────── */
+.section {
+  padding:        var(--section-padding-top) var(--content-padding-x) var(--section-gap);
+  border-top:     1px solid var(--color-divider);
+}
+
+/* ─── SECTION HEADING ─────────────────────────────────── */
+.section-heading {
+  font-size:      var(--fs-heading);
+  font-weight:    var(--fw-bold);
+  font-family:    var(--font);
+  letter-spacing: var(--letter-spacing-heading);
+  border-left:    3px solid #ffffff;
+  padding-left:   10px;
+  margin-bottom:  32px;
+  color:          var(--color-text);
+}
+
+/* ─── INTRO SECTION ───────────────────────────────────── */
+.intro-section {
+  padding:     var(--intro-padding);
+  min-height:  30vh;
+  display:     flex;
+  align-items: center;
+}
+
+.intro-statement {
+  font-size:   var(--fs-intro);
+  font-family: var(--font);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  max-width:   800px;
+  color:       var(--color-text);
+}
+
+/* Typing cursor effect */
+.typing-text::after {
+  content:   '|';
+  animation: blink 1s step-end infinite;
+  margin-left: 4px;
+  color:     var(--color-muted);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ─── TAGS ────────────────────────────────────────────── */
+.tag {
+  display:       inline-block;
+  font-size:     var(--fs-tag);
+  font-family:   var(--font-mono);
+  background:    var(--color-tag-bg);
+  color:         var(--color-tag-text);
+  padding:       3px 10px;
+  border:        1px solid var(--color-card-border);
+  margin-right:  6px;
+  margin-bottom: 4px;
+  letter-spacing: 0.03em;
+}
+
+/* ─── DETAIL LABELS ───────────────────────────────────── */
+.detail-label {
+  font-weight: var(--fw-bold);
+  color:       var(--color-text);
+}
+
+/* ─── WORKFLOW AREAS — 2×2 grid ──────────────────────── */
+.areas-grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   var(--card-gap);
+}
+
+.area-card {
+  background:   var(--color-card-bg);
+  border:       1px solid var(--color-card-border);
+  padding:      32px;
+  display:      flex;
+  flex-direction: column;
+  gap:          16px;
+}
+
+.area-card-top {
+  display:        flex;
+  flex-direction: column;
+  gap:            10px;
+}
+
+.area-title {
+  font-size:   var(--fs-area-title);
+  font-weight: var(--fw-bold);
+  font-family: var(--font);
+  color:       var(--color-text);
+}
+
+.area-tags { display: flex; flex-wrap: wrap; }
+
+.area-desc {
+  font-size:   var(--fs-body);
+  color:       var(--color-muted);
+  line-height: var(--line-height);
+  flex:        1;
+}
+
+.area-detail {
+  display:        flex;
+  flex-direction: column;
+  gap:            8px;
+  padding-top:    16px;
+  border-top:     1px solid var(--color-divider);
+  font-size:      var(--fs-body);
+  color:          var(--color-muted);
+}
+
+/* ─── PROCESS DIAGRAM ─────────────────────────────────── */
+.process-diagram {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             8px;
+  flex-wrap:       wrap;
+  padding:         24px 0;
+}
+
+.process-step {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            8px;
+}
+
+.process-node {
+  width:          var(--node-size);
+  height:         var(--node-size);
+  border:         1.5px solid var(--color-node-border);
+  background:     var(--color-node-bg);
+  display:        flex;
+  align-items:    center;
+  justify-content: center;
+  font-size:      var(--node-font-size);
+  font-family:    var(--font-mono);
+  font-weight:    var(--fw-bold);
+  color:          var(--color-text);
+  letter-spacing: 0.03em;
+}
+
+.process-node-label {
+  font-size:   13px;
+  font-family: var(--font);
+  color:       var(--color-muted);
+  text-align:  center;
+}
+
+.process-arrow {
+  font-size:   24px;
+  color:       var(--color-muted);
+  margin-bottom: 20px;
+}
+
+/* ─── SHOWCASES ───────────────────────────────────────── */
+.showcases-list {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--showcase-gap);
+}
+
+.showcase-item {
+  border:        1px solid var(--color-card-border);
+  background:    var(--color-card-bg);
+}
+
+.showcase-header {
+  padding:      28px 32px 20px;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.showcase-title {
+  font-size:      var(--fs-showcase-title);
+  font-weight:    var(--fw-bold);
+  font-family:    var(--font);
+  color:          var(--color-text);
+  margin-bottom:  8px;
+}
+
+.showcase-subtitle {
+  font-size:     var(--fs-body);
+  color:         var(--color-muted);
+  margin-bottom: 12px;
+}
+
+.showcase-tags { display: flex; flex-wrap: wrap; }
+
+/* Showcase body — info left, video right */
+.showcase-body {
+  display:               grid;
+  grid-template-columns: 1fr var(--video-width);
+  gap:                   0;
+}
+
+.showcase-info {
+  padding:        28px 32px;
+  display:        flex;
+  flex-direction: column;
+  gap:            16px;
+  font-size:      var(--fs-body);
+  color:          var(--color-muted);
+  border-right:   1px solid var(--color-divider);
+}
+
+.showcase-problem,
+.showcase-result { line-height: var(--line-height); }
+
+/* ─── VIDEO ───────────────────────────────────────────── */
+.showcase-video {
+  padding: 0;
+}
+
+.video-container {
+  width:        100%;
+  aspect-ratio: 16 / 9;
+  height:       100%;
+}
+
+.video-container iframe {
+  width:   100%;
+  height:  100%;
+  display: block;
+  border:  none;
+}
