@@ -150,6 +150,7 @@ a { text-decoration: none; color: inherit; }
   max-height: fit-content;
   align-self: center;
   padding-top: 75px;
+  overflow: visible;
 }
 
 /* ═══════════════════════════════════════════
@@ -295,24 +296,24 @@ a { text-decoration: none; color: inherit; }
 }
 
 .intro-nav-item {
-  position: relative;
+  position:    relative;
   white-space: nowrap;
-  font-size: var(--fs-intro-nav); 
-  overflow:   visible;
+  display:     flex;
+  align-items: baseline;
+  font-size: var(--fs-intro-nav);
 }
 
 .nav-phrase {
-  position:   relative;
-  left:       auto;
-  margin-left: 4px;
+  position:   absolute;
+  left:       100%;
   top:        0;
   color:      var(--offwhite);
   font-style: italic;
-  overflow:   hidden;
   white-space: nowrap;
-  display:    inline-block;
+  overflow:   hidden;
   max-width:  0;
   z-index:    999;
+  pointer-events: none;
 }
 
 .intro-nav-item:hover .nav-phrase {
