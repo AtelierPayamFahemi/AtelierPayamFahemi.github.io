@@ -142,7 +142,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 24px;
+  gap: 48px;
   max-height: fit-content;
   align-self: center;
 }
