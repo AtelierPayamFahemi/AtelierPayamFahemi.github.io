@@ -105,5 +105,17 @@
 
   </main>
 
+  <script>
+    // Reset typing animation on each hover
+    document.querySelectorAll('.intro-nav-item').forEach(item => {
+      const phrase = item.querySelector('.nav-phrase');
+      item.addEventListener('mouseenter', () => {
+        phrase.style.animation = 'none';
+        phrase.offsetHeight; // force reflow
+        phrase.style.animation = '';
+      });
+    });
+  </script>
+  
 </body>
 </html>
