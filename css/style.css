@@ -128,10 +128,13 @@ a { text-decoration: none; color: inherit; }
   height: 100%;
 }
 
-.col {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.col-top {
+  padding-top: 16px;
+}
+
+.col-bottom {
+  margin-top: auto;
+  padding-bottom: 24px;
 }
 
 .col-1 .col-middle {
