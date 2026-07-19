@@ -17,6 +17,9 @@
   --gap-edge:    48px;    /* gap B — left and right page margin */
   --line-h:      1px;     /* horizontal lines thickness */
   --nav-h:       48px;    /* nav row height */
+
+  --fs-intro-text: 26px;   /* Hey there block */
+  --fs-intro-nav:  22px;   /* page list */
 }
 
 /* ═══════════════════════════════════════════
@@ -200,7 +203,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .intro-text {
-  font-size: var(--fs-body);
+  font-size: var(--fs-intro-text);
   color: var(--white);
   line-height: 1.7;
   flex: 1;
@@ -294,6 +297,7 @@ a { text-decoration: none; color: inherit; }
 .intro-nav-item {
   position: relative;
   white-space: nowrap;
+  font-size: var(--fs-intro-nav); 
 }
 
 .nav-phrase {
