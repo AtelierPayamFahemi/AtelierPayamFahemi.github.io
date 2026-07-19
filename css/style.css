@@ -132,7 +132,7 @@ a { text-decoration: none; color: inherit; }
   padding-top: 16px;
 }
 
-.col-1 .col-top {
+.col-1 .col-middle {
   flex: 1;
   display: flex;
   flex-direction: column;
