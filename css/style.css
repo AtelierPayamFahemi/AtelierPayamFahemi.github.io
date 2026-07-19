@@ -106,7 +106,7 @@ a { text-decoration: none; color: inherit; }
   column-gap: var(--gap-col);
   padding: 0 var(--gap-edge);
   height: calc(100vh - var(--nav-h) - var(--line-h));
-  overflow: hidden;
+  overflow: visible;
   position: relative;
 }
 
@@ -291,21 +291,21 @@ a { text-decoration: none; color: inherit; }
 }
 
 .intro-nav-item {
-  font-size:    var(--fs-body);
-  font-family:  var(--font);
-  color:        var(--white);
-  position:     relative;
-  width:        fit-content;
+  position: relative;
+  white-space: nowrap;
 }
 
 .nav-phrase {
+  position:   absolute;
+  left:       100%;
+  top:        0;
   color:      var(--offwhite);
   font-style: italic;
   overflow:   hidden;
   white-space: nowrap;
   display:    inline-block;
   max-width:  0;
-  transition: none;
+  z-index:    999;
 }
 
 .intro-nav-item:hover .nav-phrase {
@@ -314,7 +314,7 @@ a { text-decoration: none; color: inherit; }
 
 @keyframes typeIn {
   from { max-width: 0; }
-  to   { max-width: 400px; }
+  to   { max-width: 800px; }
 }
 
 .intro-nav-item:hover::after { opacity: 1; }
