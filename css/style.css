@@ -128,8 +128,10 @@ a { text-decoration: none; color: inherit; }
   height: 100%;
 }
 
-.col-top {
-  padding-top: 16px;
+.col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .col-1 .col-middle {
@@ -137,16 +139,6 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.col-bottom {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 24px;
-  padding-top: 60px;
-  align-items: stretch;
 }
 
 /* ═══════════════════════════════════════════
