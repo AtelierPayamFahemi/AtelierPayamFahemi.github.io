@@ -322,7 +322,7 @@ a { text-decoration: none; color: inherit; }
 
 @keyframes typeIn {
   from { max-width: 0; }
-  to   { max-width: 1200px; }
+  to   { max-width: 1800px; }
 }
 
 .intro-nav-item:hover::after { opacity: 1; }
