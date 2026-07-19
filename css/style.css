@@ -126,6 +126,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow: visible;
 }
 
 .col-top {
@@ -314,7 +315,7 @@ a { text-decoration: none; color: inherit; }
 
 @keyframes typeIn {
   from { max-width: 0; }
-  to   { max-width: 800px; }
+  to   { max-width: 1200px; }
 }
 
 .intro-nav-item:hover::after { opacity: 1; }
