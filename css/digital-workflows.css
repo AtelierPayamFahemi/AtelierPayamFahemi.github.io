@@ -343,5 +343,18 @@ a { color: inherit; text-decoration: none; }
   width:   100%;
   height:  100%;
   display: block;
+
+/* ─── SHOWCASE IMAGE ──────────────────────────────────── */
+.st-img-wrap {
+  width:    var(--video-width);
+  overflow: hidden;
+}
+
+.st-img-wrap .st-img {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  display:    block;
+}
   border:  none;
 }
