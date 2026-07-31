@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revit Batch Processor — Headless Library Sync Pipeline</title>
+<style>
+  :root{
+    --bg:#1E1E20;
+    --panel:#26262A;
+    --panel-border:#3A3A40;
+    --text:#ECE9E4;
+    --text-muted:#98958F;
+    --accent-blue:#5B9BD5;
+    --accent-green:#7ED957;
+    --accent-amber:#E8A33D;
+    --mono: 'SFMono-Regular', 'JetBrains Mono', Consolas, 'Courier New', monospace;
+    --sans: Calibri, 'Segoe UI', Arial, sans-serif;
+    --line-h: rgba(255,255,255,0.08);
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    margin:0;
+    padding:0;
+    line-height:1.55;
+  }
+
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:64px 24px 100px;
+  }
+
+  /* ---------- Header ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent-green);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent-green);
+    box-shadow:0 0 8px var(--accent-green);
+    animation:pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ opacity:1; }
+    50%{ opacity:0.35; }
+  }
+
+  h1{
+    font-size:clamp(28px,4vw,40px);
+    font-weight:700;
+    margin:0 0 12px;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    color:var(--text-muted);
+    font-size:16px;
+    max-width:60ch;
+    margin:0 0 48px;
+  }
+  .subtitle code{
+    font-family:var(--mono);
+    color:var(--accent-blue);
+    background:rgba(91,155,213,0.1);
+    padding:1px 6px;
+    border-radius:4px;
+    font-size:0.9em;
+  }
+
+  /* ---------- Pipeline diagram (signature element) ---------- */
+  .pipeline{
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    border-radius:10px;
+    padding:32px 20px 26px;
+    margin-bottom:56px;
+    overflow-x:auto;
+  }
+  .pipeline-label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-bottom:18px;
+    padding-left:4px;
+  }
+  .pipeline-row{
+    display:flex;
+    align-items:center;
+    min-width:640px;
+  }
+  .node{
+    flex:0 0 auto;
+    width:150px;
+    text-align:center;
+  }
+  .node-icon{
+    width:52px;height:52px;
+    margin:0 auto 10px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:700;
+    border:1.5px solid;
+  }
+  .node-icon.blue{ border-color:var(--accent-blue); color:var(--accent-blue); background:rgba(91,155,213,0.08); }
+  .node-icon.amber{ border-color:var(--accent-amber); color:var(--accent-amber); background:rgba(232,163,61,0.08); }
+  .node-icon.green{ border-color:var(--accent-green); color:var(--accent-green); background:rgba(126,217,87,0.1); box-shadow:0 0 18px rgba(126,217,87,0.25); }
+  .node-title{ font-size:13px; font-weight:600; color:var(--text); }
+  .node-sub{ font-family:var(--mono); font-size:10.5px; color:var(--text-muted); margin-top:2px; }
+
+  .connector{
+    flex:1 1 auto;
+    height:2px;
+    position:relative;
+    background:repeating-linear-gradient(90deg, var(--panel-border) 0 6px, transparent 6px 12px);
+    margin-top:-30px;
+  }
+  .connector .dot{
+    position:absolute;
+    top:-2.5px;
+    width:6px;height:6px;
+    border-radius:50%;
+    background:var(--accent-green);
+    box-shadow:0 0 8px var(--accent-green);
+    animation:flow 2.6s linear infinite;
+  }
+  .connector.c2 .dot{ animation-delay:0.65s; }
+  .connector.c3 .dot{ animation-delay:1.3s; }
+  @keyframes flow{
+    0%{ left:0; opacity:0; }
+    8%{ opacity:1; }
+    92%{ opacity:1; }
+    100%{ left:100%; opacity:0; }
+  }
+
+  @media (max-width:640px){
+    .pipeline{ padding:24px 14px 20px; }
+  }
+
+  /* ---------- Steps ---------- */
+  .steps{
+    position:relative;
+  }
+  .steps::before{
+    content:"";
+    position:absolute;
+    left:27px;
+    top:10px;
+    bottom:10px;
+    width:1px;
+    background:var(--line-h);
+  }
+
+  .step{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:20px;
+    padding:26px 0;
+    border-bottom:1px solid var(--line-h);
+  }
+  .step:last-child{ border-bottom:none; }
+
+  .step-num{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--bg);
+    background:var(--accent-blue);
+    width:34px;height:34px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    position:relative;
+    z-index:1;
+    margin-top:2px;
+  }
+  .step:nth-child(6) .step-num,
+  .step:nth-child(8) .step-num{
+    background:var(--accent-green);
+  }
+
+  .step-title{
+    font-size:17px;
+    font-weight:700;
+    margin:2px 0 8px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .step-title .tag{
+    font-family:var(--mono);
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--accent-amber);
+    background:rgba(232,163,61,0.1);
+    border:1px solid rgba(232,163,61,0.3);
+    padding:2px 7px;
+    border-radius:4px;
+  }
+
+  .step-body p{
+    margin:0 0 12px;
+    color:#D6D3CE;
+    font-size:14.5px;
+    max-width:64ch;
+  }
+  .step-body p:last-child{ margin-bottom:0; }
+
+  .term{
+    font-family:var(--mono);
+    font-size:12.5px;
+    background:#141416;
+    border:1px solid var(--panel-border);
+    border-radius:8px;
+    overflow:hidden;
+    margin-top:10px;
+  }
+  .term-bar{
+    display:flex;
+    gap:6px;
+    padding:8px 10px;
+    background:#1B1B1E;
+    border-bottom:1px solid var(--panel-border);
+  }
+  .term-bar span{
+    width:9px;height:9px;border-radius:50%;
+    background:#4A4A50;
+  }
+  .term-body{
+    padding:10px 14px 12px;
+    color:var(--accent-blue);
+    white-space:pre-wrap;
+    word-break:break-word;
+  }
+  .term-body .path-muted{ color:var(--text-muted); }
+
+  .checklist{
+    list-style:none;
+    margin:10px 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .checklist li{
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .checklist li::before{
+    content:"✓";
+    color:var(--accent-green);
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:12px;
+  }
+
+  /* ---------- Footer outcome ---------- */
+  .outcome{
+    margin-top:56px;
+    padding:24px 26px;
+    border-radius:10px;
+    background:linear-gradient(135deg, rgba(126,217,87,0.08), rgba(91,155,213,0.06));
+    border:1px solid rgba(126,217,87,0.25);
+  }
+  .outcome-label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--accent-green);
+    margin-bottom:8px;
+  }
+  .outcome p{
+    margin:0;
+    font-size:15px;
+    color:var(--text);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Pipeline status — automated / headless</div>
+  <h1>Revit Family Library Synchronization via RBP: </h1>
+  <p class="subtitle">
+    A macro-scheduler for Revit
+  </p>
+
+  <!-- Signature: animated pipeline diagram -->
+  <div class="pipeline">
+    <div class="pipeline-label">job flow</div>
+    <div class="pipeline-row">
+      <div class="node">
+        <div class="node-icon blue">RVT</div>
+        <div class="node-title">Library File</div>
+        <div class="node-sub">input</div>
+      </div>
+      <div class="connector"><div class="dot"></div></div>
+      <div class="node">
+        <div class="node-icon amber">.DYN</div>
+        <div class="node-title">Dynamo Script</div>
+        <div class="node-sub">graph</div>
+      </div>
+      <div class="connector c2"><div class="dot"></div></div>
+      <div class="node">
+        <div class="node-icon green">RBP</div>
+        <div class="node-title">Batch Engine</div>
+        <div class="node-sub">headless</div>
+      </div>
+      <div class="connector c3"><div class="dot"></div></div>
+      <div class="node">
+        <div class="node-icon blue">RVT</div>
+        <div class="node-title">Updated Library</div>
+        <div class="node-sub">output</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <div class="step-title">Open Revit Batch Processor</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <div class="step-title">Add the library RVT</div>
+        <p><em>Add Document</em> → point RBP at the target model.</p>
+        <div class="term">
+          <div class="term-bar"><span></span><span></span><span></span></div>
+          <div class="term-body">/BIM_Library/02_Library_RVT/<span style="color:#ECE9E4">Library_Doors.rvt</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <div class="step-title">Add the Dynamo script</div>
+        <p><em>Actions → Run Dynamo Script</em> — select the graph that will run against the model.</p>
+        <div class="term">
+          <div class="term-bar"><span></span><span></span><span></span></div>
+          <div class="term-body">/BIM_Library/03_Scripts/<span style="color:#ECE9E4">Load_Folder_Families.dyn</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <div class="step-title">Provide input for the graph <span class="tag">Dynamo Inputs</span></div>
+        <p>The script expects a folder path. RBP exposes it as a named input — assign the value directly, no UI prompt needed at runtime.</p>
+        <div class="term">
+          <div class="term-bar"><span></span><span></span><span></span></div>
+          <div class="term-body"><span class="path-muted">FolderPath →</span> C:\BIM_Library\01_Families_RFA\Doors</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-body">
+        <div class="step-title">Enable saving</div>
+        <ul class="checklist">
+          <li>Save File When Done</li>
+          <li>Audit (optional, recommended)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">06</div>
+      <div class="step-body">
+        <div class="step-title">Set the run method <span class="tag">Automatic · No UI</span></div>
+        <p>Revit runs completely silently — no visible window, no risk of accidental interaction mid-job.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">07</div>
+      <div class="step-body">
+        <div class="step-title">Save as an XML job</div>
+        <p>Persist the configuration so the same job can be re-run on demand or scheduled later.</p>
+        <div class="term">
+          <div class="term-bar"><span></span><span></span><span></span></div>
+          <div class="term-body">Update_Library_Doors.xml</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">08</div>
+      <div class="step-body">
+        <div class="step-title">Run</div>
+        <p>Revit opens invisibly in the background, loads every RFA, updates the RVT, saves, and closes — library synchronization, fully automated.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="outcome">
+    <div class="outcome-label">result</div>
+    <p>One XML job replaces a manual, repetitive library-loading task with a silent, repeatable, one-click pipeline.</p>
+  </div>
+
+</div>
+</body>
+</html>
