@@ -231,16 +231,23 @@
     // Sticky section indicator
     const dots     = document.querySelectorAll('.indicator-dot');
     const sections = document.querySelectorAll('section[id]');
-
-    function updateIndicator() {
-      const scrollY = window.scrollY + window.innerHeight * 0.15;
-      let current = sections[0].id;
     
-      sections.forEach(section => {
-        if (section.offsetTop <= scrollY) {
-          current = section.id;
-        }
-      });
+    function updateIndicator() {
+      let current = sections[0].id;
+      const scrollBottom = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+    
+      // If at bottom of page, activate last section
+      if (scrollBottom >= pageHeight - 10) {
+        current = sections[sections.length - 1].id;
+      } else {
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.5) {
+            current = section.id;
+          }
+        });
+      }
     
       dots.forEach(d => d.classList.remove('active'));
       const active = document.querySelector(`.indicator-dot[href="#${current}"]`);
