@@ -346,6 +346,10 @@ a { color: inherit; text-decoration: none; }
   gap:            6px;
 }
 
+#thoughts {
+  min-height: 60vh;
+}
+
 .thought-item:last-child { border-bottom: none; }
 
 .thought-meta {
