@@ -1,0 +1,382 @@
+/* ═══════════════════════════════════════════════════════
+   blog.css
+   PF Portfolio — Blog Page
+   ═══════════════════════════════════════════════════════
+
+   PARAMETERS — change these independently:
+   ─────────────────────────────────────────────────────── */
+
+:root {
+  /* Typography */
+  --font:                   'Calibri', 'Calibri Regular', sans-serif;
+  --fs-body:                18px;
+  --fs-heading:             24px;       /* section headings: NEWS, BOOKS, MY THOUGHTS */
+  --fs-item-title:          20px;       /* news/thought titles */
+  --fs-meta:                14px;       /* dates, author */
+  --fw-bold:                700;
+  --fw-normal:              400;
+  --line-height:            1.6;
+  --letter-spacing-heading: 0.05em;
+
+  /* Colors */
+  --color-bg:               #ffffff;
+  --color-text:             #000000;
+  --color-muted:            #555555;
+  --color-divider:          #e0e0e0;
+  --color-placeholder:      #000000;
+  --color-btn:              #888888;
+
+  /* Header — DO NOT CHANGE */
+  --nav-h:                  48px;
+  --gap-edge:               48px;
+  --gap-col:                80px;
+
+  /* Layout */
+  --content-max-width:      960px;
+  --content-padding-x:      40px;
+  --section-gap:            72px;
+  --section-padding-top:    16px;
+  --block-gap:              24px;
+
+  /* Section accent */
+  --accent-border:          3px solid #000000;
+
+  /* Sticky indicator */
+  --indicator-left:         20px;
+  --indicator-dot-size:     8px;
+  --indicator-line-w:       1px;
+
+  /* News */
+  --news-image-width:       200px;
+  --news-image-height:      140px;
+  --news-gap:               32px;       /* gap between news items */
+  --news-inner-gap:         24px;       /* gap between image and text */
+
+  /* Books */
+  --book-card-width:        200px;      /* width of each book card */
+  --book-cover-height:      280px;      /* height of book cover */
+  --books-gap:              24px;       /* gap between book cards */
+
+  /* Thoughts */
+  --thought-gap:            32px;
+
+  /* Placeholder */
+  --placeholder-font:       'Courier New', Courier, monospace;
+  --placeholder-font-size:  13px;
+}
+
+/* ─── RESET ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family:      var(--font);
+  font-size:        var(--fs-body);
+  color:            var(--color-text);
+  background-color: var(--color-bg);
+  line-height:      var(--line-height);
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ─── HEADER — DO NOT CHANGE ─────────────────────────── */
+.nav-row {
+  display:               grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap:            var(--gap-col);
+  padding:               0 var(--gap-edge);
+  height:                var(--nav-h);
+  align-items:           center;
+  border-bottom:         1px solid #000000;
+  position:              sticky;
+  top:                   0;
+  background:            var(--color-bg);
+  z-index:               200;
+}
+
+.nav-brand {
+  font-size:   var(--fs-body);
+  font-weight: var(--fw-bold);
+  font-family: var(--font);
+  color:       #000000;
+  white-space: nowrap;
+}
+
+.nav-brand a        { color: inherit; text-decoration: none; }
+.nav-brand a:hover  { text-decoration: underline; }
+
+.nav-section {
+  font-size:   var(--fs-body);
+  font-family: var(--font);
+  color:       #000000;
+}
+
+/* ─── STICKY SECTION INDICATOR ───────────────────────── */
+.section-indicator {
+  position:       fixed;
+  left:           var(--indicator-left);
+  top:            50%;
+  transform:      translateY(-50%);
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            16px;
+  z-index:        100;
+}
+
+.indicator-line {
+  position:  absolute;
+  top:       0;
+  bottom:    0;
+  left:      50%;
+  transform: translateX(-50%);
+  width:     var(--indicator-line-w);
+  background: #cccccc;
+  z-index:   -1;
+}
+
+.indicator-dot {
+  width:         var(--indicator-dot-size);
+  height:        var(--indicator-dot-size);
+  border-radius: 50%;
+  border:        1.5px solid #000000;
+  background:    var(--color-bg);
+  display:       block;
+  position:      relative;
+  transition:    background 0.2s;
+}
+
+.indicator-dot.active,
+.indicator-dot:hover { background: #000000; }
+
+.indicator-dot::after {
+  content:     attr(data-label);
+  position:    absolute;
+  left:        16px;
+  top:         50%;
+  transform:   translateY(-50%);
+  font-size:   10px;
+  font-family: var(--font);
+  color:       var(--color-muted);
+  white-space: nowrap;
+  opacity:     0;
+  transition:  opacity 0.2s;
+}
+
+.indicator-dot:hover::after,
+.indicator-dot.active::after { opacity: 1; }
+
+/* ─── PAGE CONTENT WRAPPER ────────────────────────────── */
+.page-content {
+  max-width:      var(--content-max-width);
+  margin:         0 auto;
+  padding:        var(--section-gap) var(--content-padding-x);
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--section-gap);
+}
+
+/* ─── SECTION ─────────────────────────────────────────── */
+.section {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--block-gap);
+}
+
+.section-divided {
+  padding-top: var(--section-padding-top);
+  border-top:  1px solid var(--color-divider);
+}
+
+/* ─── SECTION HEADING ─────────────────────────────────── */
+.section-heading {
+  font-size:      var(--fs-heading);
+  font-weight:    var(--fw-bold);
+  font-family:    var(--font);
+  letter-spacing: var(--letter-spacing-heading);
+  border-left:    var(--accent-border);
+  padding-left:   10px;
+  margin-bottom:  16px;
+}
+
+/* ─── EXPAND BUTTON ───────────────────────────────────── */
+.expand-btn {
+  background:  none;
+  border:      none;
+  padding:     0;
+  font-size:   var(--fs-meta);
+  font-family: var(--font);
+  font-style:  italic;
+  color:       var(--color-btn);
+  cursor:      pointer;
+  margin-top:  8px;
+  transition:  color 0.2s;
+}
+
+.expand-btn:hover { color: var(--color-text); }
+
+/* ─── EXPAND CONTENT ──────────────────────────────────── */
+.expand-content {
+  margin-top:  12px;
+  padding-top: 12px;
+  border-top:  1px solid var(--color-divider);
+  font-size:   var(--fs-body);
+  line-height: var(--line-height);
+  color:       var(--color-muted);
+}
+
+.expand-content[hidden] { display: none; }
+
+/* ─── NEWS ────────────────────────────────────────────── */
+.news-item {
+  display:       grid;
+  grid-template-columns: var(--news-image-width) 1fr;
+  gap:           var(--news-inner-gap);
+  align-items:   start;
+  padding-bottom: var(--news-gap);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.news-item:last-child { border-bottom: none; }
+
+.news-image {
+  width:       var(--news-image-width);
+  height:      var(--news-image-height);
+  flex-shrink: 0;
+}
+
+.news-image img {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  display:    block;
+}
+
+.news-body {
+  display:        flex;
+  flex-direction: column;
+  gap:            6px;
+}
+
+.news-meta {
+  display:     flex;
+  align-items: center;
+  gap:         12px;
+}
+
+.news-date {
+  font-size:  var(--fs-meta);
+  color:      var(--color-muted);
+  font-style: italic;
+}
+
+.news-title {
+  font-size:   var(--fs-item-title);
+  font-weight: var(--fw-bold);
+  font-family: var(--font);
+  line-height: 1.3;
+}
+
+.news-desc {
+  font-size:   var(--fs-body);
+  color:       var(--color-muted);
+  line-height: var(--line-height);
+}
+
+/* ─── BOOKS — horizontal scroll ──────────────────────── */
+.books-scroll {
+  display:    flex;
+  gap:        var(--books-gap);
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep functionality */
+.books-scroll::-webkit-scrollbar { height: 4px; }
+.books-scroll::-webkit-scrollbar-track { background: var(--color-divider); }
+.books-scroll::-webkit-scrollbar-thumb { background: #000000; }
+
+.book-card {
+  flex-shrink:  0;
+  width:        var(--book-card-width);
+  scroll-snap-align: start;
+  display:      flex;
+  flex-direction: column;
+  gap:          12px;
+}
+
+.book-cover {
+  width:  var(--book-card-width);
+  height: var(--book-cover-height);
+}
+
+.book-cover img {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  display:    block;
+}
+
+.book-body {
+  display:        flex;
+  flex-direction: column;
+  gap:            4px;
+}
+
+.book-title {
+  font-size:   var(--fs-item-title);
+  font-weight: var(--fw-bold);
+  font-family: var(--font);
+  line-height: 1.3;
+}
+
+.book-author {
+  font-size:  var(--fs-meta);
+  color:      var(--color-muted);
+  font-style: italic;
+}
+
+/* ─── MY THOUGHTS ─────────────────────────────────────── */
+.thought-item {
+  padding-bottom: var(--thought-gap);
+  border-bottom:  1px solid var(--color-divider);
+  display:        flex;
+  flex-direction: column;
+  gap:            6px;
+}
+
+.thought-item:last-child { border-bottom: none; }
+
+.thought-meta {
+  display: flex;
+  gap:     12px;
+}
+
+.thought-date {
+  font-size:  var(--fs-meta);
+  color:      var(--color-muted);
+  font-style: italic;
+}
+
+.thought-title {
+  font-size:   var(--fs-item-title);
+  font-weight: var(--fw-bold);
+  font-family: var(--font);
+  line-height: 1.3;
+}
+
+/* ─── PLACEHOLDER ─────────────────────────────────────── */
+.placeholder-black {
+  background:      var(--color-placeholder);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  color:           #ffffff;
+  font-family:     var(--placeholder-font);
+  font-size:       var(--placeholder-font-size);
+  text-align:      center;
+  letter-spacing:  0.05em;
+}
+
+.placeholder-label { line-height: 1.5; }
