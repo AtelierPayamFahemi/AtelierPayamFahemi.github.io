@@ -376,7 +376,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .menu-dropdown {
-  display:    none;
+  display:    none !important;
   position:   absolute;
   top:        calc(100% + 16px);
   right:      0;
@@ -387,7 +387,10 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
 }
 
-.menu-dropdown.open { display: flex; }
+.menu-dropdown.open {
+  display:        flex !important;
+  flex-direction: column;
+}
 
 .menu-dropdown a {
   padding:       12px 20px;
