@@ -331,17 +331,18 @@
   </section>
 
   <script>
-    const menuBtn      = document.getElementById('menuBtn');
-    const menuDropdown = document.getElementById('menuDropdown');
-  
-    menuBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      menuDropdown.classList.toggle('open');
-    });
-  
-    document.addEventListener('click', () => {
-      menuDropdown.classList.remove('open');
-    });
-    </script>
+      const menuBtn      = document.getElementById('menuBtn');
+      const menuDropdown = document.getElementById('menuDropdown');
+    
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuDropdown.classList.toggle('open');
+      });
+    
+      document.addEventListener('click', () => {
+        menuDropdown.classList.remove('open');
+      });
+      </script>
+
 </body>
 </html>
