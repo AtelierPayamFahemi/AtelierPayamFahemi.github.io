@@ -519,11 +519,11 @@ em   { font-style: italic; }
 .menu-dropdown {
   display:    none;
   position:   absolute;
-  top:        calc(100% + 8px);
+  top:        calc(100% + 16px);
   right:      0;
   background: #ffffff;
-  border:     1px solid #000000;
-  min-width:  200px;
+  border:     none;
+  min-width:  260px;
   z-index:    500;
   flex-direction: column;
 }
