@@ -386,7 +386,10 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
 }
 
-.menu-dropdown.open { display: flex; }
+.menu-dropdown.open { 
+  display:        flex; 
+  flex-direction: column;
+}
 
 .menu-dropdown a {
   padding:       12px 20px;
