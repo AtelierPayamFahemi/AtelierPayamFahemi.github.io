@@ -352,29 +352,26 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ─── BURGER MENU ─────────────────────────────────────── */
-.nav-menu,
-.menu-dropdown {
-  all: initial;
-}
-
 .nav-menu {
   position:     relative;
   justify-self: end;
-  font-family:  var(--font);
 }
 
 .menu-dropdown {
   display:    none;
-  position:   fixed;
-  top:        var(--nav-h);
+  position:   absolute;
+  top:        calc(100% + 16px);
   right:      0;
-  background: #1E1E20;
+  background: #2E2E30;
+  border:     1px solid #3A3A3C;
   min-width:  260px;
-  z-index:    9999;
+  z-index:    500;
+  flex-direction: column;
 }
 
 .menu-dropdown.open {
-  display: block;
+  display:        flex;
+  flex-direction: column;
 }
 
 .menu-dropdown a {
@@ -387,4 +384,4 @@ a { color: inherit; text-decoration: none; }
 }
 
 .menu-dropdown a:last-child { border-bottom: none; }
-.menu-dropdown a:hover      { background: #2E2E30; }
+.menu-dropdown a:hover      { background: #3A3A3C; }
