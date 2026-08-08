@@ -14,6 +14,22 @@
   <header class="nav-row">
     <span class="nav-brand"><a href="index.html"><strong>PF Portfolio</strong></a></span>
     <span class="nav-section">| 05.Digital workflows &amp; AI</span>
+    <!-- MENU -->
+    <div class="nav-menu">
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="menu-dropdown" id="menuDropdown">
+        <a href="index.html">Intro</a>
+        <a href="full-profile.html">Full profile</a>
+        <a href="storyteller.html">Storyteller</a>
+        <a href="key-projects.html">Key projects</a>
+        <a href="digital-workflows.html">Digital workflows & AI</a>
+        <a href="blog.html">Blog</a>
+      </div>
+    </div>
   </header>
 
   <!-- ═══════════════════════════════════════════
@@ -314,5 +330,18 @@
     </div>
   </section>
 
+  <script>
+    const menuBtn      = document.getElementById('menuBtn');
+    const menuDropdown = document.getElementById('menuDropdown');
+  
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuDropdown.classList.toggle('open');
+    });
+  
+    document.addEventListener('click', () => {
+      menuDropdown.classList.remove('open');
+    });
+  </script>
 </body>
 </html>
