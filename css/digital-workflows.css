@@ -352,7 +352,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── BURGER MENU ─────────────────────────────────────── */
 .nav-menu {
-  position:    relative;
+  position:     relative;
   justify-self: end;
 }
 
@@ -371,7 +371,6 @@ a { color: inherit; text-decoration: none; }
   width:      22px;
   height:     1.5px;
   background: #ffffff;
-  transition: opacity 0.2s;
 }
 
 .menu-dropdown {
