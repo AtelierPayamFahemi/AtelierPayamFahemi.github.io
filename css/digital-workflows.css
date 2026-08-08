@@ -387,8 +387,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .menu-dropdown.open {
-  display:        flex;
-  flex-direction: column;
+  display:        block;
 }
 
 .menu-dropdown a {
