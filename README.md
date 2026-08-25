@@ -1,7 +1,11 @@
 # Payam Fahemi — BIM Portfolio
 
-**Architect | BIM Coordinator | CDE Manager**  
-BIM & Digital Information Manager — Milan, Italy
+**Architect**
+**BIM & Digital Information Manager**  
+BIM COORDINATION | CDE & INFORMATION MANAGEMENT | AI
+Registered Architect in Italy
+Iranian - Italian
+Milan, Italy
 
 ---
 
@@ -16,7 +20,7 @@ Driven by a data-centric approach, combining technical expertise with innovation
 
 ## Portfolio
 
-🌐 [atelierPayamFahemi.github.io](https://AtelierPayamFahemi.github.io)
+🌐 [payamfahemi.com](https://payamfahemi.com/)
 
 ---
 
