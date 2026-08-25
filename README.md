@@ -11,9 +11,10 @@ Milan, Italy
 
 ## About
 
-BIM Coordinator and BIM & Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments.
-Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines.
-Advanced user of tools such as Revit, Navisworks, and Solibri, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation. Strong capabilities in automation and computational workflows using Dynamo, Python, and Rhino.Inside.Revit to optimize processes and enhance efficiency.
+BIM Coordinator and BIM & Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments.<br />
+Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines.<br />
+Advanced user of tools such as Revit, Navisworks, and Solibri, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation.<br />
+Strong capabilities in automation and computational workflows using Dynamo, Python, and Rhino.Inside.Revit to optimize processes and enhance efficiency.<br />
 Driven by a data-centric approach, combining technical expertise with innovation to support digital transformation and informed decision-making in BIM environments.
 
 ---
