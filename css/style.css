@@ -206,7 +206,7 @@ a { text-decoration: none; color: inherit; }
 .intro-text {
   font-size: var(--fs-intro-text);
   color: var(--white);
-  line-height: 2;
+  line-height: 1;
   flex: 1;
   padding-top: 10px;
 }
