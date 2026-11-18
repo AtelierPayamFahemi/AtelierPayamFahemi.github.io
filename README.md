@@ -1,46 +1,25 @@
-# Payam Fahemi — BIM Portfolio
+# Payam Fahemi — personal website
 
-**Architect**<br />
-**BIM & Digital Information Manager**<br />
-BIM COORDINATION | CDE & INFORMATION MANAGEMENT | AI<br />
-Registered Architect in Italy<br />
-Iranian - Italian<br />
-Milan, Italy
+Static site for GitHub Pages (no build step).
 
----
+## Files
+| File | What it is |
+|---|---|
+| `index.html` | Main page: hero, About me, Solutions, Key projects, Contacts |
+| `certificates.html` | Certificates (opens in a new tab) |
+| `storyteller.html` | Storyteller journey (opens in a new tab) |
+| `project.html` | One page for every "+ See the project" (`project.html?id=01`) |
+| `style.css` | All styles, numbered sections |
+| `content.js` | **All texts, links, certificates, projects, story and cards — edit here** |
+| `main.js` | Behaviour (scroll scenes, transitions). Normally not edited |
+| `fonts/` | Bebas Neue + Carlito (free twin of Calibri) |
+| `Source/` | Images, CV and embedded project files |
 
-## About
+## Files you still upload to `Source/`
+- `MAIN_CV.pdf` (downloadable CV)
+- `MAIN_ProfilePicture` (.png / .jpg / .jpeg). A placeholder is included; replace it with a high-resolution cut-out
+- `CERTIFICATE_BIM Foundation`, then `CERTIFICATE_Name02` … `CERTIFICATE_Name05` (or rename them in `content.js`)
+- `KEYPROJECT_01.html`, `KEYPROJECT_02.html`, `KEYPROJECT_03.html` (shown in the white hatched square)
+- Card images for the Storyteller pop-ups: any name, listed in `content.js → CARDS`
 
-BIM Coordinator and BIM & Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments.<br />
-Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements. Proven ability to lead BIM implementation, coordinate teams, and standardize workflows across disciplines.<br />
-Advanced user of tools such as Revit, Navisworks, and Solibri, with solid experience in clash detection, rule-based model checking, and IDS (Information Delivery Specification) for structured data validation.<br />
-Strong capabilities in automation and computational workflows using Dynamo, Python, and Rhino.Inside.Revit to optimize processes and enhance efficiency.<br />
-Driven by a data-centric approach, combining technical expertise with innovation to support digital transformation and informed decision-making in BIM environments.
-
----
-
-## Portfolio
-
-🌐 [payamfahemi.com](https://payamfahemi.com/)
-
----
-
-## Areas of Expertise
-- In-depth knowledge of UNI11337, ISO19650, ISO16739 and OpenBIM standards.
-- Lead BIM strategy, governance, and digital information management.
-- Develop and implement company-wide BIM standards, templates, and workflows.
-- Support project teams in digital implementation, automation, and workflow optimization.
-- Drive innovation in digital processes, including Dynamo and Python-based automation.
-- Develop and manage BEPs (Pre-BEP and Post-BEP).
-- Perform clash detection, issue reporting, and model/code quality control.
-- Extract data from Revit, map IFC classes, and configure models based on specific project requirements.
-- Set up BIM projects within a CDE (e.g., ACC).
-- Coordinate interdisciplinary BIM workflows across architectural and engineering teams.
-
----
-
-## Contact
-
-- fahemipayam@gmail.com
-- [LinkedIn](https://www.linkedin.com/in/payamfahemi/)
-- [Youtube](http://www.youtube.com/@AtelierPayamFahemi)
+Images can be .png, .jpg or .jpeg; the site finds the right one. Names are case-sensitive.

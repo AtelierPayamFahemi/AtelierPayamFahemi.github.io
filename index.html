@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payam Fahemi — Architect · BIM Coordinator</title>
+  <meta name="description" content="Payam Fahemi — Architect, BIM Coordinator and BIM & Digital Information Manager based in Milan.">
+  <link rel="icon" href="Source/MAIN_Logo.png">
+  <link rel="preload" href="fonts/BebasNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-main hdr-intro" data-page="main">
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="hdr">
+    <a class="hdr-logo" href="index.html#home"><img data-img="MAIN_Logo" alt="Payam Fahemi logo"></a>
+    <span class="hdr-slot hdr-slot-name" aria-hidden="true">PAYAM FAHEMI</span>
+    <div class="hdr-slot hdr-slot-cta" aria-hidden="true"></div>
+    <div class="hdr-right">
+      <span class="hdr-anchor"></span>
+      <button class="hdr-burger" aria-label="Open menu"><i></i><i></i><i></i></button>
+    </div>
+  </header>
+  <button class="side-menu">Menu</button>
+
+  <main>
+
+    <!-- ============================== HERO ============================== -->
+    <!-- The name PAYAM FAHEMI and the CV / STORYTELLER buttons are added by main.js -->
+    <section class="sec-hero" id="home" aria-label="Payam Fahemi"></section>
+
+
+    <!-- ============================== ABOUT ME ============================== -->
+    <!-- data-step = the order in which blocks appear while scrolling -->
+    <section class="pin sec-about" id="about" data-steps="4">
+      <div class="stage">
+        <div class="about">
+
+          <div class="about-left rv" data-step="0">
+            <h2 class="about-title">ABOUT ME</h2>
+            <p class="about-tagline">I work at the intersection of <b>BIM</b>,<br><b>information management</b>,<br>&amp; <b>digital workflows</b>.</p>
+            <div class="about-photo"><img data-img="MAIN_ProfilePicture" alt="Portrait of Payam Fahemi"></div>
+          </div>
+
+          <div class="about-right">
+            <p class="about-desc rv" data-step="1">Architect, BIM Coordinator and BIM &amp; Digital Information Manager with extensive experience in managing multidisciplinary BIM processes across complex projects, including healthcare, residential, and large-scale developments. Expert in BIM strategy, model governance, and information management, with a strong focus on data quality, interoperability, and compliance with project information requirements.</p>
+
+            <div class="rv" data-step="2">
+              <h3 class="about-block-title">IDEOLOGY</h3>
+              <p class="about-ideology">Unhinged curiosity,<br>skin in the game,<br>not just software, but workflows.</p>
+            </div>
+
+            <div class="rv" data-step="3">
+              <a class="about-link arrow-link" href="certificates.html" target="_blank" rel="noopener" data-icon="ne">CERTIFICATES</a>
+            </div>
+
+            <div class="rv" data-step="4">
+              <a class="about-link" href="#contacts" data-scroll="contacts">CONTACTS</a>
+            </div>
+          </div>
+
+        </div>
+        <span class="scroll-cue" data-dir="down"><i></i><span>Scroll</span></span>
+      </div>
+    </section>
+
+
+    <!-- ============================== SOLUTIONS ============================== -->
+    <!-- steps: 0 title · 1 tagline · 2 dot · 3 network · 4–7 each solution (texts in content.js) -->
+    <section class="pin sec-solutions" id="solutions" data-steps="7">
+      <div class="stage">
+        <canvas class="dots-canvas" aria-hidden="true"></canvas>
+        <h2 class="sec-title" data-title="SOLUTIONS"></h2>
+        <p class="sol-tagline rv" data-only="1">ARCHITECTURE IS DATA.<br>I BUILD THE SYSTEMS THAT MAKE IT SPEAK.</p>
+        <div class="net">
+          <svg class="net-lines" aria-hidden="true"></svg>
+          <button class="net-core" aria-label="Show all solutions">+</button>
+        </div>
+        <div class="sol-panels"></div>
+        <span class="scroll-cue" data-dir="down"><i></i><span>Scroll</span></span>
+      </div>
+    </section>
+
+
+    <!-- ============================== KEY PROJECTS ============================== -->
+    <!-- projects are written in content.js → PROJECTS -->
+    <section class="pin sec-projects" id="key-projects" data-steps="3">
+      <div class="stage">
+        <h2 class="sec-title" data-title="KEY PROJECTS"></h2>
+        <div class="kp-wrap"></div>
+        <div class="kp-dots"></div>
+        <span class="scroll-cue" data-dir="left"><i></i><span>Scroll</span></span>
+      </div>
+    </section>
+
+
+    <!-- ============================== CONTACTS ============================== -->
+    <section class="pin sec-contacts" id="contacts" data-steps="5">
+      <div class="stage">
+        <h2 class="sec-title" data-title="CONTACTS"></h2>
+
+        <div class="ct-say">
+          <p class="up rv" data-step="2">I am a <b>continual improver</b>.</p>
+          <p class="up rv" data-step="3">My <b>curiosity</b> and <b>contextualizing mindset</b> led me to build this.</p>
+          <p class="gap rv" data-step="4">The idea, UI design and creative direction are mine.</p>
+          <p class="rv" data-step="5">Brought to life with claude.ai.</p>
+        </div>
+
+        <div class="ct-grid rv" data-step="1">
+          <div><p class="ct-label">Pages</p><ul class="ct-list ct-pages"></ul></div>
+          <div><p class="ct-label">Contacts</p><ul class="ct-list ct-contacts"></ul></div>
+          <div class="ct-cta"></div>
+        </div>
+
+        <div class="ct-bar rv" data-step="1">
+          <small class="ct-copy"></small>
+          <button class="ct-top">Back to top</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
