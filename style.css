@@ -412,9 +412,10 @@ body.page-main { --page-bg: var(--seashell); }
 @media (min-width: 900px) and (min-height: 560px) {
   .about {
     position: absolute; inset: 0;
-    padding: calc(var(--header-h) + 5vh) 12vw 10vh 17vw;
-    grid-template-columns: minmax(0, 29vw) minmax(0, 37vw);
-    gap: 0 5.5vw;
+    padding: calc(var(--header-h) + 5vh) var(--pad) 10vh;
+    grid-template-columns: minmax(0, 24vw) minmax(0, 21.5vw);
+    gap: 0 8vw;
+    justify-content: center;
   }
   .about-left { display: flex; flex-direction: column; height: 100%; }
   .about-photo { flex: 1; min-height: 0; width: auto; margin: 4vh 0 0; aspect-ratio: auto; }
@@ -468,7 +469,7 @@ body.page-main { --page-bg: var(--seashell); }
   .net { position: absolute; inset: 0; height: auto; margin: 0; }
   .sol-panels { display: block; }
   .sol-panel {
-    position: absolute; left: 13vw; top: 29vh; width: 25vw; max-width: none;
+    position: absolute; left: 15vw; top: 29vh; width: 25vw; max-width: none;
     background: var(--seashell); padding-bottom: 1rem;
     opacity: 0; transition: clip-path var(--t-curtain) var(--ease-curtain), transform var(--t-curtain) var(--ease), opacity .3s;
   }
@@ -554,9 +555,9 @@ body.page-main { --page-bg: var(--seashell); }
 
 @media (min-width: 900px) and (min-height: 560px) {
   .sec-contacts .stage { padding: 0; display: block; }
-  .ct-say { position: absolute; left: 15vw; top: calc(var(--header-h) + 6vh); margin: 0; }
+  .ct-say { position: absolute; left: 0; right: 0; width: max-content; top: calc(var(--header-h) + 6vh); margin: 0 auto; }
   .ct-grid {
-    position: absolute; left: 18.5vw; top: 64vh; grid-template-columns: 23vw 17vw auto; gap: 0;
+    position: absolute; left: 0; right: 0; width: max-content; margin: 0 auto; top: 64vh; grid-template-columns: 23vw 17vw auto; gap: 0;
   }
   .ct-cta { grid-column: auto; padding-top: calc(var(--fs-4) * 2.3); }
   .ct-bar { position: absolute; left: var(--pad); right: var(--pad); bottom: 2.2vh; margin: 0; padding: 0; }
