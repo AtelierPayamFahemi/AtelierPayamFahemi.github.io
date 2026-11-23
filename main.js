@@ -130,7 +130,7 @@ const Engine = {
   init() {
     this.pins = $$(".pin").map(sec => ({
       sec, stepsDesk: +sec.dataset.steps || 0, steps: +sec.dataset.steps || 0, step: null, t: -9, top: 0,
-      els: [], cue: null, onStep: null, onFrame: null
+      els: [], onStep: null, onFrame: null
     }));
     addEventListener("resize", () => this.requestLayout());
     DESK.addEventListener?.("change", () => this.requestLayout());
@@ -151,7 +151,7 @@ const Engine = {
     });
     this.pins.forEach(p => {
       p.top = p.sec.getBoundingClientRect().top + scrollY; p.step = null;
-      p.els = $$("[data-step],[data-only]", p.sec); p.cue = $(".scroll-cue", p.sec);
+      p.els = $$("[data-step],[data-only]", p.sec);
     });
     this.flowEls = $$("[data-step],[data-only],[data-reveal]").filter(el => {
       const p = this.pins.find(q => q.sec.contains(el));
@@ -179,7 +179,6 @@ const Engine = {
           if (el.dataset.step !== undefined) el.classList.toggle("is-on", step >= +el.dataset.step);
           else el.classList.toggle("is-on", step === +el.dataset.only);
         });
-        if (p.cue) p.cue.classList.toggle("is-off", step >= p.steps);
         p.onStep && p.onStep(step);
       }
     });
@@ -325,9 +324,7 @@ const Cards = {
    ===================================================================== */
 function initMain() {
   /* ---- 10.1 hero: name + buttons fly into the header ---- */
-  const name = make(`<a class="flyer flyer-name" href="#home" aria-label="${SITE.name}">${
-    [...SITE.name].map((ch, i) => ch === " " ? '<span class="sp"></span>' : `<span class="ltr"><span style="--i:${i}">${ch}</span></span>`).join("")
-  }</a>`);
+  const name = make(`<a class="flyer flyer-name" href="#home" aria-label="${SITE.name}"><span class="fp">${SITE.name}</span></a>`);
   const ctaMarkup = `<div class="cta"><a class="btn-cv" href="${SITE.cv}" download>CV${ICON.se}</a><a class="pill" href="storyteller.html" target="_blank" rel="noopener">STORYTELLER</a></div>`;
   const cta = make(`<div class="flyer flyer-cta">${ctaMarkup}</div>`);
   $(".hdr-slot-cta").innerHTML = ctaMarkup;
@@ -631,7 +628,6 @@ function initStory() {
         <div class="st-intro-panel" data-step="1">
           <h1>${STORY.intro.title}</h1>
           <p>${STORY.intro.text}</p>
-          <span class="scroll-cue" data-dir="down"><i></i><span>Scroll</span></span>
         </div>
       </div>
     </section>

@@ -7,7 +7,7 @@
    03  SHARED · header, logo, menu
    04  SHARED · flying titles
    05  SHARED · buttons, links, arrows
-   06  SHARED · curtain reveals & scroll cue
+   06  SHARED · curtain reveals
    07  SHARED · pinned sections (scroll scenes)
    08  SHARED · pop-up cards
    10  MAIN · hero & about
@@ -225,10 +225,12 @@ body.show-side-menu .side-menu { opacity: 1; pointer-events: auto; }
   font-family: var(--font-head); font-size: var(--fs-2); line-height: 1; color: var(--black);
   pointer-events: auto;
 }
-.flyer-name .ltr { display: inline-block; overflow: hidden; vertical-align: top; }
-.flyer-name .ltr > span { display: inline-block; transform: translateY(105%); animation: ltr-rise 1.4s var(--ease) forwards; animation-delay: calc(.25s + var(--i) * 45ms); }
-.flyer-name .sp { display: inline-block; width: .22em; }
-@keyframes ltr-rise { to { transform: translateY(0); } }
+.flyer-name .fp { display: inline-block; opacity: 0; animation: focus-pull 3.4s cubic-bezier(.25, 1, .5, 1) .3s forwards; }
+@keyframes focus-pull {
+  from { opacity: 0; filter: blur(.085em); transform: scale(1.03); }
+  60%  { opacity: 1; }
+  to   { opacity: 1; filter: none; transform: none; }
+}
 
 /* hero buttons (CV + Storyteller) */
 .flyer-cta { pointer-events: auto; }
@@ -286,7 +288,7 @@ body.hdr-nav .flyer-cta { opacity: 0; pointer-events: none; }
 
 
 /* =====================================================================
-   06  SHARED · CURTAIN REVEALS & SCROLL CUE
+   06  SHARED · CURTAIN REVEALS
    ---------------------------------------------------------------------
    .rv        → vertical curtain (rises from bottom to top)
    .rv-x      → horizontal curtain (left to right)
@@ -305,26 +307,6 @@ body.hdr-nav .flyer-cta { opacity: 0; pointer-events: none; }
 .rv-x.is-on { clip-path: inset(0 0 0 0); }
 .rv-fade { opacity: 0; transition: opacity .8s var(--ease); }
 .rv-fade.is-on { opacity: 1; }
-
-/* scroll cue: small gray arrow + "Scroll" */
-.scroll-cue {
-  position: absolute; right: var(--pad); top: 50%; transform: translateY(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  color: var(--gray); font-size: var(--fs-4); z-index: 5;
-  transition: opacity .5s var(--ease);
-}
-.scroll-cue i { position: relative; display: block; background: var(--gray); animation: cue 2.2s var(--ease) infinite; }
-.scroll-cue[data-dir="down"] i, .scroll-cue[data-dir="up"] i { width: 1.5px; height: 34px; }
-.scroll-cue[data-dir="left"] i, .scroll-cue[data-dir="right"] i { width: 38px; height: 1.5px; }
-.scroll-cue i::after {
-  content: ""; position: absolute; width: 7px; height: 7px; border: solid var(--gray); border-width: 1.5px 1.5px 0 0;
-}
-.scroll-cue[data-dir="down"]  i::after { left: 50%; bottom: 0;  transform: translate(-50%, 0) rotate(135deg); }
-.scroll-cue[data-dir="up"]    i::after { left: 50%; top: 0;     transform: translate(-50%, 0) rotate(-45deg); }
-.scroll-cue[data-dir="right"] i::after { right: 0; top: 50%;    transform: translate(0, -50%) rotate(45deg); }
-.scroll-cue[data-dir="left"]  i::after { left: 0;  top: 50%;    transform: translate(0, -50%) rotate(-135deg); }
-@keyframes cue { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
-.scroll-cue.is-off { opacity: 0; }
 
 
 /* =====================================================================
@@ -621,7 +603,6 @@ body.page-certificates { --page-bg: var(--seashell); }
 }
 .cert-dots button::before { content: "+"; }
 .cert-dots button.is-on { background: var(--navy); }
-.sec-certs .scroll-cue { display: none; }
 
 @media (min-width: 900px) and (min-height: 560px) {
   .sec-certs .stage { padding: 0; display: block; }
@@ -633,7 +614,6 @@ body.page-certificates { --page-bg: var(--seashell); }
   .cert-img img { max-height: 100%; }
   .cert-card { height: 100%; padding-top: 34%; }
   .cert-dots { position: absolute; left: 8.5vw; bottom: 6vh; padding: 0; }
-  .sec-certs .scroll-cue { display: flex; right: 2.4vw; }
 }
 
 
@@ -650,9 +630,6 @@ body.page-story { --page-bg: var(--white); }
 .st-intro-panel.is-on { clip-path: inset(0 0 0 0); }
 .st-intro-panel h1 { font-size: var(--fs-3); font-weight: 700; letter-spacing: .04em; }
 .st-intro-panel p { font-size: var(--fs-4); }
-.st-intro-panel .scroll-cue { top: auto; bottom: 4vh; right: 50%; transform: translateX(50%); }
-.st-intro-panel .scroll-cue i, .st-intro-panel .scroll-cue i::after { background-color: var(--white); border-color: var(--white); }
-.st-intro-panel .scroll-cue span { display: none; }
 
 .st-list .stage { background: var(--white); display: grid; place-items: center; }
 .st-chapters { display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -899,7 +876,6 @@ body.page-project { --page-bg: var(--seashell); }
   body.page-certificates .hdr,
   body.page-project .hdr { background: var(--seashell); }
   .side-menu { display: none; }
-  .scroll-cue { display: none; }
 }
 
 
