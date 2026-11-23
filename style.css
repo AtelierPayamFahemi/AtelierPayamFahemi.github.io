@@ -416,10 +416,11 @@ body.page-main { --page-bg: var(--seashell); }
     grid-template-columns: minmax(0, 24vw) minmax(0, 21.5vw);
     gap: 0 8vw;
     justify-content: center;
+    align-content: start;
   }
   .about-left { display: flex; flex-direction: column; height: 100%; }
-  .about-photo { flex: 1; min-height: 0; width: auto; margin: 4vh 0 0; aspect-ratio: auto; }
-  .about-photo img { object-position: 18% bottom; }
+  .about-photo { flex: 1; min-height: 0; width: auto; margin: 4vh 0 0; aspect-ratio: auto; position: relative; }
+  .about-photo img { object-position: 18% bottom; position: absolute; inset: 0; }
   .about-right { padding-top: calc(var(--fs-3) * 2.4); gap: 4.2vh; }
   .about-right .about-link + .about-link { margin-top: 4vh; }
 }
