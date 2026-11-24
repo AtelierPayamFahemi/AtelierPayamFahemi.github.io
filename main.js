@@ -330,6 +330,8 @@ function initMain() {
   $(".hdr-slot-cta").innerHTML = ctaMarkup;
   document.body.append(name, cta);
   name.addEventListener("click", e => { e.preventDefault(); scrollToId("home"); });
+  // when the entrance (focus pull) ends, release its GPU layer so the text stays sharp
+  $(".fp", name).addEventListener("animationend", ev => { ev.target.style.animation = "none"; ev.target.style.opacity = "1"; });
 
   const solutions = $("#solutions");
   let nm = {}, cm = {};
@@ -343,7 +345,13 @@ function initMain() {
     const e = ease(clamp(scrollY / (vh * 0.7)));
     const ns = $(".hdr-slot-name").getBoundingClientRect();
     const S0 = (vw - pad * 2) / nm.w;
-    name.style.transform = `translate3d(${lerp(pad, ns.left, e)}px, ${lerp(vh * 0.055, ns.top, e)}px, 0) scale(${lerp(S0, 1, e)})`;
+    if (e >= 1) {   // landed in the header: plain text at whole pixels (sharp edges)
+      name.style.transform = "none"; name.style.willChange = "auto";
+      name.style.left = Math.round(ns.left) + "px"; name.style.top = Math.round(ns.top) + "px";
+    } else {
+      name.style.left = name.style.top = name.style.willChange = "";
+      name.style.transform = `translate3d(${lerp(pad, ns.left, e)}px, ${lerp(vh * 0.055, ns.top, e)}px, 0) scale(${lerp(S0, 1, e)})`;
+    }
     const cs = $(".hdr-slot-cta").getBoundingClientRect();
     cta.style.transform = `translate3d(${lerp(vw - pad - cm.w, cs.left, e)}px, ${lerp(vh * 0.9 - cm.h, cs.top, e)}px, 0)`;
 
